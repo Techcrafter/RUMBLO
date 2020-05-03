@@ -1,0 +1,178 @@
+Segment  Base   Top    High   Length
+-------- ------ ------ ------ -------
+icon     D1A882 D1A99E           11Ch
+launcher D1A99E D1A9F6            58h
+libs     D1A9F6 D1AA41            4Bh
+startup  D1AA41 D1AA80            3Fh
+cleanup  D1AA80 D1AA94            14h
+exit     D1AA94 D1AA9A             6h
+code     D1AA9A D1AC74           1DAh
+data     D1AC74 D232D3          865Fh
+strsect  D232D3 D232DF             Ch
+text     D232DF D232DF             0h
+bss      D031F6 D031F6 D13FD6      0h
+header   D1A87F D1A882             3h
+
+Label                       Value
+-------------------------   ------
+_delay                    = D1AA9A
+_os_DisableHomeTextBuffer = D1AAE3
+_os_EnableHomeTextBuffer  = D1AAF5
+__frameset                = D1AB07
+__findlibload             = D1A99E
+__program_icon            = D1A887
+__program_description     = D1A989
+__ccleanup                = D1AA80
+_errno                    = D008DC
+_init                     = D1A882
+_exit                     = D1AA96
+__exit                    = D1AA6F
+__exitsp                  = D1AA6F
+__errsp                   = D1AA6F
+_global_palette           = D1AC96
+_tileset_tiles_data       = D22E30
+_tileset_tile_127_data    = D22D2E
+_tileset_tile_126_data    = D22C2C
+_tileset_tile_125_data    = D22B2A
+_tileset_tile_124_data    = D22A28
+_tileset_tile_123_data    = D22926
+_tileset_tile_122_data    = D22824
+_tileset_tile_121_data    = D22722
+_tileset_tile_120_data    = D22620
+_tileset_tile_119_data    = D2251E
+_tileset_tile_118_data    = D2241C
+_tileset_tile_117_data    = D2231A
+_tileset_tile_116_data    = D22218
+_tileset_tile_115_data    = D22116
+_tileset_tile_114_data    = D22014
+_tileset_tile_113_data    = D21F12
+_tileset_tile_112_data    = D21E10
+_tileset_tile_111_data    = D21D0E
+_tileset_tile_110_data    = D21C0C
+_tileset_tile_109_data    = D21B0A
+_tileset_tile_108_data    = D21A08
+_tileset_tile_107_data    = D21906
+_tileset_tile_106_data    = D21804
+_tileset_tile_105_data    = D21702
+_tileset_tile_104_data    = D21600
+_tileset_tile_103_data    = D214FE
+_tileset_tile_102_data    = D213FC
+_tileset_tile_101_data    = D212FA
+_tileset_tile_100_data    = D211F8
+_tileset_tile_99_data     = D210F6
+_tileset_tile_98_data     = D20FF4
+_tileset_tile_97_data     = D20EF2
+_tileset_tile_96_data     = D20DF0
+_tileset_tile_95_data     = D20CEE
+_tileset_tile_94_data     = D20BEC
+_tileset_tile_93_data     = D20AEA
+_tileset_tile_92_data     = D209E8
+_tileset_tile_91_data     = D208E6
+_tileset_tile_90_data     = D207E4
+_tileset_tile_89_data     = D206E2
+_tileset_tile_88_data     = D205E0
+_tileset_tile_87_data     = D204DE
+_tileset_tile_86_data     = D203DC
+_tileset_tile_85_data     = D202DA
+_tileset_tile_84_data     = D201D8
+_tileset_tile_83_data     = D200D6
+_tileset_tile_82_data     = D1FFD4
+_tileset_tile_81_data     = D1FED2
+_tileset_tile_80_data     = D1FDD0
+_tileset_tile_79_data     = D1FCCE
+_tileset_tile_78_data     = D1FBCC
+_tileset_tile_77_data     = D1FACA
+_tileset_tile_76_data     = D1F9C8
+_tileset_tile_75_data     = D1F8C6
+_tileset_tile_74_data     = D1F7C4
+_tileset_tile_73_data     = D1F6C2
+_tileset_tile_72_data     = D1F5C0
+_tileset_tile_71_data     = D1F4BE
+_tileset_tile_70_data     = D1F3BC
+_tileset_tile_69_data     = D1F2BA
+_tileset_tile_68_data     = D1F1B8
+_tileset_tile_67_data     = D1F0B6
+_tileset_tile_66_data     = D1EFB4
+_tileset_tile_65_data     = D1EEB2
+_tileset_tile_64_data     = D1EDB0
+_tileset_tile_63_data     = D1ECAE
+_tileset_tile_62_data     = D1EBAC
+_tileset_tile_61_data     = D1EAAA
+_tileset_tile_60_data     = D1E9A8
+_tileset_tile_59_data     = D1E8A6
+_tileset_tile_58_data     = D1E7A4
+_tileset_tile_57_data     = D1E6A2
+_tileset_tile_56_data     = D1E5A0
+_tileset_tile_55_data     = D1E49E
+_tileset_tile_54_data     = D1E39C
+_tileset_tile_53_data     = D1E29A
+_tileset_tile_52_data     = D1E198
+_tileset_tile_51_data     = D1E096
+_tileset_tile_50_data     = D1DF94
+_tileset_tile_49_data     = D1DE92
+_tileset_tile_48_data     = D1DD90
+_tileset_tile_47_data     = D1DC8E
+_tileset_tile_46_data     = D1DB8C
+_tileset_tile_45_data     = D1DA8A
+_tileset_tile_44_data     = D1D988
+_tileset_tile_43_data     = D1D886
+_tileset_tile_42_data     = D1D784
+_tileset_tile_41_data     = D1D682
+_tileset_tile_40_data     = D1D580
+_tileset_tile_39_data     = D1D47E
+_tileset_tile_38_data     = D1D37C
+_tileset_tile_37_data     = D1D27A
+_tileset_tile_36_data     = D1D178
+_tileset_tile_35_data     = D1D076
+_tileset_tile_34_data     = D1CF74
+_tileset_tile_33_data     = D1CE72
+_tileset_tile_32_data     = D1CD70
+_tileset_tile_31_data     = D1CC6E
+_tileset_tile_30_data     = D1CB6C
+_tileset_tile_29_data     = D1CA6A
+_tileset_tile_28_data     = D1C968
+_tileset_tile_27_data     = D1C866
+_tileset_tile_26_data     = D1C764
+_tileset_tile_25_data     = D1C662
+_tileset_tile_24_data     = D1C560
+_tileset_tile_23_data     = D1C45E
+_tileset_tile_22_data     = D1C35C
+_tileset_tile_21_data     = D1C25A
+_tileset_tile_20_data     = D1C158
+_tileset_tile_19_data     = D1C056
+_tileset_tile_18_data     = D1BF54
+_tileset_tile_17_data     = D1BE52
+_tileset_tile_16_data     = D1BD50
+_tileset_tile_15_data     = D1BC4E
+_tileset_tile_14_data     = D1BB4C
+_tileset_tile_13_data     = D1BA4A
+_tileset_tile_12_data     = D1B948
+_tileset_tile_11_data     = D1B846
+_tileset_tile_10_data     = D1B744
+_tileset_tile_9_data      = D1B642
+_tileset_tile_8_data      = D1B540
+_tileset_tile_7_data      = D1B43E
+_tileset_tile_6_data      = D1B33C
+_tileset_tile_5_data      = D1B23A
+_tileset_tile_4_data      = D1B138
+_tileset_tile_3_data      = D1B036
+_tileset_tile_2_data      = D1AF34
+_tileset_tile_1_data      = D1AE32
+_tileset_tile_0_data      = D1AD30
+_main                     = D1AB15
+_scroll                   = D22FB0
+_tilemap_map              = D22FB3
+_gfx_Begin                = D1AA09
+_gfx_End                  = D1AA0D
+_gfx_SetColor             = D1AA11
+_gfx_SetPalette           = D1AA15
+_gfx_SetDraw              = D1AA19
+_gfx_SwapDraw             = D1AA1D
+_gfx_PrintUInt            = D1AA21
+_gfx_PrintString          = D1AA25
+_gfx_PrintStringXY        = D1AA29
+_gfx_SetTextBGColor       = D1AA2D
+_gfx_SetTextFGColor       = D1AA31
+_gfx_SetMonospaceFont     = D1AA35
+_gfx_FillRectangle        = D1AA39
+_gfx_Tilemap              = D1AA3D

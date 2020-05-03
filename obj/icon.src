@@ -1,0 +1,29 @@
+	.def __program_icon
+	.def __program_description
+
+	.assume adl=1
+	segment .icon
+
+	jp __program_description_end
+	db	1
+__program_icon:
+	db	010h, 010h
+	db	0FFh, 0FFh, 0FFh, 0FFh, 0DEh, 06Ch, 04Ah, 001h, 021h, 04Ah, 093h, 0DEh, 0FFh, 0FFh, 0FFh, 0FFh
+	db	0FFh, 0FFh, 0FFh, 094h, 000h, 000h, 000h, 000h, 000h, 000h, 000h, 000h, 094h, 0FFh, 0FFh, 0FFh
+	db	0FFh, 0FFh, 04Bh, 000h, 000h, 04Ah, 0B5h, 0DEh, 0DEh, 0B5h, 06Bh, 000h, 000h, 04Ah, 0FFh, 0FFh
+	db	0FFh, 094h, 000h, 021h, 0B5h, 0FFh, 000h, 000h, 000h, 000h, 0FFh, 0B5h, 021h, 000h, 094h, 0FFh
+	db	0DEh, 000h, 000h, 0B5h, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh, 000h, 0FFh, 0B5h, 000h, 000h, 0DEh
+	db	06Ch, 000h, 04Ah, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 0FFh, 0FFh, 06Bh, 000h, 093h
+	db	04Ah, 000h, 0B5h, 0FFh, 000h, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 0B5h, 000h, 04Ah
+	db	001h, 000h, 0DEh, 0FFh, 000h, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh, 000h, 0FFh, 0DEh, 000h, 021h
+	db	001h, 000h, 0DEh, 0FFh, 000h, 0FFh, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh, 000h, 0DEh, 000h, 021h
+	db	04Ah, 000h, 0B5h, 0FFh, 000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 0FFh, 0FFh, 000h, 0B5h, 000h, 04Ah
+	db	06Ch, 000h, 06Bh, 0FFh, 000h, 0FFh, 000h, 0FFh, 0FFh, 000h, 0FFh, 000h, 0FFh, 06Bh, 000h, 093h
+	db	0DEh, 000h, 000h, 0B5h, 0FFh, 0FFh, 0FFh, 000h, 0FFh, 0FFh, 0FFh, 000h, 0B6h, 000h, 000h, 0DEh
+	db	0FFh, 094h, 000h, 021h, 0B5h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 0B6h, 021h, 000h, 094h, 0FFh
+	db	0FFh, 0FFh, 04Ah, 000h, 000h, 06Bh, 0B5h, 0DEh, 0DEh, 0B5h, 06Bh, 000h, 000h, 04Ah, 0FFh, 0FFh
+	db	0FFh, 0FFh, 0FFh, 094h, 000h, 000h, 000h, 000h, 000h, 000h, 000h, 000h, 094h, 0FFh, 0FFh, 0FFh
+	db	0FFh, 0FFh, 0FFh, 0FFh, 0DEh, 06Ch, 04Ah, 001h, 021h, 04Ah, 093h, 0DEh, 0FFh, 0FFh, 0FFh, 0FFh
+__program_description:
+	db	"A fun fighting game.", 0
+__program_description_end:
