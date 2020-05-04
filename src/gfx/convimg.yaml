@@ -7,7 +7,6 @@ output: c
 
 palette: global_palette
   fixed-color: {index:0, r:255, g:255, b:255}
-  fixed-color: {index:1, r:255, g:216, b:0}
   images: automatic
 
 convert: tileset
