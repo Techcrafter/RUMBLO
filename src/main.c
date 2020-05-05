@@ -32,6 +32,10 @@ extern unsigned char tilemap_map[];
 int selection;
 int selecting;
 
+int players;
+int map;
+int character;
+
 int getXBlock(int xBlock)
 {
 	return TILE_WIDTH * TILEMAP_DRAW_WIDTH * xBlock;
@@ -44,9 +48,8 @@ int getYBlock(int yBlock)
 
 int main(void)
 {
+	//initialization
 	sk_key_t key;
-	
-	//initialize tilemap
 	
     gfx_tilemap_t tilemap;
 	tilemap.map         = tilemap_map;
@@ -79,13 +82,22 @@ int main(void)
 	
 	delay(2000);
 	
+	//---------------------------------------------------------------
+	
+	//start screen
+	startScreen:
+	
 	gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
-	gfx_PrintStringXY("Press [enter] to begin...", 70, 200);
+	gfx_SetTextFGColor(BLACK);
+    gfx_SetTextBGColor(WHITE);
+	gfx_SetTextScale(1, 1);
+	gfx_PrintStringXY("Press [enter] to start...", 65, 200);
 	gfx_SwapDraw();
 	while(os_GetCSC() != sk_Enter);
 	
-	//main menu
+	//---------------------------------------------------------------
 	
+	//main menu
 	mainMenu:
 	
 	selection = 0;
@@ -118,7 +130,7 @@ int main(void)
 		{
 			gfx_SetTextFGColor(BLACK);
 		}
-		gfx_PrintStringXY("Singleplayer", 115, 70);
+		gfx_PrintStringXY("Singleplayer", 112, 68);
 		if(selection == 1)
 		{
 			gfx_SetTextFGColor(RED);
@@ -127,7 +139,7 @@ int main(void)
 		{
 			gfx_SetTextFGColor(BLACK);
 		}
-		gfx_PrintStringXY("Quit game", 125, 100);
+		gfx_PrintStringXY("Quit game", 124, 100);
 		
 		gfx_SwapDraw();
 	}
@@ -135,6 +147,7 @@ int main(void)
 	switch(selection)
 	{
 		case 0:
+			players = 1;
 			goto mapSelector;
 			break;
 		case 1:
@@ -142,8 +155,11 @@ int main(void)
 			break;
 	}
 	
-	//map selector
+	goto error;
 	
+	//---------------------------------------------------------------
+	
+	//map selector
 	mapSelector:
 	
 	selection = 0;
@@ -160,6 +176,10 @@ int main(void)
 		if(key == sk_Enter)
 		{
 			selecting = 0;
+		}
+		else if(key == sk_Clear)
+		{
+			goto mainMenu;
 		}
 		else if(key == sk_Left && selection != 0)
 		{
@@ -181,12 +201,79 @@ int main(void)
 		}
 		gfx_SwapDraw();
 	}
+	map = selection;
 	
+	goto characterSelector;
+	
+	//---------------------------------------------------------------
+	
+	//character selector
+	characterSelector:
+	
+	selection = 0;
+	selecting = 1;
+	
+	while(selecting)
+	{
+		gfx_Tilemap(&tilemap, getXBlock(3), getYBlock(0));
+		gfx_SetTextFGColor(WHITE);
+		gfx_SetTextBGColor(BLACK);
+		gfx_SetTextScale(2, 2);
+		gfx_PrintStringXY("Select a character:", 10, 10);
+		
+		key = os_GetCSC();
+		if(key == sk_Enter)
+		{
+			selecting = 0;
+		}
+		else if(key == sk_Clear)
+		{
+			goto mainMenu;
+		}
+		else if(key == sk_Left && selection != 0)
+		{
+			selection--;
+		}
+		else if(key == sk_Right && selection != 1)
+		{
+			selection++;
+		}
+		
+		switch(selection)
+		{
+			case 0:
+				gfx_TransparentSprite(mapHighlighter, 32, 64);
+				break;
+			case 1:
+				gfx_TransparentSprite(mapHighlighter, 96, 64);
+				break;
+		}
+		gfx_SwapDraw();
+	}
+	character = selection;
+	
+	goto error;
+	
+	//---------------------------------------------------------------
+	
+	//error
+	error:
+	
+	gfx_FillScreen(RED);
+	gfx_SetTextFGColor(WHITE);
+	gfx_SetTextBGColor(RED);
+	gfx_SetTextScale(1, 1);
+	gfx_PrintStringXY("An error has occurred!", 0, 0);
+	gfx_PrintStringXY("Press [enter] to go to the main menu...", 0, 10);
+	gfx_SwapDraw();
+	while(os_GetCSC() != sk_Enter);
 	goto mainMenu;
 	
-	//quit game
+	//---------------------------------------------------------------
 	
+	//quit game
 	quitGame:
+	
 	gfx_End();
 	return 0;
 }
