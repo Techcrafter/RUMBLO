@@ -4,12 +4,21 @@ output: c
     - global_palette
   converts:
     - tileset
+    - sprites
 
 palette: global_palette
-  fixed-color: {index:0, r:255, g:255, b:255}
+  fixed-color: {index:0, r:140, g:168, b:252}
+  fixed-color: {index:1, r:0, g:0, b:0}
+  fixed-color: {index:2, r:255, g:255, b:255}
   images: automatic
 
 convert: tileset
   palette: global_palette
   tilesets: {tile-width:16, tile-height:16}
     - tileset.png
+
+convert: sprites
+  palette: global_palette
+  transparent-color-index: 0
+  images:
+    - mapHighlighter.png

@@ -2,20 +2,20 @@ Segment  Base   Top    High   Length
 -------- ------ ------ ------ -------
 icon     D1A882 D1A9A3           121h
 launcher D1A9A3 D1A9FB            58h
-libs     D1A9FB D1AA3A            3Fh
-startup  D1AA3A D1AA79            3Fh
-cleanup  D1AA79 D1AA8D            14h
-exit     D1AA8D D1AA93             6h
-code     D1AA93 D1ACB0           21Dh
-data     D1ACB0 D20BDD          5F2Dh
-strsect  D20BDD D20C01            24h
-text     D20C01 D20C01             0h
-bss      D031F6 D031F6 D13FD6      0h
+libs     D1A9FB D1AA46            4Bh
+startup  D1AA46 D1AA85            3Fh
+cleanup  D1AA85 D1AA99            14h
+exit     D1AA99 D1AA9F             6h
+code     D1AA9F D1AEAC           40Dh
+data     D1AEAC D22768          78BCh
+strsect  D22768 D227A7            3Fh
+text     D227A7 D227A7             0h
+bss      D031F6 D031FC D13FD6      6h
 header   D1A87F D1A882             3h
 
 Label                       Value
 -------------------------   ------
-_delay                    = D1AA93
+_delay                    = D1AA9F
 _boot_GetBootMajorVer     = 000080
 _boot_GetHardwareVer      = 000084
 _boot_GetBootMinorVer     = 00008C
@@ -151,48 +151,74 @@ _asm_DisableAPD           = 021134
 _asm_EnableAPD            = 021138
 _asm_DrawStatusBar        = 021A3C
 _asm_ArcChk               = 022040
-_os_DisableHomeTextBuffer = D1AADC
-_os_EnableHomeTextBuffer  = D1AAEE
-__frameset0               = D1AB00
-__frameset                = D1AB0B
+_os_DisableHomeTextBuffer = D1AAE8
+_os_EnableHomeTextBuffer  = D1AAFA
+__frameset0               = D1AB0C
+__case8                   = 000124
+__frameset                = D1AB17
 __imuls                   = 000154
 __imul_b                  = 000158
 __imul_b                  = 000150
+__icmpzero                = 000138
 __findlibload             = D1A9A3
 __program_icon            = D1A887
 __program_description     = D1A989
-__ccleanup                = D1AA79
+__ccleanup                = D1AA85
 _errno                    = D008DC
 _init                     = D1A882
-_exit                     = D1AA8F
-__exit                    = D1AA68
-__exitsp                  = D1AA68
-__errsp                   = D1AA68
-_global_palette           = D1ACD2
-_tileset_tiles_data       = D1C0A4
-_tileset_tile_18_data     = D1BFA2
-_tileset_tile_17_data     = D1BEA0
-_tileset_tile_16_data     = D1BD9E
-_tileset_tile_15_data     = D1BC9C
-_tileset_tile_14_data     = D1BB9A
-_tileset_tile_13_data     = D1BA98
-_tileset_tile_12_data     = D1B996
-_tileset_tile_11_data     = D1B894
-_tileset_tile_10_data     = D1B792
-_tileset_tile_9_data      = D1B690
-_tileset_tile_8_data      = D1B58E
-_tileset_tile_7_data      = D1B48C
-_tileset_tile_6_data      = D1B38A
-_tileset_tile_5_data      = D1B288
-_tileset_tile_4_data      = D1B186
-_tileset_tile_3_data      = D1B084
-_tileset_tile_2_data      = D1AF82
-_tileset_tile_1_data      = D1AE80
-_tileset_tile_0_data      = D1AD7E
-_main                     = D1AB3F
-_getYBlock                = D1AB2D
-_getXBlock                = D1AB19
-_tilemap_map              = D1C0DD
+_exit                     = D1AA9B
+__exit                    = D1AA74
+__exitsp                  = D1AA74
+__errsp                   = D1AA74
+_global_palette           = D1AECE
+_mapHighlighter_data      = D1AF9E
+_tileset_tiles_data       = D1DBF0
+_tileset_tile_39_data     = D1DAEE
+_tileset_tile_38_data     = D1D9EC
+_tileset_tile_37_data     = D1D8EA
+_tileset_tile_36_data     = D1D7E8
+_tileset_tile_35_data     = D1D6E6
+_tileset_tile_34_data     = D1D5E4
+_tileset_tile_33_data     = D1D4E2
+_tileset_tile_32_data     = D1D3E0
+_tileset_tile_31_data     = D1D2DE
+_tileset_tile_30_data     = D1D1DC
+_tileset_tile_29_data     = D1D0DA
+_tileset_tile_28_data     = D1CFD8
+_tileset_tile_27_data     = D1CED6
+_tileset_tile_26_data     = D1CDD4
+_tileset_tile_25_data     = D1CCD2
+_tileset_tile_24_data     = D1CBD0
+_tileset_tile_23_data     = D1CACE
+_tileset_tile_22_data     = D1C9CC
+_tileset_tile_21_data     = D1C8CA
+_tileset_tile_20_data     = D1C7C8
+_tileset_tile_19_data     = D1C6C6
+_tileset_tile_18_data     = D1C5C4
+_tileset_tile_17_data     = D1C4C2
+_tileset_tile_16_data     = D1C3C0
+_tileset_tile_15_data     = D1C2BE
+_tileset_tile_14_data     = D1C1BC
+_tileset_tile_13_data     = D1C0BA
+_tileset_tile_12_data     = D1BFB8
+_tileset_tile_11_data     = D1BEB6
+_tileset_tile_10_data     = D1BDB4
+_tileset_tile_9_data      = D1BCB2
+_tileset_tile_8_data      = D1BBB0
+_tileset_tile_7_data      = D1BAAE
+_tileset_tile_6_data      = D1B9AC
+_tileset_tile_5_data      = D1B8AA
+_tileset_tile_4_data      = D1B7A8
+_tileset_tile_3_data      = D1B6A6
+_tileset_tile_2_data      = D1B5A4
+_tileset_tile_1_data      = D1B4A2
+_tileset_tile_0_data      = D1B3A0
+_main                     = D1AB4B
+_getYBlock                = D1AB39
+_getXBlock                = D1AB25
+_selecting                = D031F9
+_selection                = D031F6
+_tilemap_map              = D1DC68
 _gfx_Begin                = D1AA0E
 _gfx_End                  = D1AA12
 _gfx_SetColor             = D1AA16
@@ -204,3 +230,6 @@ _gfx_SetTextBGColor       = D1AA2A
 _gfx_SetTextFGColor       = D1AA2E
 _gfx_SetMonospaceFont     = D1AA32
 _gfx_Tilemap              = D1AA36
+_gfx_TransparentSprite    = D1AA3A
+_gfx_SetTextScale         = D1AA3E
+_gfx_SetTransparentColor  = D1AA42

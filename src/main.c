@@ -24,8 +24,13 @@ extern unsigned char tilemap_map[];
 #define Y_OFFSET            0
 #define X_OFFSET            0
 
-#define BLACK				7
-#define WHITE				0
+#define BLACK				1
+#define RED					gfx_red
+#define TRANSPARENT			0
+#define WHITE				2
+
+int selection;
+int selecting;
 
 int getXBlock(int xBlock)
 {
@@ -41,8 +46,9 @@ int main(void)
 {
 	sk_key_t key;
 	
-    gfx_tilemap_t tilemap;
+	//initialize tilemap
 	
+    gfx_tilemap_t tilemap;
 	tilemap.map         = tilemap_map;
     tilemap.tiles       = tileset_tiles;
     tilemap.type_width  = gfx_tile_16_pixel;
@@ -59,41 +65,128 @@ int main(void)
 	gfx_Begin();
 	
 	gfx_SetPalette(global_palette, sizeof_global_palette, 0);
+	gfx_SetTransparentColor(TRANSPARENT);
     gfx_SetColor(WHITE);
-    gfx_SetTextFGColor(BLACK);
-    gfx_SetTextBGColor(WHITE);
 	
 	gfx_SetDrawBuffer();
 	
 	gfx_SetMonospaceFont(8);
+	gfx_SetTextFGColor(BLACK);
+    gfx_SetTextBGColor(WHITE);
 	
 	gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
 	gfx_SwapDraw();
 	
-	delay(3000);
+	delay(2000);
 	
 	gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
-	gfx_PrintStringXY("Press [enter] to begin...", 60, 200);
+	gfx_PrintStringXY("Press [enter] to begin...", 70, 200);
 	gfx_SwapDraw();
 	while(os_GetCSC() != sk_Enter);
 	
-	while(1)
+	//main menu
+	
+	mainMenu:
+	
+	selection = 0;
+	selecting = 1;
+	while(selecting)
 	{
-		key = os_GetCSC();
+		gfx_Tilemap(&tilemap, getXBlock(1), getYBlock(0));
+		gfx_SetTextBGColor(WHITE);
+		gfx_SetTextScale(1, 1);
 		
-		switch(key)
+		key = os_GetCSC();
+		if(key == sk_Enter)
 		{
-			
+			selecting = 0;
 		}
+		else if(key == sk_Up && selection != 0)
+		{
+			selection--;
+		}
+		else if(key == sk_Down && selection != 1)
+		{
+			selection++;
+		}
+		
+		if(selection == 0)
+		{
+			gfx_SetTextFGColor(RED);
+		}
+		else
+		{
+			gfx_SetTextFGColor(BLACK);
+		}
+		gfx_PrintStringXY("Singleplayer", 115, 70);
+		if(selection == 1)
+		{
+			gfx_SetTextFGColor(RED);
+		}
+		else
+		{
+			gfx_SetTextFGColor(BLACK);
+		}
+		gfx_PrintStringXY("Quit game", 125, 100);
+		
+		gfx_SwapDraw();
 	}
 	
-	gfx_Tilemap(&tilemap, getXBlock(1), getYBlock(0));
-	gfx_SetTextFGColor(BLACK);
-	gfx_PrintStringXY("Quit game", 110, 100);
-	gfx_SwapDraw();
+	switch(selection)
+	{
+		case 0:
+			goto mapSelector;
+			break;
+		case 1:
+			goto quitGame;
+			break;
+	}
 	
-	while(os_GetCSC() != sk_Enter);
+	//map selector
 	
+	mapSelector:
+	
+	selection = 0;
+	selecting = 1;
+	while(selecting)
+	{
+		gfx_Tilemap(&tilemap, getXBlock(2), getYBlock(0));
+		gfx_SetTextFGColor(WHITE);
+		gfx_SetTextBGColor(BLACK);
+		gfx_SetTextScale(2, 2);
+		gfx_PrintStringXY("Select a map:", 62, 10);
+		
+		key = os_GetCSC();
+		if(key == sk_Enter)
+		{
+			selecting = 0;
+		}
+		else if(key == sk_Left && selection != 0)
+		{
+			selection--;
+		}
+		else if(key == sk_Right && selection != 1)
+		{
+			selection++;
+		}
+		
+		switch(selection)
+		{
+			case 0:
+				gfx_TransparentSprite(mapHighlighter, 32, 64);
+				break;
+			case 1:
+				gfx_TransparentSprite(mapHighlighter, 96, 64);
+				break;
+		}
+		gfx_SwapDraw();
+	}
+	
+	goto mainMenu;
+	
+	//quit game
+	
+	quitGame:
 	gfx_End();
 	return 0;
 }

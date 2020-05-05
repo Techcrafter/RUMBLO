@@ -3,7 +3,11 @@
 ; -localcse -const=ROM 
 	FILE	"SRC\MAIN.C"
 	.assume ADL=1
-	SEGMENT CODE
+	SEGMENT BSS
+_selection:
+	DS	3
+_selecting:
+	DS	3
 ;    1	#include <fileioc.h>
 ;    2	#include <fontlibc.h>
 ;    3	#include "gfx/gfx.h"
@@ -30,15 +34,24 @@
 ;   24	#define Y_OFFSET            0
 ;   25	#define X_OFFSET            0
 ;   26	
-;   27	int getXBlock(int xBlock)
-;   28	{
+;   27	#define BLACK				1
+;   28	#define RED					gfx_red
+;   29	#define TRANSPARENT			0
+;   30	#define WHITE				2
+;   31	
+;   32	int selection;
+;   33	int selecting;
+	SEGMENT CODE
+;   34	
+;   35	int getXBlock(int xBlock)
+;   36	{
 _getXBlock:
 	CALL	__frameset0
-;   29		return TILE_WIDTH * TILEMAP_DRAW_WIDTH * xBlock;
+;   37		return TILE_WIDTH * TILEMAP_DRAW_WIDTH * xBlock;
 	LD	BC,320
 	LD	HL,(IX+6)
 	CALL	__imuls
-;   30	}
+;   38	}
 	LD	SP,IX
 	POP	IX
 	RET	
@@ -53,16 +66,16 @@ _getXBlock:
 ;       Spill Code: 0 (instruction)
 
 
-;   31	
-;   32	int getYBlock(int yBlock)
-;   33	{
+;   39	
+;   40	int getYBlock(int yBlock)
+;   41	{
 _getYBlock:
 	CALL	__frameset0
-;   34		return TILE_HEIGHT * TILEMAP_DRAW_HEIGHT * yBlock;
+;   42		return TILE_HEIGHT * TILEMAP_DRAW_HEIGHT * yBlock;
 	LD	HL,(IX+6)
 	LD	A,240
 	CALL	__imul_b
-;   35	}
+;   43	}
 	LD	SP,IX
 	POP	IX
 	RET	
@@ -77,51 +90,52 @@ _getYBlock:
 ;       Spill Code: 0 (instruction)
 
 
-;   36	
-;   37	int main(void)
-;   38	{
+;   44	
+;   45	int main(void)
+;   46	{
 _main:
-	LD	HL,-18
+	LD	HL,-19
 	CALL	__frameset
-;   39		sk_key_t key;
-;   40		
-;   41	    gfx_tilemap_t tilemap;
-;   42		
-;   43		tilemap.map         = tilemap_map;
+;   47		sk_key_t key;
+;   48		
+;   49		//initialize tilemap
+;   50		
+;   51	    gfx_tilemap_t tilemap;
+;   52		tilemap.map         = tilemap_map;
 	LD	BC,_tilemap_map
-	LD	(IX+-18),BC
-;   44	    tilemap.tiles       = tileset_tiles;
+	LD	(IX+-19),BC
+;   53	    tilemap.tiles       = tileset_tiles;
 	LD	BC,_tileset_tiles_data
-	LD	(IX+-15),BC
-;   45	    tilemap.type_width  = gfx_tile_16_pixel;
+	LD	(IX+-16),BC
+;   54	    tilemap.type_width  = gfx_tile_16_pixel;
+	LD	(IX+-9),4
+;   55	    tilemap.type_height = gfx_tile_16_pixel;
 	LD	(IX+-8),4
-;   46	    tilemap.type_height = gfx_tile_16_pixel;
-	LD	(IX+-7),4
-;   47	    tilemap.tile_height = TILE_HEIGHT;
+;   56	    tilemap.tile_height = TILE_HEIGHT;
+	LD	(IX+-13),16
+;   57	    tilemap.tile_width  = TILE_WIDTH;
 	LD	(IX+-12),16
-;   48	    tilemap.tile_width  = TILE_WIDTH;
-	LD	(IX+-11),16
-;   49	    tilemap.draw_height = TILEMAP_DRAW_HEIGHT;
-	LD	(IX+-10),15
-;   50	    tilemap.draw_width  = TILEMAP_DRAW_WIDTH;
-	LD	(IX+-9),20
-;   51	    tilemap.height      = TILEMAP_HEIGHT;
-	LD	(IX+-6),120
-;   52	    tilemap.width       = TILEMAP_WIDTH;
-	LD	(IX+-5),160
-;   53	    tilemap.y_loc       = Y_OFFSET;
-	LD	(IX+-4),0
-;   54	    tilemap.x_loc       = X_OFFSET;
+;   58	    tilemap.draw_height = TILEMAP_DRAW_HEIGHT;
+	LD	(IX+-11),15
+;   59	    tilemap.draw_width  = TILEMAP_DRAW_WIDTH;
+	LD	(IX+-10),20
+;   60	    tilemap.height      = TILEMAP_HEIGHT;
+	LD	(IX+-7),120
+;   61	    tilemap.width       = TILEMAP_WIDTH;
+	LD	(IX+-6),160
+;   62	    tilemap.y_loc       = Y_OFFSET;
+	LD	(IX+-5),0
+;   63	    tilemap.x_loc       = X_OFFSET;
 	LD	BC,0
-	LD	(IX+-3),BC
-;   55		
-;   56		gfx_Begin();
+	LD	(IX+-4),BC
+;   64		
+;   65		gfx_Begin();
 	CALL	_gfx_Begin
-;   57		
-;   58		gfx_SetPalette(global_palette, sizeof_global_palette, 0);
+;   66		
+;   67		gfx_SetPalette(global_palette, sizeof_global_palette, 0);
 	LD	BC,0
 	PUSH	BC
-	LD	BC,172
+	LD	BC,208
 	PUSH	BC
 	LD	BC,_global_palette
 	PUSH	BC
@@ -129,35 +143,40 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;   59	    gfx_SetColor(0);
+;   68		gfx_SetTransparentColor(TRANSPARENT);
 	LD	BC,0
+	PUSH	BC
+	CALL	_gfx_SetTransparentColor
+	POP	BC
+;   69	    gfx_SetColor(WHITE);
+	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetColor
 	POP	BC
-;   60	    gfx_SetTextFGColor(gfx_blue);
-	LD	BC,16
-	PUSH	BC
-	CALL	_gfx_SetTextFGColor
-	POP	BC
-;   61	    gfx_SetTextBGColor(0);
-	LD	BC,0
-	PUSH	BC
-	CALL	_gfx_SetTextBGColor
-	POP	BC
-;   62		
-;   63		gfx_SetDrawBuffer();
+;   70		
+;   71		gfx_SetDrawBuffer();
 	LD	BC,1
 	PUSH	BC
 	CALL	_gfx_SetDraw
 	POP	BC
-;   64		
-;   65		gfx_SetMonospaceFont(8);
+;   72		
+;   73		gfx_SetMonospaceFont(8);
 	LD	BC,8
 	PUSH	BC
 	CALL	_gfx_SetMonospaceFont
 	POP	BC
-;   66		
-;   67		gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
+;   74		gfx_SetTextFGColor(BLACK);
+	LD	BC,1
+	PUSH	BC
+	CALL	_gfx_SetTextFGColor
+	POP	BC
+;   75	    gfx_SetTextBGColor(WHITE);
+	LD	BC,2
+	PUSH	BC
+	CALL	_gfx_SetTextBGColor
+	POP	BC
+;   76		
+;   77		gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
@@ -168,21 +187,21 @@ _main:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-18
+	PEA	IX+-19
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;   68		gfx_SwapDraw();
+;   78		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;   69		
-;   70		delay(3000);
-	LD	BC,3000
+;   79		
+;   80		delay(2000);
+	LD	BC,2000
 	PUSH	BC
 	CALL	_delay
 	POP	BC
-;   71		
-;   72		gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
+;   81		
+;   82		gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
@@ -193,15 +212,15 @@ _main:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-18
+	PEA	IX+-19
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;   73		gfx_PrintStringXY("Press [enter] to begin...", 60, 200);
+;   83		gfx_PrintStringXY("Press [enter] to begin...", 70, 200);
 	LD	BC,200
 	PUSH	BC
-	LD	BC,60
+	LD	BC,70
 	PUSH	BC
 	LD	BC,L__2
 	PUSH	BC
@@ -209,9 +228,9 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;   74		gfx_SwapDraw();
+;   84		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;   75		while(os_GetCSC() != sk_Enter);
+;   85		while(os_GetCSC() != sk_Enter);
 L_3:
 	CALL	_os_GetCSC
 	UEXT	HL
@@ -220,8 +239,23 @@ L_3:
 	LD	BC,9
 	SBC	HL,BC
 	JR	NZ,L_3
-;   76		
-;   77		gfx_Tilemap(&tilemap, getXBlock(1), getYBlock(0));
+;   86		
+;   87		//main menu
+;   88		
+;   89		mainMenu:
+L_4:
+;   90		
+;   91		selection = 0;
+	LD	BC,0
+	LD	(_selection),BC
+;   92		selecting = 1;
+	LD	BC,1
+	LD	(_selecting),BC
+;   93		while(selecting)
+	JR	L_22
+L_23:
+;   94		{
+;   95			gfx_Tilemap(&tilemap, getXBlock(1), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
@@ -232,51 +266,338 @@ L_3:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-18
+	PEA	IX+-19
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;   78		gfx_SetTextFGColor(gfx_red);
+;   96			gfx_SetTextBGColor(WHITE);
+	LD	BC,2
+	PUSH	BC
+	CALL	_gfx_SetTextBGColor
+	POP	BC
+;   97			gfx_SetTextScale(1, 1);
+	LD	BC,1
+	PUSH	BC
+	PUSH	BC
+	CALL	_gfx_SetTextScale
+	POP	BC
+	POP	BC
+;   98			
+;   99			key = os_GetCSC();
+	CALL	_os_GetCSC
+	LD	(IX+-1),A
+;  100			if(key == sk_Enter)
+	CP	A,9
+	JR	NZ,L_14
+;  101			{
+;  102				selecting = 0;
+	LD	BC,0
+	LD	(_selecting),BC
+;  103			}
+;  104			else if(key == sk_Up && selection != 0)
+	JR	L_17
+L_14:
+	LD	A,(IX+-1)
+	CP	A,4
+	JR	NZ,L_12
+	LD	HL,(_selection)
+	CALL	__icmpzero
+	JR	Z,L_12
+;  105			{
+;  106				selection--;
+	LD	BC,(_selection)
+	DEC	BC
+	LD	(_selection),BC
+;  107			}
+;  108			else if(key == sk_Down && selection != 1)
+	JR	L_17
+L_12:
+	LD	A,(IX+-1)
+	CP	A,1
+	JR	NZ,L_17
+	LD	BC,1
+	LD	HL,(_selection)
+	OR	A,A
+	SBC	HL,BC
+	JR	Z,L_17
+;  109			{
+;  110				selection++;
+	LD	BC,(_selection)
+	INC	BC
+	LD	(_selection),BC
+;  111			}
+L_17:
+;  112			
+;  113			if(selection == 0)
+	LD	HL,(_selection)
+	CALL	__icmpzero
+	JR	NZ,L_16
+;  114			{
+;  115				gfx_SetTextFGColor(RED);
 	LD	BC,224
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;   79	    gfx_SetTextBGColor(0);
-	LD	BC,0
+;  116			}
+;  117			else
+	JR	L_18
+L_16:
+;  118			{
+;  119				gfx_SetTextFGColor(BLACK);
+	LD	BC,1
 	PUSH	BC
-	CALL	_gfx_SetTextBGColor
+	CALL	_gfx_SetTextFGColor
 	POP	BC
-;   80		gfx_PrintStringXY("Quit game", 110, 100);
-	LD	BC,100
+;  120			}
+L_18:
+;  121			gfx_PrintStringXY("Singleplayer", 115, 70);
+	LD	BC,70
 	PUSH	BC
-	LD	BC,110
+	LD	BC,115
 	PUSH	BC
-	LD	BC,L__4
+	LD	BC,L__10
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;   81		gfx_SwapDraw();
-	CALL	_gfx_SwapDraw
-;   82		
-;   83		while(os_GetCSC() != sk_Enter);
-L_6:
-	CALL	_os_GetCSC
-	UEXT	HL
-	LD	L,A
+;  122			if(selection == 1)
+	LD	BC,1
+	LD	HL,(_selection)
 	OR	A,A
-	LD	BC,9
 	SBC	HL,BC
-	JR	NZ,L_6
-;   84		
-;   85		gfx_End();
+	JR	NZ,L_20
+;  123			{
+;  124				gfx_SetTextFGColor(RED);
+	LD	BC,224
+	PUSH	BC
+	CALL	_gfx_SetTextFGColor
+	POP	BC
+;  125			}
+;  126			else
+	JR	L_21
+L_20:
+;  127			{
+;  128				gfx_SetTextFGColor(BLACK);
+	PUSH	BC
+	CALL	_gfx_SetTextFGColor
+	POP	BC
+;  129			}
+L_21:
+;  130			gfx_PrintStringXY("Quit game", 125, 100);
+	LD	BC,100
+	PUSH	BC
+	LD	BC,125
+	PUSH	BC
+	LD	BC,L__12
+	PUSH	BC
+	CALL	_gfx_PrintStringXY
+	POP	BC
+	POP	BC
+	POP	BC
+;  131			
+;  132			gfx_SwapDraw();
+	CALL	_gfx_SwapDraw
+;  133		}
+L_22:
+	LD	HL,(_selecting)
+	CALL	__icmpzero
+	JR	NZ,L_23
+;  134		
+;  135		switch(selection)
+	LD	HL,(_selection)
+	CALL	__case8
+L__14:
+	DW	2
+	DB	0
+	DW24	L_25	
+
+	DB	1
+	DW24	L_27	
+
+	DW24	L_29	
+
+;  136		{
+;  137			case 0:
+;  138				goto mapSelector;
+;  139				break;
+;  140			case 1:
+;  141				goto quitGame;
+;  142				break;
+;  143		}
+L_29:
+L_25:
+;  144		
+;  145		//map selector
+;  146		
+;  147		mapSelector:
+;  148		
+;  149		selection = 0;
+	LD	BC,0
+	LD	(_selection),BC
+;  150		selecting = 1;
+	LD	BC,1
+	LD	(_selecting),BC
+;  151		while(selecting)
+	JR	L_43
+L_44:
+;  152		{
+;  153			gfx_Tilemap(&tilemap, getXBlock(2), getYBlock(0));
+	LD	BC,0
+	PUSH	BC
+	CALL	_getYBlock
+	POP	BC
+	PUSH	HL
+	LD	BC,2
+	PUSH	BC
+	CALL	_getXBlock
+	POP	BC
+	PUSH	HL
+	PEA	IX+-19
+	CALL	_gfx_Tilemap
+	POP	BC
+	POP	BC
+	POP	BC
+;  154			gfx_SetTextFGColor(WHITE);
+	LD	BC,2
+	PUSH	BC
+	CALL	_gfx_SetTextFGColor
+	POP	BC
+;  155			gfx_SetTextBGColor(BLACK);
+	LD	BC,1
+	PUSH	BC
+	CALL	_gfx_SetTextBGColor
+	POP	BC
+;  156			gfx_SetTextScale(2, 2);
+	LD	BC,2
+	PUSH	BC
+	PUSH	BC
+	CALL	_gfx_SetTextScale
+	POP	BC
+	POP	BC
+;  157			gfx_PrintStringXY("Select a map:", 65, 10);
+	LD	BC,10
+	PUSH	BC
+	LD	BC,65
+	PUSH	BC
+	LD	BC,L__15
+	PUSH	BC
+	CALL	_gfx_PrintStringXY
+	POP	BC
+	POP	BC
+	POP	BC
+;  158			
+;  159			key = os_GetCSC();
+	CALL	_os_GetCSC
+	LD	(IX+-1),A
+;  160			if(key == sk_Enter)
+	CP	A,9
+	JR	NZ,L_38
+;  161			{
+;  162				selecting = 0;
+	LD	BC,0
+	LD	(_selecting),BC
+;  163			}
+;  164			else if(key == sk_Left && selection != 0)
+	JR	L_41
+L_38:
+	LD	A,(IX+-1)
+	CP	A,2
+	JR	NZ,L_36
+	LD	HL,(_selection)
+	CALL	__icmpzero
+	JR	Z,L_36
+;  165			{
+;  166				selection--;
+	LD	BC,(_selection)
+	DEC	BC
+	LD	(_selection),BC
+;  167			}
+;  168			else if(key == sk_Right && selection != 1)
+	JR	L_41
+L_36:
+	LD	A,(IX+-1)
+	CP	A,3
+	JR	NZ,L_41
+	LD	BC,1
+	LD	HL,(_selection)
+	OR	A,A
+	SBC	HL,BC
+	JR	Z,L_41
+;  169			{
+;  170				selection++;
+	LD	BC,(_selection)
+	INC	BC
+	LD	(_selection),BC
+;  171			}
+L_41:
+;  172			
+;  173			switch(selection)
+	LD	HL,(_selection)
+	CALL	__case8
+L__21:
+	DW	2
+	DB	0
+	DW24	L_39	
+
+	DB	1
+	DW24	L_40	
+
+	DW24	L_42	
+
+;  174			{
+;  175				case 0:
+L_39:
+;  176					gfx_TransparentSprite(mapHighlighter, 32, 64);
+	LD	BC,64
+	PUSH	BC
+	LD	BC,32
+	PUSH	BC
+	LD	BC,_mapHighlighter_data
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  177					break;
+	JR	L_42
+;  178				case 1:
+L_40:
+;  179					gfx_TransparentSprite(mapHighlighter, 96, 64);
+	LD	BC,64
+	PUSH	BC
+	LD	BC,96
+	PUSH	BC
+	LD	BC,_mapHighlighter_data
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  180					break;
+;  181			}
+L_42:
+;  182			gfx_SwapDraw();
+	CALL	_gfx_SwapDraw
+;  183		}
+L_43:
+	LD	HL,(_selecting)
+	CALL	__icmpzero
+	JR	NZ,L_44
+;  184		
+;  185		goto mainMenu;
+	JR	L_4
+L_27:
+;  186		
+;  187		//quit game
+;  188		
+;  189		quitGame:
+;  190		gfx_End();
 	CALL	_gfx_End
 	OR	A,A
-;   86		return 0;
+;  191		return 0;
 	SBC	HL,HL
-;   87	}
 	LD	SP,IX
 	POP	IX
 	RET	
@@ -285,25 +606,32 @@ L_6:
 ;**************************** _main ***************************
 ;Name                         Addr/Register   Size   Type
 ;_gfx_End                            IMPORT  -----   function
+;_mapHighlighter_data                IMPORT   1026   variable
+;_gfx_TransparentSprite              IMPORT  -----   function
+;_gfx_SetTextScale                   IMPORT  -----   function
+;_selecting                          STATIC      3   variable
+;_selection                          STATIC      3   variable
 ;_os_GetCSC                          IMPORT  -----   function
 ;_gfx_PrintStringXY                  IMPORT  -----   function
 ;_delay                              IMPORT  -----   function
 ;_gfx_SwapDraw                       IMPORT  -----   function
 ;_gfx_Tilemap                        IMPORT  -----   function
-;_gfx_SetMonospaceFont               IMPORT  -----   function
-;_gfx_SetDraw                        IMPORT  -----   function
 ;_gfx_SetTextBGColor                 IMPORT  -----   function
 ;_gfx_SetTextFGColor                 IMPORT  -----   function
+;_gfx_SetMonospaceFont               IMPORT  -----   function
+;_gfx_SetDraw                        IMPORT  -----   function
 ;_gfx_SetColor                       IMPORT  -----   function
-;_global_palette                     IMPORT    172   variable
+;_gfx_SetTransparentColor            IMPORT  -----   function
+;_global_palette                     IMPORT    208   variable
 ;_gfx_SetPalette                     IMPORT  -----   function
 ;_gfx_Begin                          IMPORT  -----   function
-;_tileset_tiles_data                 IMPORT     57   variable
+;_tileset_tiles_data                 IMPORT    120   variable
 ;_tilemap_map                        IMPORT  unknown variable
-;tilemap                              IX-18     18   variable
+;tilemap                              IX-19     18   variable
+;key                                   IX-1      1   variable
 
 
-; Stack Frame Size: 24 (bytes)
+; Stack Frame Size: 25 (bytes)
 ;       Spill Code: 0 (instruction)
 
 
@@ -311,21 +639,31 @@ L_6:
 L__2:
 	DB	"Press [enter] to begin..."
 	DB	0
-L__4:
+L__10:
+	DB	"Singleplayer"
+	DB	0
+L__12:
 	DB	"Quit game"
+	DB	0
+L__15:
+	DB	"Select a map:"
 	DB	0
 	XREF _tilemap_map:ROM
 	XREF _gfx_SetMonospaceFont:ROM
+	XREF _gfx_TransparentSprite:ROM
 	XREF _gfx_SetTextBGColor:ROM
 	XREF _gfx_SetTextFGColor:ROM
 	XREF _gfx_PrintStringXY:ROM
+	XREF _gfx_SetTextScale:ROM
 	XREF _gfx_SwapDraw:ROM
 	XREF _gfx_SetDraw:ROM
 	XREF _gfx_SetPalette:ROM
+	XREF _gfx_SetTransparentColor:ROM
 	XREF _gfx_SetColor:ROM
 	XREF _gfx_Tilemap:ROM
 	XREF _gfx_End:ROM
 	XREF _gfx_Begin:ROM
+	XREF _mapHighlighter_data:ROM
 	XREF _tileset_tiles_data:ROM
 	XREF _global_palette:ROM
 	XREF _os_GetCSC:ROM
@@ -333,8 +671,12 @@ L__4:
 	XREF __imuls:ROM
 	XREF __frameset0:ROM
 	XREF __frameset:ROM
+	XREF __icmpzero:ROM
+	XREF __case8:ROM
 	XREF __imul_b:ROM
 	XDEF _main
 	XDEF _getYBlock
 	XDEF _getXBlock
+	XDEF _selecting
+	XDEF _selection
 	END

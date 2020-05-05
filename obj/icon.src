@@ -10,17 +10,17 @@ __program_icon:
 	db	010h, 010h
 	db	0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh
 	db	0FFh, 0FFh, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh
-	db	0FFh, 0FFh, 000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 000h, 021h, 0FFh, 0FFh, 000h, 0FFh, 0FFh
-	db	0FFh, 000h, 0FFh, 0FFh, 0FFh, 049h, 000h, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 0FFh
-	db	0FFh, 000h, 0FFh, 0FFh, 0FFh, 021h, 000h, 000h, 0FFh, 049h, 000h, 000h, 029h, 0FFh, 000h, 0FFh
-	db	000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 000h, 029h, 0FFh, 0FFh, 000h
-	db	000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 021h, 0FFh, 021h, 000h, 000h, 0FFh, 0FFh, 0FFh, 000h
-	db	000h, 0FFh, 0FFh, 0FFh, 04Ah, 000h, 000h, 000h, 000h, 000h, 000h, 021h, 0FFh, 0FFh, 0FFh, 000h
-	db	000h, 0FFh, 0FFh, 0FFh, 029h, 000h, 000h, 000h, 000h, 000h, 021h, 0FFh, 0FFh, 0FFh, 0FFh, 000h
+	db	0FFh, 0FFh, 000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 0FFh, 0FFh
+	db	0FFh, 000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 0FFh
+	db	0FFh, 000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 000h, 000h, 000h, 000h, 0FFh, 000h, 0FFh
+	db	000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 000h
+	db	000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 000h
+	db	000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 000h
+	db	000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h
 	db	000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h
-	db	000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 029h, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h
-	db	0FFh, 000h, 0FFh, 0FFh, 000h, 000h, 029h, 0FFh, 0FFh, 000h, 000h, 021h, 0FFh, 0FFh, 000h, 0FFh
-	db	0FFh, 000h, 0FFh, 04Ah, 000h, 000h, 04Ah, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 0FFh
+	db	000h, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 000h
+	db	0FFh, 000h, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 0FFh
+	db	0FFh, 000h, 0FFh, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 000h, 000h, 0FFh, 0FFh, 000h, 0FFh
 	db	0FFh, 0FFh, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 0FFh, 0FFh
 	db	0FFh, 0FFh, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh
 	db	0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh

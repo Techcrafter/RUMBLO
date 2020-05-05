@@ -7,6 +7,7 @@ extern "C" {
 
 #include "global_palette.h"
 #include "tileset.h"
+#include "mapHighlighter.h"
 
 #ifdef __cplusplus
 }
