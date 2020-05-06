@@ -25,16 +25,32 @@ extern unsigned char tilemap_map[];
 #define X_OFFSET            0
 
 #define BLACK				1
+#define GRAY				13
 #define RED					gfx_red
 #define TRANSPARENT			0
 #define WHITE				2
+
+char version[] = "1.0";
 
 int selection;
 int selecting;
 
 int players;
 int map;
-int character;
+int mapXBlock;
+int mapYBlock;
+int fighting;
+
+int player1Character;
+int player1X;
+int player1Y;
+int player1Lifes;
+
+int player2IsAi;
+int player2Character;
+int player2X;
+int player2Y;
+int player2Lifes;
 
 int getXBlock(int xBlock)
 {
@@ -78,6 +94,7 @@ int main(void)
     gfx_SetTextBGColor(WHITE);
 	
 	gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
+	gfx_PrintStringXY(version, 296, 232);
 	gfx_SwapDraw();
 	
 	delay(2000);
@@ -92,6 +109,7 @@ int main(void)
     gfx_SetTextBGColor(WHITE);
 	gfx_SetTextScale(1, 1);
 	gfx_PrintStringXY("Press [enter] to start...", 65, 200);
+	gfx_PrintStringXY(version, 296, 232);
 	gfx_SwapDraw();
 	while(os_GetCSC() != sk_Enter);
 	
@@ -112,6 +130,10 @@ int main(void)
 		if(key == sk_Enter)
 		{
 			selecting = 0;
+		}
+		else if(key == sk_Clear)
+		{
+			goto startScreen;
 		}
 		else if(key == sk_Up && selection != 0)
 		{
@@ -140,6 +162,8 @@ int main(void)
 			gfx_SetTextFGColor(BLACK);
 		}
 		gfx_PrintStringXY("Quit game", 124, 100);
+		gfx_SetTextFGColor(BLACK);
+		gfx_PrintStringXY("Star it on GitHub!", 90, 220);
 		
 		gfx_SwapDraw();
 	}
@@ -167,6 +191,7 @@ int main(void)
 	while(selecting)
 	{
 		gfx_Tilemap(&tilemap, getXBlock(2), getYBlock(0));
+		gfx_SetColor(GRAY);
 		gfx_SetTextFGColor(WHITE);
 		gfx_SetTextBGColor(BLACK);
 		gfx_SetTextScale(2, 2);
@@ -202,6 +227,15 @@ int main(void)
 		gfx_SwapDraw();
 	}
 	map = selection;
+	switch(map)
+	{
+		case 0:
+			mapXBlock = 3;
+			mapYBlock = 0;
+			break;
+		case 1:
+			break;
+	}
 	
 	goto characterSelector;
 	
@@ -215,11 +249,21 @@ int main(void)
 	
 	while(selecting)
 	{
-		gfx_Tilemap(&tilemap, getXBlock(3), getYBlock(0));
+		switch(map)
+		{
+			case 0:
+				gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+				break;
+			case 1:
+				goto error;
+				break;
+		}
+		gfx_FillRectangle(0, 70, 320, 105);
 		gfx_SetTextFGColor(WHITE);
-		gfx_SetTextBGColor(BLACK);
+		gfx_SetTextBGColor(GRAY);
 		gfx_SetTextScale(2, 2);
-		gfx_PrintStringXY("Select a character:", 10, 10);
+		gfx_PrintStringXY("Select a character:", 10, 76);
+		gfx_TransparentSprite(characterHighlighter, 138, 100);
 		
 		key = os_GetCSC();
 		if(key == sk_Enter)
@@ -228,29 +272,134 @@ int main(void)
 		}
 		else if(key == sk_Clear)
 		{
-			goto mainMenu;
+			goto mapSelector;
 		}
 		else if(key == sk_Left && selection != 0)
 		{
 			selection--;
 		}
+		else if(key == sk_Left && selection == 0)
+		{
+			selection = 1;
+		}
 		else if(key == sk_Right && selection != 1)
 		{
 			selection++;
+		}
+		else if(key == sk_Right && selection == 1)
+		{
+			selection = 0;
 		}
 		
 		switch(selection)
 		{
 			case 0:
-				gfx_TransparentSprite(mapHighlighter, 32, 64);
+				gfx_TransparentSprite(character1, 69, 100);
+				gfx_TransparentSprite(character0, 138, 100);
+				gfx_TransparentSprite(character1, 207, 100);
 				break;
 			case 1:
-				gfx_TransparentSprite(mapHighlighter, 96, 64);
+				gfx_TransparentSprite(character0, 69, 100);
+				gfx_TransparentSprite(character1, 138, 100);
+				gfx_TransparentSprite(character0, 207, 100);
 				break;
 		}
 		gfx_SwapDraw();
 	}
-	character = selection;
+	player1Character = selection;
+	
+	goto prepareFight;
+	
+	//---------------------------------------------------------------
+	
+	//prepareFight
+	prepareFight:
+	
+	fighting = 1;
+	switch(map)
+	{
+		case 0:
+			player1X = 100;
+			player1Y = 100;
+			player1Lifes = 3;
+			if(players == 1)
+			{
+				player2IsAi = 1;
+			}
+			else if(players == 2)
+			{
+				player2IsAi = 0;
+			}
+			player2X = 200;
+			player2Y = 200;
+			player2Lifes = 3;
+			break;
+		case 1:
+			break;
+	}
+	
+	gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+	gfx_TransparentSprite(counter3, 136, 104);
+	gfx_SwapDraw();
+	delay(1000);
+	gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+	gfx_TransparentSprite(counter2, 136, 104);
+	gfx_SwapDraw();
+	delay(1000);
+	gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+	gfx_TransparentSprite(counter1, 136, 104);
+	gfx_SwapDraw();
+	delay(1000);
+	gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+	gfx_TransparentSprite(counterFight, 136, 104);
+	gfx_SwapDraw();
+	delay(1000);
+	
+	goto fight;
+	
+	//---------------------------------------------------------------
+	
+	//fight
+	fight:
+	
+	while(fighting)
+	{
+		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+		
+		key = os_GetCSC();
+		if(key == sk_Clear)
+		{
+			fighting = 0;
+		}
+		else if(key == sk_Up)
+		{
+			player1Y--;
+		}
+		else if(key == sk_Down)
+		{
+			player1Y++;
+		}
+		else if(key == sk_Left)
+		{
+			player1X--;
+		}
+		else if(key == sk_Right)
+		{
+			player1X++;
+		}
+		
+		switch(player1Character)
+		{
+			case 0:
+				gfx_TransparentSprite(character0, player1X, player1Y);
+				break;
+			case 1:
+				gfx_TransparentSprite(character1, player1X, player1Y);
+				break;
+		}
+		
+		gfx_SwapDraw();
+	}
 	
 	goto error;
 	

@@ -21,4 +21,11 @@ convert: sprites
   palette: global_palette
   transparent-color-index: 0
   images:
+    - character0.png
+    - character1.png
+    - characterHighlighter
+    - counter1.png
+    - counter2.png
+    - counter3.png
+    - counterFight.png
     - mapHighlighter.png

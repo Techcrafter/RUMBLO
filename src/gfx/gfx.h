@@ -7,6 +7,13 @@ extern "C" {
 
 #include "global_palette.h"
 #include "tileset.h"
+#include "character0.h"
+#include "character1.h"
+#include "characterHighlighter.h"
+#include "counter1.h"
+#include "counter2.h"
+#include "counter3.h"
+#include "counterFight.h"
 #include "mapHighlighter.h"
 
 #ifdef __cplusplus
