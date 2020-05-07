@@ -7,153 +7,153 @@
 _characterHighlighter_data:
 	DB	48
 	DB	64
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -196,12 +196,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -244,12 +244,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -292,12 +292,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -340,12 +340,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -388,12 +388,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -436,12 +436,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -484,12 +484,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -532,12 +532,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -580,12 +580,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -628,12 +628,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -676,12 +676,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -724,12 +724,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -772,12 +772,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -820,12 +820,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -868,12 +868,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -916,12 +916,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -964,12 +964,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1012,12 +1012,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1060,12 +1060,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1108,12 +1108,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1156,12 +1156,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1204,12 +1204,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1252,12 +1252,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1300,12 +1300,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1348,12 +1348,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1396,12 +1396,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1444,12 +1444,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1492,12 +1492,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1540,12 +1540,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1588,12 +1588,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1636,12 +1636,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1684,12 +1684,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1732,12 +1732,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1780,12 +1780,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1828,12 +1828,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1876,12 +1876,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1924,12 +1924,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -1972,12 +1972,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2020,12 +2020,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2068,12 +2068,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2116,12 +2116,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2164,12 +2164,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2212,12 +2212,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2260,12 +2260,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2308,12 +2308,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2356,12 +2356,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2404,12 +2404,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2452,12 +2452,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2500,12 +2500,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2548,12 +2548,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2596,12 +2596,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2644,12 +2644,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2692,12 +2692,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2740,12 +2740,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2788,12 +2788,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2836,12 +2836,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2884,12 +2884,12 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
 	DB	0
 	DB	0
 	DB	0
@@ -2932,153 +2932,153 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
 	XDEF _characterHighlighter_data
 ;    1	unsigned char characterHighlighter_data[3074] = 
 ;    2	{ 

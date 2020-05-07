@@ -535,167 +535,167 @@ _counterFight_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	0
-	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	0
+	DB	0
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	127
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	5
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
 	DB	0
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
@@ -703,47 +703,47 @@ _counterFight_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
@@ -751,317 +751,317 @@ _counterFight_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	4
-	DB	4
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
+	DB	5
+	DB	5
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	7
+	DB	7
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	4
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
-	DB	127
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
-	DB	127
-	DB	4
-	DB	4
+	DB	5
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0

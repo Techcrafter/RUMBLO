@@ -178,72 +178,72 @@ _main:
 ;   76		//initialization
 ;   77		sk_key_t key;
 ;   78		
-;   79		gfx_sprite_t *player1Character = gfx_MallocSprite(48, 64);
+;   79		gfx_sprite_t *player1Character = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-59),HL
-;   80		gfx_sprite_t *player1CharacterMoving = gfx_MallocSprite(48, 64);
+;   80		gfx_sprite_t *player1CharacterMoving = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-26),HL
-;   81		gfx_sprite_t *player1CharacterJumping = gfx_MallocSprite(48, 64);
+;   81		gfx_sprite_t *player1CharacterJumping = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-29),HL
-;   82		gfx_sprite_t *player1CharacterFlipped = gfx_MallocSprite(48, 64);
+;   82		gfx_sprite_t *player1CharacterFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-32),HL
-;   83		gfx_sprite_t *player1CharacterMovingFlipped = gfx_MallocSprite(48, 64);
+;   83		gfx_sprite_t *player1CharacterMovingFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-35),HL
-;   84		gfx_sprite_t *player1CharacterJumpingFlipped = gfx_MallocSprite(48, 64);
+;   84		gfx_sprite_t *player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
@@ -251,72 +251,72 @@ _main:
 	POP	BC
 	LD	(IX+-38),HL
 ;   85		
-;   86		gfx_sprite_t *player2Character = gfx_MallocSprite(48, 64);
+;   86		gfx_sprite_t *player2Character = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-41),HL
-;   87		gfx_sprite_t *player2CharacterMoving = gfx_MallocSprite(48, 64);
+;   87		gfx_sprite_t *player2CharacterMoving = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-44),HL
-;   88		gfx_sprite_t *player2CharacterJumping = gfx_MallocSprite(48, 64);
+;   88		gfx_sprite_t *player2CharacterJumping = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-47),HL
-;   89		gfx_sprite_t *player2CharacterFlipped = gfx_MallocSprite(48, 64);
+;   89		gfx_sprite_t *player2CharacterFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-50),HL
-;   90		gfx_sprite_t *player2CharacterMovingFlipped = gfx_MallocSprite(48, 64);
+;   90		gfx_sprite_t *player2CharacterMovingFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
 	LD	(IX+-53),HL
-;   91		gfx_sprite_t *player2CharacterJumpingFlipped = gfx_MallocSprite(48, 64);
+;   91		gfx_sprite_t *player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
-	LD	BC,64
-	PUSH	BC
 	LD	BC,48
+	PUSH	BC
+	LD	BC,32
 	PUSH	BC
 	CALL	_gfx_AllocSprite
 	POP	BC
@@ -359,7 +359,7 @@ _main:
 ;  109		gfx_SetPalette(global_palette, sizeof_global_palette, 0);
 	LD	BC,0
 	PUSH	BC
-	LD	BC,260
+	LD	BC,262
 	PUSH	BC
 	LD	BC,_global_palette
 	PUSH	BC
@@ -1127,10 +1127,10 @@ L__38:
 ;  314			{
 ;  315				case 0:
 L_74:
-;  316					gfx_TransparentSprite(character1, 69, 100);
-	LD	BC,100
+;  316					gfx_TransparentSprite(character1, 77, 108);
+	LD	BC,108
 	PUSH	BC
-	LD	BC,69
+	LD	BC,77
 	PUSH	BC
 	LD	BC,_character1_data
 	PUSH	BC
@@ -1138,10 +1138,10 @@ L_74:
 	POP	BC
 	POP	BC
 	POP	BC
-;  317					gfx_TransparentSprite(character0, 138, 100);
-	LD	BC,100
+;  317					gfx_TransparentSprite(character0, 146, 108);
+	LD	BC,108
 	PUSH	BC
-	LD	BC,138
+	LD	BC,146
 	PUSH	BC
 	LD	BC,_character0_data
 	PUSH	BC
@@ -1149,10 +1149,10 @@ L_74:
 	POP	BC
 	POP	BC
 	POP	BC
-;  318					gfx_TransparentSprite(character1, 207, 100);
-	LD	BC,100
+;  318					gfx_TransparentSprite(character1, 215, 108);
+	LD	BC,108
 	PUSH	BC
-	LD	BC,207
+	LD	BC,215
 	PUSH	BC
 	LD	BC,_character1_data
 	PUSH	BC
@@ -1164,10 +1164,10 @@ L_74:
 	JR	L_77
 ;  320				case 1:
 L_75:
-;  321					gfx_TransparentSprite(character0, 69, 100);
-	LD	BC,100
+;  321					gfx_TransparentSprite(character0, 77, 108);
+	LD	BC,108
 	PUSH	BC
-	LD	BC,69
+	LD	BC,77
 	PUSH	BC
 	LD	BC,_character0_data
 	PUSH	BC
@@ -1175,10 +1175,10 @@ L_75:
 	POP	BC
 	POP	BC
 	POP	BC
-;  322					gfx_TransparentSprite(character1, 138, 100);
-	LD	BC,100
+;  322					gfx_TransparentSprite(character1, 146, 108);
+	LD	BC,108
 	PUSH	BC
-	LD	BC,138
+	LD	BC,146
 	PUSH	BC
 	LD	BC,_character1_data
 	PUSH	BC
@@ -1186,10 +1186,10 @@ L_75:
 	POP	BC
 	POP	BC
 	POP	BC
-;  323					gfx_TransparentSprite(character0, 207, 100);
-	LD	BC,100
+;  323					gfx_TransparentSprite(character0, 215, 108);
+	LD	BC,108
 	PUSH	BC
-	LD	BC,207
+	LD	BC,215
 	PUSH	BC
 	LD	BC,_character0_data
 	PUSH	BC
@@ -2423,11 +2423,11 @@ L_28:
 ;_counter2_data                      IMPORT   1538   variable
 ;_counter3_data                      IMPORT   1538   variable
 ;_player2CharacterSelection          STATIC      3   variable
-;_character1Jumping_data             IMPORT   3074   variable
-;_character1Moving_data              IMPORT   3074   variable
+;_character1Jumping_data             IMPORT   1538   variable
+;_character1Moving_data              IMPORT   1538   variable
 ;_gfx_FlipSpriteY                    IMPORT  -----   function
-;_character0Jumping_data             IMPORT   3074   variable
-;_character0Moving_data              IMPORT   3074   variable
+;_character0Jumping_data             IMPORT   1538   variable
+;_character0Moving_data              IMPORT   1538   variable
 ;_player2Y                           STATIC      3   variable
 ;_player2X                           STATIC      3   variable
 ;_player2IsAi                        STATIC      3   variable
@@ -2445,8 +2445,8 @@ L_28:
 ;_player1Flipped                     STATIC      3   variable
 ;_fighting                           STATIC      3   variable
 ;_player1CharacterSelection          STATIC      3   variable
-;_character0_data                    IMPORT   3074   variable
-;_character1_data                    IMPORT   3074   variable
+;_character0_data                    IMPORT   1538   variable
+;_character1_data                    IMPORT   1538   variable
 ;_characterHighlighter_data          IMPORT   3074   variable
 ;_gfx_FillRectangle                  IMPORT  -----   function
 ;_mapYBlock                          STATIC      3   variable
@@ -2470,7 +2470,7 @@ L_28:
 ;_gfx_SetDraw                        IMPORT  -----   function
 ;_gfx_SetColor                       IMPORT  -----   function
 ;_gfx_SetTransparentColor            IMPORT  -----   function
-;_global_palette                     IMPORT    260   variable
+;_global_palette                     IMPORT    262   variable
 ;_gfx_SetPalette                     IMPORT  -----   function
 ;_gfx_Begin                          IMPORT  -----   function
 ;_tileset_tiles_data                 IMPORT    180   variable

@@ -5,8 +5,8 @@
 	.assume ADL=1
 	SEGMENT DATA
 _character0Moving_data:
+	DB	32
 	DB	48
-	DB	64
 	DB	8
 	DB	8
 	DB	8
@@ -118,6 +118,9 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -150,6 +153,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -182,6 +186,8 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -213,6 +219,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -245,6 +252,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -255,6 +263,28 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -286,6 +316,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -316,6 +347,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -346,6 +378,8 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -376,6 +410,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -405,6 +440,8 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -434,6 +471,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -465,6 +503,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -495,6 +534,8 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -524,6 +565,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -554,13 +596,11 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
 	DB	8
-	DB	12
-	DB	12
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -588,6 +628,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -609,7 +650,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -658,8 +698,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -707,7 +745,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -756,7 +793,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -783,28 +819,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -852,7 +866,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -899,7 +912,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -946,8 +958,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -973,6 +983,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -994,7 +1005,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -1006,6 +1016,8 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1037,11 +1049,10 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
-	DB	12
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -1071,6 +1082,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1087,7 +1099,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -1104,6 +1115,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1135,8 +1147,8 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1168,6 +1180,8 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1178,12 +1192,12 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
 	DB	8
-	DB	12
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -1199,6 +1213,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1211,6 +1226,26 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1229,7 +1264,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -1245,6 +1279,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1272,11 +1307,15 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
+	DB	13
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
 	DB	8
@@ -1297,6 +1336,9 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
+	DB	13
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1324,9 +1366,9 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	12
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1357,6 +1399,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1388,6 +1431,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1419,6 +1463,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -1450,1588 +1495,7 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	12
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	12
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	13
 	DB	8
 	DB	8
 	DB	8
@@ -3080,6 +1544,6 @@ _character0Moving_data:
 	DB	8
 	DB	8
 	XDEF _character0Moving_data
-;    1	unsigned char character0Moving_data[3074] = 
+;    1	unsigned char character0Moving_data[1538] = 
 ;    2	{ 
 	END

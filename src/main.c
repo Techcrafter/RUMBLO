@@ -76,19 +76,19 @@ int main(void)
 	//initialization
 	sk_key_t key;
 	
-	gfx_sprite_t *player1Character = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player1CharacterMoving = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player1CharacterJumping = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player1CharacterFlipped = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player1CharacterMovingFlipped = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player1CharacterJumpingFlipped = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player1Character = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player1CharacterMoving = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player1CharacterJumping = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player1CharacterFlipped = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player1CharacterMovingFlipped = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
 	
-	gfx_sprite_t *player2Character = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player2CharacterMoving = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player2CharacterJumping = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player2CharacterFlipped = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player2CharacterMovingFlipped = gfx_MallocSprite(48, 64);
-	gfx_sprite_t *player2CharacterJumpingFlipped = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player2Character = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player2CharacterMoving = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player2CharacterJumping = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player2CharacterFlipped = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player2CharacterMovingFlipped = gfx_MallocSprite(32, 48);
+	gfx_sprite_t *player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
 	
     gfx_tilemap_t tilemap;
 	tilemap.map         = tilemap_map;
@@ -313,14 +313,14 @@ int main(void)
 		switch(selection)
 		{
 			case 0:
-				gfx_TransparentSprite(character1, 69, 100);
-				gfx_TransparentSprite(character0, 138, 100);
-				gfx_TransparentSprite(character1, 207, 100);
+				gfx_TransparentSprite(character1, 77, 108);
+				gfx_TransparentSprite(character0, 146, 108);
+				gfx_TransparentSprite(character1, 215, 108);
 				break;
 			case 1:
-				gfx_TransparentSprite(character0, 69, 100);
-				gfx_TransparentSprite(character1, 138, 100);
-				gfx_TransparentSprite(character0, 207, 100);
+				gfx_TransparentSprite(character0, 77, 108);
+				gfx_TransparentSprite(character1, 146, 108);
+				gfx_TransparentSprite(character0, 215, 108);
 				break;
 		}
 		
