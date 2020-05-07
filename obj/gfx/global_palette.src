@@ -11,20 +11,32 @@ _global_palette:
 	DB	0
 	DB	255
 	DB	255
-	DB	255
-	DB	127
-	DB	2
-	DB	159
-	DB	31
-	DB	124
-	DB	159
-	DB	99
-	DB	103
-	DB	125
+	DB	16
+	DB	66
 	DB	160
 	DB	127
-	DB	255
+	DB	31
+	DB	124
+	DB	38
+	DB	105
+	DB	56
+	DB	161
 	DB	243
+	DB	177
+	DB	240
+	DB	13
+	DB	159
+	DB	99
+	DB	32
+	DB	243
+	DB	161
+	DB	2
+	DB	196
+	DB	42
+	DB	228
+	DB	52
+	DB	255
+	DB	127
 	DB	160
 	DB	125
 	DB	199
@@ -33,8 +45,6 @@ _global_palette:
 	DB	77
 	DB	8
 	DB	33
-	DB	16
-	DB	66
 	DB	66
 	DB	8
 	DB	64
@@ -67,8 +77,6 @@ _global_palette:
 	DB	99
 	DB	0
 	DB	124
-	DB	181
-	DB	86
 	DB	123
 	DB	239
 	DB	188
@@ -77,8 +85,6 @@ _global_palette:
 	DB	231
 	DB	165
 	DB	20
-	DB	74
-	DB	169
 	DB	0
 	DB	128
 	DB	181
@@ -93,12 +99,12 @@ _global_palette:
 	DB	111
 	DB	221
 	DB	119
-	DB	192
-	DB	188
 	DB	198
 	DB	152
 	DB	239
 	DB	189
+	DB	192
+	DB	188
 	DB	41
 	DB	37
 	DB	24
@@ -107,12 +113,14 @@ _global_palette:
 	DB	41
 	DB	231
 	DB	28
-	DB	96
-	DB	160
 	DB	66
 	DB	176
 	DB	98
 	DB	32
+	DB	96
+	DB	160
+	DB	74
+	DB	169
 	DB	34
 	DB	136
 	DB	222
@@ -121,20 +129,20 @@ _global_palette:
 	DB	61
 	DB	156
 	DB	243
+	DB	192
+	DB	192
 	DB	165
 	DB	148
-	DB	192
-	DB	192
 	DB	247
 	DB	222
 	DB	72
 	DB	183
-	DB	128
-	DB	176
 	DB	132
 	DB	144
 	DB	214
 	DB	90
+	DB	128
+	DB	176
 	DB	189
 	DB	119
 	DB	160
@@ -143,8 +151,6 @@ _global_palette:
 	DB	70
 	DB	107
 	DB	45
-	DB	90
-	DB	235
 	DB	224
 	DB	131
 	DB	72
@@ -153,6 +159,8 @@ _global_palette:
 	DB	173
 	DB	41
 	DB	165
+	DB	181
+	DB	86
 	DB	49
 	DB	198
 	DB	100
@@ -199,8 +207,6 @@ _global_palette:
 	DB	185
 	DB	75
 	DB	173
-	DB	213
-	DB	222
 	DB	64
 	DB	255
 	DB	214
@@ -209,6 +215,8 @@ _global_palette:
 	DB	148
 	DB	155
 	DB	111
+	DB	14
+	DB	242
 	DB	199
 	DB	156
 	DB	114
@@ -223,43 +231,41 @@ _global_palette:
 	DB	160
 	DB	108
 	DB	177
-	DB	181
-	DB	82
-	DB	255
-	DB	247
-	DB	223
-	DB	115
 	DB	89
 	DB	103
-	DB	116
-	DB	66
 	DB	56
 	DB	99
-	DB	42
-	DB	161
 	DB	147
 	DB	78
 	DB	132
 	DB	49
-	DB	36
-	DB	46
 	DB	205
 	DB	65
+	DB	36
+	DB	46
 	DB	182
+	DB	82
+	DB	181
 	DB	82
 	DB	191
 	DB	107
-	DB	255
-	DB	251
+	DB	213
+	DB	246
+	DB	223
+	DB	115
+	DB	246
+	DB	246
 	DB	141
 	DB	181
-	DB	56
-	DB	161
-	DB	196
-	DB	42
-	DB	228
-	DB	52
+	DB	2
+	DB	159
+	DB	103
+	DB	125
+	DB	90
+	DB	235
+	DB	255
+	DB	243
 	XDEF _global_palette
-;    1	unsigned char global_palette[254] = 
+;    1	unsigned char global_palette[260] = 
 ;    2	{ 
 	END

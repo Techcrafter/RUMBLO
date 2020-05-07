@@ -10,6 +10,7 @@ palette: global_palette
   fixed-color: {index:0, r:140, g:168, b:252}
   fixed-color: {index:1, r:0, g:0, b:0}
   fixed-color: {index:2, r:255, g:255, b:255}
+  fixed-color: {index:3, r:128, g:128, b:128}
   images: automatic
 
 convert: tileset
@@ -22,10 +23,15 @@ convert: sprites
   transparent-color-index: 0
   images:
     - character0.png
+    - character0Jumping.png
+    - character0Moving.png
     - character1.png
+    - character1Jumping.png
+    - character1Moving.png
     - characterHighlighter
     - counter1.png
     - counter2.png
     - counter3.png
     - counterFight.png
     - mapHighlighter.png
+    - statusUi.png

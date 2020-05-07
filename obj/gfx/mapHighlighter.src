@@ -7,105 +7,105 @@
 _mapHighlighter_data:
 	DB	32
 	DB	32
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -132,12 +132,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -164,12 +164,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -196,12 +196,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -228,12 +228,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -260,12 +260,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -292,12 +292,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -324,12 +324,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -356,12 +356,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -388,12 +388,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -420,12 +420,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -452,12 +452,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -484,12 +484,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -516,12 +516,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -548,12 +548,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -580,12 +580,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -612,12 +612,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -644,12 +644,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -676,12 +676,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -708,12 +708,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -740,12 +740,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -772,12 +772,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -804,12 +804,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -836,12 +836,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -868,12 +868,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -900,12 +900,12 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
 	DB	0
 	DB	0
 	DB	0
@@ -932,105 +932,105 @@ _mapHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	8
-	DB	7
-	DB	7
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	4
+	DB	127
+	DB	127
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	4
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
+	DB	127
 	XDEF _mapHighlighter_data
 ;    1	unsigned char mapHighlighter_data[1026] = 
 ;    2	{ 

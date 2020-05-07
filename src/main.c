@@ -2,6 +2,7 @@
 #include <fontlibc.h>
 #include "gfx/gfx.h"
 #include <graphx.h>
+#include <keypadc.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -25,7 +26,7 @@ extern unsigned char tilemap_map[];
 #define X_OFFSET            0
 
 #define BLACK				1
-#define GRAY				13
+#define GRAY				3
 #define RED					gfx_red
 #define TRANSPARENT			0
 #define WHITE				2
@@ -41,15 +42,23 @@ int mapXBlock;
 int mapYBlock;
 int fighting;
 
-int player1Character;
+int player1CharacterSelection;
 int player1X;
 int player1Y;
+int player1Flipped;
+int player1MoveAnimation;
+int player1Jumping;
+int player1ShieldActive;
 int player1Lifes;
 
 int player2IsAi;
-int player2Character;
+int player2CharacterSelection;
 int player2X;
 int player2Y;
+int player2Flipped;
+int player2MoveAnimation;
+int player2Jumping;
+int player2ShieldActive;
 int player2Lifes;
 
 int getXBlock(int xBlock)
@@ -66,6 +75,20 @@ int main(void)
 {
 	//initialization
 	sk_key_t key;
+	
+	gfx_sprite_t *player1Character = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player1CharacterMoving = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player1CharacterJumping = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player1CharacterFlipped = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player1CharacterMovingFlipped = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player1CharacterJumpingFlipped = gfx_MallocSprite(48, 64);
+	
+	gfx_sprite_t *player2Character = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player2CharacterMoving = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player2CharacterJumping = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player2CharacterFlipped = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player2CharacterMovingFlipped = gfx_MallocSprite(48, 64);
+	gfx_sprite_t *player2CharacterJumpingFlipped = gfx_MallocSprite(48, 64);
 	
     gfx_tilemap_t tilemap;
 	tilemap.map         = tilemap_map;
@@ -108,10 +131,10 @@ int main(void)
 	gfx_SetTextFGColor(BLACK);
     gfx_SetTextBGColor(WHITE);
 	gfx_SetTextScale(1, 1);
-	gfx_PrintStringXY("Press [enter] to start...", 65, 200);
+	gfx_PrintStringXY("Press [2nd] to start...", 78, 200);
 	gfx_PrintStringXY(version, 296, 232);
 	gfx_SwapDraw();
-	while(os_GetCSC() != sk_Enter);
+	while(os_GetCSC() != sk_2nd);
 	
 	//---------------------------------------------------------------
 	
@@ -127,13 +150,9 @@ int main(void)
 		gfx_SetTextScale(1, 1);
 		
 		key = os_GetCSC();
-		if(key == sk_Enter)
+		if(key == sk_2nd)
 		{
 			selecting = 0;
-		}
-		else if(key == sk_Clear)
-		{
-			goto startScreen;
 		}
 		else if(key == sk_Up && selection != 0)
 		{
@@ -191,14 +210,13 @@ int main(void)
 	while(selecting)
 	{
 		gfx_Tilemap(&tilemap, getXBlock(2), getYBlock(0));
-		gfx_SetColor(GRAY);
 		gfx_SetTextFGColor(WHITE);
 		gfx_SetTextBGColor(BLACK);
 		gfx_SetTextScale(2, 2);
 		gfx_PrintStringXY("Select a map:", 62, 10);
 		
 		key = os_GetCSC();
-		if(key == sk_Enter)
+		if(key == sk_2nd)
 		{
 			selecting = 0;
 		}
@@ -258,6 +276,7 @@ int main(void)
 				goto error;
 				break;
 		}
+		gfx_SetColor(GRAY);
 		gfx_FillRectangle(0, 70, 320, 105);
 		gfx_SetTextFGColor(WHITE);
 		gfx_SetTextBGColor(GRAY);
@@ -266,7 +285,7 @@ int main(void)
 		gfx_TransparentSprite(characterHighlighter, 138, 100);
 		
 		key = os_GetCSC();
-		if(key == sk_Enter)
+		if(key == sk_2nd)
 		{
 			selecting = 0;
 		}
@@ -304,9 +323,10 @@ int main(void)
 				gfx_TransparentSprite(character0, 207, 100);
 				break;
 		}
+		
 		gfx_SwapDraw();
 	}
-	player1Character = selection;
+	player1CharacterSelection = selection;
 	
 	goto prepareFight;
 	
@@ -316,12 +336,21 @@ int main(void)
 	prepareFight:
 	
 	fighting = 1;
+	player1Flipped = 0;
+	player1MoveAnimation = 0;
+	player1Jumping = 0;
+	player1ShieldActive = 0;
+	player1Lifes = 3;
+	player2Flipped = 0;
+	player2MoveAnimation = 0;
+	player2Jumping = 0;
+	player2ShieldActive = 0;
+	player2Lifes = 3;
 	switch(map)
 	{
 		case 0:
 			player1X = 100;
 			player1Y = 100;
-			player1Lifes = 3;
 			if(players == 1)
 			{
 				player2IsAi = 1;
@@ -332,9 +361,47 @@ int main(void)
 			}
 			player2X = 200;
 			player2Y = 200;
-			player2Lifes = 3;
 			break;
 		case 1:
+			break;
+	}
+	
+	switch(player1CharacterSelection)
+	{
+		case 0:
+			player1Character = character0;
+			player1CharacterMoving = character0Moving;
+			player1CharacterJumping = character0Jumping;
+			gfx_FlipSpriteY(character0, player1CharacterFlipped);
+			gfx_FlipSpriteY(character0Moving, player1CharacterMovingFlipped);
+			gfx_FlipSpriteY(character0Jumping, player1CharacterJumpingFlipped);
+			break;
+		case 1:
+			player1Character = character1;
+			player1CharacterMoving = character1Moving;
+			player1CharacterJumping = character1Jumping;
+			gfx_FlipSpriteY(character1, player1CharacterFlipped);
+			gfx_FlipSpriteY(character1Moving, player1CharacterMovingFlipped);
+			gfx_FlipSpriteY(character1Jumping, player1CharacterJumpingFlipped);
+			break;
+	}
+	switch(player2CharacterSelection)
+	{
+		case 0:
+			player2Character = character0;
+			player2CharacterMoving = character0Moving;
+			player2CharacterJumping = character0Jumping;
+			gfx_FlipSpriteY(character0, player2CharacterFlipped);
+			gfx_FlipSpriteY(character0Moving, player2CharacterMovingFlipped);
+			gfx_FlipSpriteY(character0Jumping, player2CharacterJumpingFlipped);
+			break;
+		case 1:
+			player2Character = character1;
+			player2CharacterMoving = character1Moving;
+			player2CharacterJumping = character1Jumping;
+			gfx_FlipSpriteY(character1, player2CharacterFlipped);
+			gfx_FlipSpriteY(character1Moving, player2CharacterMovingFlipped);
+			gfx_FlipSpriteY(character1Jumping, player2CharacterJumpingFlipped);
 			break;
 	}
 	
@@ -362,46 +429,159 @@ int main(void)
 	//fight
 	fight:
 	
+	gfx_TransparentSprite(statusUi, 128, 208);
+	gfx_SetTextFGColor(BLACK);
+	gfx_SetTextBGColor(gfx_GetPixel(150, 224));
+	
 	while(fighting)
 	{
 		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 		
 		key = os_GetCSC();
+		if(key == sk_2nd)
+		{
+			//jump
+		}
+		if(key == sk_Alpha)
+		{
+			//shoot
+		}
 		if(key == sk_Clear)
 		{
-			fighting = 0;
+			goto pause;
 		}
-		else if(key == sk_Up)
+		
+		kb_Scan();
+        key = kb_Data[7];
+		if(key & kb_Up)
 		{
 			player1Y--;
 		}
-		else if(key == sk_Down)
+		if(key & kb_Down)
 		{
 			player1Y++;
 		}
-		else if(key == sk_Left)
+		if(key & kb_Left)
 		{
 			player1X--;
+			player1Flipped = 1;
 		}
-		else if(key == sk_Right)
+		if(key & kb_Right)
 		{
 			player1X++;
+			player1Flipped = 0;
 		}
 		
-		switch(player1Character)
+		if(player1Flipped == 0 && player1Jumping == 1)
 		{
-			case 0:
-				gfx_TransparentSprite(character0, player1X, player1Y);
-				break;
-			case 1:
-				gfx_TransparentSprite(character1, player1X, player1Y);
-				break;
+			gfx_TransparentSprite(player1CharacterJumping, player1X, player1Y);
+			player1MoveAnimation = 0;
 		}
+		else if(player1Flipped == 1 && player1Jumping == 1)
+		{
+			gfx_TransparentSprite(player1CharacterJumpingFlipped, player1X, player1Y);
+			player1MoveAnimation = 0;
+		}
+		else if(player1Flipped == 0 && player1MoveAnimation == 0)
+		{
+			gfx_TransparentSprite(player1Character, player1X, player1Y);
+		}
+		else if(player1Flipped == 1 && player1MoveAnimation == 0)
+		{
+			gfx_TransparentSprite(player1CharacterFlipped, player1X, player1Y);
+		}
+		else if(player1Flipped == 0 && player1MoveAnimation == 1)
+		{
+			gfx_TransparentSprite(player1CharacterMoving, player1X, player1Y);
+		}
+		else if(player1Flipped == 1 && player1MoveAnimation == 1)
+		{
+			gfx_TransparentSprite(player1CharacterMovingFlipped, player1X, player1Y);
+		}
+		
+		if(player2Flipped == 0 && player2Jumping == 1)
+		{
+			gfx_TransparentSprite(player2CharacterJumping, player2X, player2Y);
+			player2MoveAnimation = 0;
+		}
+		else if(player2Flipped == 1 && player2Jumping == 1)
+		{
+			gfx_TransparentSprite(player2CharacterJumpingFlipped, player2X, player2Y);
+			player2MoveAnimation = 0;
+		}
+		else if(player2Flipped == 0 && player2MoveAnimation == 0)
+		{
+			gfx_TransparentSprite(player2Character, player2X, player2Y);
+		}
+		else if(player2Flipped == 1 && player2MoveAnimation == 0)
+		{
+			gfx_TransparentSprite(player2CharacterFlipped, player2X, player2Y);
+		}
+		else if(player2Flipped == 0 && player2MoveAnimation == 1)
+		{
+			gfx_TransparentSprite(player2CharacterMoving, player2X, player2Y);
+		}
+		else if(player2Flipped == 1 && player2MoveAnimation == 1)
+		{
+			gfx_TransparentSprite(player2CharacterMovingFlipped, player2X, player2Y);
+		}
+		
+		gfx_TransparentSprite(statusUi, 128, 208);
+		gfx_SetTextXY(10, 10);
+		gfx_SetTextScale(2, 2);
+		gfx_PrintInt(player1X, 3);
+		gfx_PrintString(" ");
+		gfx_PrintInt(player1Y, 3);
 		
 		gfx_SwapDraw();
 	}
 	
 	goto error;
+	
+	//---------------------------------------------------------------
+	
+	//pause
+	pause:
+	
+	gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+	gfx_SetColor(GRAY);
+	gfx_FillRectangle(0, 70, 320, 105);
+	gfx_SetTextFGColor(WHITE);
+	gfx_SetTextBGColor(GRAY);
+	gfx_SetTextScale(2, 2);
+	gfx_PrintStringXY("Pause menu", 85, 76);
+	gfx_SetTextScale(1, 1);
+	gfx_PrintStringXY("Press [clear] to continue...", 55, 110);
+	gfx_PrintStringXY("Press [del] to give up...", 62, 130);
+	gfx_SwapDraw();
+	
+	while(1)
+	{
+		key = os_GetCSC();
+		if(key == sk_Clear)
+		{
+			goto fight;
+		}
+		else if(key == sk_Del)
+		{
+			goto gameOver;
+		}
+	}
+	
+	//---------------------------------------------------------------
+	
+	//gameOver
+	gameOver:
+	
+	gfx_Tilemap(&tilemap, getXBlock(4), getYBlock(0));
+	gfx_SetTextFGColor(WHITE);
+	gfx_SetTextBGColor(gfx_GetPixel(0, 0));
+	gfx_SetTextScale(1, 1);
+	gfx_PrintStringXY("Press [2nd] to go to the main menu...", 15, 225);
+	gfx_SwapDraw();
+	while(os_GetCSC() != sk_2nd);
+	goto mainMenu;
+	
 	
 	//---------------------------------------------------------------
 	
@@ -413,9 +593,9 @@ int main(void)
 	gfx_SetTextBGColor(RED);
 	gfx_SetTextScale(1, 1);
 	gfx_PrintStringXY("An error has occurred!", 0, 0);
-	gfx_PrintStringXY("Press [enter] to go to the main menu...", 0, 10);
+	gfx_PrintStringXY("Press [2nd] to go to the main menu...", 0, 10);
 	gfx_SwapDraw();
-	while(os_GetCSC() != sk_Enter);
+	while(os_GetCSC() != sk_2nd);
 	goto mainMenu;
 	
 	//---------------------------------------------------------------
