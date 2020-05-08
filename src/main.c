@@ -42,12 +42,23 @@ int mapXBlock;
 int mapYBlock;
 int fighting;
 
+int player;
+int playerX;
+int playerY;
+int playerGrounded;
+
 int player1CharacterSelection;
 int player1X;
 int player1Y;
 int player1Flipped;
+int player1MoveSpeed;
+int player1FallSpeed;
+int player1JumpSpeed;
+int player1JumpHeight;
 int player1MoveAnimation;
+int player1MoveAnimationCount;
 int player1Jumping;
+int player1Grounded;
 int player1ShieldActive;
 int player1Lifes;
 
@@ -56,10 +67,38 @@ int player2CharacterSelection;
 int player2X;
 int player2Y;
 int player2Flipped;
+int player2MoveSpeed;
+int player2FallSpeed;
+int player2JumpSpeed;
+int player2JumpHeight;
 int player2MoveAnimation;
+int player2MoveAnimationCount;
 int player2Jumping;
+int player2Grounded;
 int player2ShieldActive;
 int player2Lifes;
+
+sk_key_t key;
+
+gfx_sprite_t *player1Character;
+gfx_sprite_t *player1CharacterMoving1;
+gfx_sprite_t *player1CharacterMoving2;
+gfx_sprite_t *player1CharacterJumping;
+gfx_sprite_t *player1CharacterFlipped;
+gfx_sprite_t *player1CharacterMoving1Flipped;
+gfx_sprite_t *player1CharacterMoving2Flipped;
+gfx_sprite_t *player1CharacterJumpingFlipped;
+
+gfx_sprite_t *player2Character;
+gfx_sprite_t *player2CharacterMoving1;
+gfx_sprite_t *player2CharacterMoving2;
+gfx_sprite_t *player2CharacterJumping;
+gfx_sprite_t *player2CharacterFlipped;
+gfx_sprite_t *player2CharacterMoving1Flipped;
+gfx_sprite_t *player2CharacterMoving2Flipped;
+gfx_sprite_t *player2CharacterJumpingFlipped;
+
+gfx_tilemap_t tilemap;
 
 int getXBlock(int xBlock)
 {
@@ -74,23 +113,24 @@ int getYBlock(int yBlock)
 int main(void)
 {
 	//initialization
-	sk_key_t key;
+	player1Character = gfx_MallocSprite(32, 48);
+	player1CharacterMoving1 = gfx_MallocSprite(32, 48);
+	player1CharacterMoving2 = gfx_MallocSprite(32, 48);
+	player1CharacterJumping = gfx_MallocSprite(32, 48);
+	player1CharacterFlipped = gfx_MallocSprite(32, 48);
+	player1CharacterMoving1Flipped = gfx_MallocSprite(32, 48);
+	player1CharacterMoving2Flipped = gfx_MallocSprite(32, 48);
+	player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
 	
-	gfx_sprite_t *player1Character = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player1CharacterMoving = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player1CharacterJumping = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player1CharacterFlipped = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player1CharacterMovingFlipped = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+	player2Character = gfx_MallocSprite(32, 48);
+	player2CharacterMoving1 = gfx_MallocSprite(32, 48);
+	player2CharacterMoving2 = gfx_MallocSprite(32, 48);
+	player2CharacterJumping = gfx_MallocSprite(32, 48);
+	player2CharacterFlipped = gfx_MallocSprite(32, 48);
+	player2CharacterMoving1Flipped = gfx_MallocSprite(32, 48);
+	player2CharacterMoving2Flipped = gfx_MallocSprite(32, 48);
+	player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
 	
-	gfx_sprite_t *player2Character = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player2CharacterMoving = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player2CharacterJumping = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player2CharacterFlipped = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player2CharacterMovingFlipped = gfx_MallocSprite(32, 48);
-	gfx_sprite_t *player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
-	
-    gfx_tilemap_t tilemap;
 	tilemap.map         = tilemap_map;
     tilemap.tiles       = tileset_tiles;
     tilemap.type_width  = gfx_tile_16_pixel;
@@ -153,6 +193,10 @@ int main(void)
 		if(key == sk_2nd)
 		{
 			selecting = 0;
+		}
+		else if(key == sk_Clear)
+		{
+			goto startScreen;
 		}
 		else if(key == sk_Up && selection != 0)
 		{
@@ -339,18 +383,20 @@ int main(void)
 	player1Flipped = 0;
 	player1MoveAnimation = 0;
 	player1Jumping = 0;
+	player1Grounded = 1;
 	player1ShieldActive = 0;
 	player1Lifes = 3;
-	player2Flipped = 0;
+	player2Flipped = 1;
 	player2MoveAnimation = 0;
 	player2Jumping = 0;
+	player2Grounded = 1;
 	player2ShieldActive = 0;
 	player2Lifes = 3;
 	switch(map)
 	{
 		case 0:
-			player1X = 100;
-			player1Y = 100;
+			player1X = 80;
+			player1Y = 132;
 			if(players == 1)
 			{
 				player2IsAi = 1;
@@ -359,8 +405,8 @@ int main(void)
 			{
 				player2IsAi = 0;
 			}
-			player2X = 200;
-			player2Y = 200;
+			player2X = 220;
+			player2Y = 132;
 			break;
 		case 1:
 			break;
@@ -370,38 +416,62 @@ int main(void)
 	{
 		case 0:
 			player1Character = character0;
-			player1CharacterMoving = character0Moving;
+			player1CharacterMoving1 = character0Moving1;
+			player1CharacterMoving2 = character0Moving2;
 			player1CharacterJumping = character0Jumping;
 			gfx_FlipSpriteY(character0, player1CharacterFlipped);
-			gfx_FlipSpriteY(character0Moving, player1CharacterMovingFlipped);
+			gfx_FlipSpriteY(character0Moving1, player1CharacterMoving1Flipped);
+			gfx_FlipSpriteY(character0Moving2, player1CharacterMoving2Flipped);
 			gfx_FlipSpriteY(character0Jumping, player1CharacterJumpingFlipped);
+			player1MoveSpeed = 4;
+			player1FallSpeed = 4;
+			player1JumpSpeed = 8;
+			player1JumpHeight = 10;
 			break;
 		case 1:
 			player1Character = character1;
-			player1CharacterMoving = character1Moving;
+			player1CharacterMoving1 = character1Moving1;
+			player1CharacterMoving2 = character1Moving2;
 			player1CharacterJumping = character1Jumping;
 			gfx_FlipSpriteY(character1, player1CharacterFlipped);
-			gfx_FlipSpriteY(character1Moving, player1CharacterMovingFlipped);
+			gfx_FlipSpriteY(character1Moving1, player1CharacterMoving1Flipped);
+			gfx_FlipSpriteY(character1Moving2, player1CharacterMoving2Flipped);
 			gfx_FlipSpriteY(character1Jumping, player1CharacterJumpingFlipped);
+			player1MoveSpeed = 8;
+			player1FallSpeed = 4;
+			player1JumpSpeed = 4;
+			player1JumpHeight = 12;
 			break;
 	}
 	switch(player2CharacterSelection)
 	{
 		case 0:
 			player2Character = character0;
-			player2CharacterMoving = character0Moving;
+			player2CharacterMoving1 = character0Moving1;
+			player2CharacterMoving2 = character0Moving2;
 			player2CharacterJumping = character0Jumping;
 			gfx_FlipSpriteY(character0, player2CharacterFlipped);
-			gfx_FlipSpriteY(character0Moving, player2CharacterMovingFlipped);
+			gfx_FlipSpriteY(character0Moving1, player2CharacterMoving1Flipped);
+			gfx_FlipSpriteY(character0Moving2, player2CharacterMoving2Flipped);
 			gfx_FlipSpriteY(character0Jumping, player2CharacterJumpingFlipped);
+			player2MoveSpeed = 4;
+			player2FallSpeed = 4;
+			player2JumpSpeed = 8;
+			player2JumpHeight = 10;
 			break;
 		case 1:
 			player2Character = character1;
-			player2CharacterMoving = character1Moving;
+			player2CharacterMoving1 = character1Moving1;
+			player2CharacterMoving2 = character1Moving2;
 			player2CharacterJumping = character1Jumping;
 			gfx_FlipSpriteY(character1, player2CharacterFlipped);
-			gfx_FlipSpriteY(character1Moving, player2CharacterMovingFlipped);
+			gfx_FlipSpriteY(character1Moving1, player2CharacterMoving1Flipped);
+			gfx_FlipSpriteY(character1Moving2, player2CharacterMoving2Flipped);
 			gfx_FlipSpriteY(character1Jumping, player2CharacterJumpingFlipped);
+			player2MoveSpeed = 8;
+			player2FallSpeed = 4;
+			player2JumpSpeed = 4;
+			player2JumpHeight = 12;
 			break;
 	}
 	
@@ -440,7 +510,10 @@ int main(void)
 		key = os_GetCSC();
 		if(key == sk_2nd)
 		{
-			//jump
+			if(player1Grounded == 1)
+			{
+				player1Jumping = player1JumpHeight;
+			}
 		}
 		if(key == sk_Alpha)
 		{
@@ -455,32 +528,147 @@ int main(void)
         key = kb_Data[7];
 		if(key & kb_Up)
 		{
-			player1Y--;
+			
 		}
 		if(key & kb_Down)
 		{
-			player1Y++;
+			player1Jumping = 0;
+			if(player1Grounded == 1)
+			{
+				player1ShieldActive = 1;
+			}
+		}
+		else
+		{
+			player1ShieldActive = 0;
 		}
 		if(key & kb_Left)
 		{
-			player1X--;
-			player1Flipped = 1;
+			player1X -= player1MoveSpeed;
+			if(player1Flipped == 0)
+			{
+				player1Flipped = 1;
+				player1MoveAnimation = 0;
+				player1MoveAnimationCount = 0;
+			}
+			player1MoveAnimationCount++;
+			if(player1MoveAnimationCount == 3)
+			{
+				if(player1MoveAnimation != 3)
+				{
+					player1MoveAnimation++;
+				}
+				else
+				{
+					player1MoveAnimation = 0;
+				}
+				player1MoveAnimationCount = 0;
+			}
 		}
 		if(key & kb_Right)
 		{
-			player1X++;
-			player1Flipped = 0;
+			player1X += player1MoveSpeed;
+			if(player1Flipped == 1)
+			{
+				player1Flipped = 0;
+				player1MoveAnimation = 0;
+				player1MoveAnimationCount = 0;
+			}
+			player1MoveAnimationCount++;
+			if(player1MoveAnimationCount == 3)
+			{
+				if(player1MoveAnimation != 3)
+				{
+					player1MoveAnimation++;
+				}
+				else
+				{
+					player1MoveAnimation = 0;
+				}
+				player1MoveAnimationCount = 0;
+			}
 		}
 		
-		if(player1Flipped == 0 && player1Jumping == 1)
+		for(player = 1; player < 3; ++player)
+		{
+			switch(player)
+			{
+				case 1:
+					playerX = player1X;
+					playerY = player1Y;
+					break;
+				case 2:
+					playerX = player2X;
+					playerY = player2Y;
+					break;
+			}
+			
+			if(map == 0)
+			{
+				if(playerX >= 24 && playerX <= 264 && playerY == 132)
+				{
+					playerGrounded = 1;
+				}
+				else if(playerX >= 72 && playerX <= 216 && playerY == 64)
+				{
+					playerGrounded = 1;
+				}
+				else if(playerX >= -8 && playerX <= 40 && playerY == 40)
+				{
+					playerGrounded = 1;
+				}
+				else if(playerX >= 248 && playerX <= 296 && playerY == 40)
+				{
+					playerGrounded = 1;
+				}
+				else
+				{
+					playerGrounded = 0;
+				}
+			}
+			
+			switch(player)
+			{
+				case 1:
+					player1Grounded = playerGrounded;
+					break;
+				case 2:
+					player2Grounded = playerGrounded;
+					break;
+			}
+		}
+		
+		if(player1Jumping > 0)
+		{
+			player1Jumping--;
+			player1Y -= player1JumpSpeed;
+		}
+		else if(player1Grounded == 0)
+		{
+			player1Y += player1FallSpeed;
+		}
+		
+		if(player2Jumping > 0)
+		{
+			player2Jumping--;
+			player2Y -= player2JumpSpeed;
+		}
+		else if(player2Grounded == 0)
+		{
+			player2Y += player2FallSpeed;
+		}
+		
+		if(player1Flipped == 0 && player1Grounded == 0)
 		{
 			gfx_TransparentSprite(player1CharacterJumping, player1X, player1Y);
 			player1MoveAnimation = 0;
+			player1MoveAnimationCount = 0;
 		}
-		else if(player1Flipped == 1 && player1Jumping == 1)
+		else if(player1Flipped == 1 && player1Grounded == 0)
 		{
 			gfx_TransparentSprite(player1CharacterJumpingFlipped, player1X, player1Y);
 			player1MoveAnimation = 0;
+			player1MoveAnimationCount = 0;
 		}
 		else if(player1Flipped == 0 && player1MoveAnimation == 0)
 		{
@@ -492,22 +680,41 @@ int main(void)
 		}
 		else if(player1Flipped == 0 && player1MoveAnimation == 1)
 		{
-			gfx_TransparentSprite(player1CharacterMoving, player1X, player1Y);
+			gfx_TransparentSprite(player1CharacterMoving1, player1X, player1Y);
 		}
 		else if(player1Flipped == 1 && player1MoveAnimation == 1)
 		{
-			gfx_TransparentSprite(player1CharacterMovingFlipped, player1X, player1Y);
+			gfx_TransparentSprite(player1CharacterMoving1Flipped, player1X, player1Y);
+		}
+		else if(player1Flipped == 0 && player1MoveAnimation == 2)
+		{
+			gfx_TransparentSprite(player1CharacterMoving2, player1X, player1Y);
+		}
+		else if(player1Flipped == 1 && player1MoveAnimation == 2)
+		{
+			gfx_TransparentSprite(player1CharacterMoving2Flipped, player1X, player1Y);
+		}
+		else if(player1Flipped == 0 && player1MoveAnimation == 3)
+		{
+			gfx_TransparentSprite(player1CharacterMoving1, player1X, player1Y);
+		}
+		else if(player1Flipped == 1 && player1MoveAnimation == 3)
+		{
+			gfx_TransparentSprite(player1CharacterMoving1Flipped, player1X, player1Y);
 		}
 		
-		if(player2Flipped == 0 && player2Jumping == 1)
+		
+		if(player2Flipped == 0 && player2Grounded == 0)
 		{
 			gfx_TransparentSprite(player2CharacterJumping, player2X, player2Y);
 			player2MoveAnimation = 0;
+			player2MoveAnimationCount = 0;
 		}
-		else if(player2Flipped == 1 && player2Jumping == 1)
+		else if(player2Flipped == 1 && player2Grounded == 0)
 		{
 			gfx_TransparentSprite(player2CharacterJumpingFlipped, player2X, player2Y);
 			player2MoveAnimation = 0;
+			player2MoveAnimationCount = 0;
 		}
 		else if(player2Flipped == 0 && player2MoveAnimation == 0)
 		{
@@ -519,11 +726,27 @@ int main(void)
 		}
 		else if(player2Flipped == 0 && player2MoveAnimation == 1)
 		{
-			gfx_TransparentSprite(player2CharacterMoving, player2X, player2Y);
+			gfx_TransparentSprite(player2CharacterMoving1, player2X, player2Y);
 		}
 		else if(player2Flipped == 1 && player2MoveAnimation == 1)
 		{
-			gfx_TransparentSprite(player2CharacterMovingFlipped, player2X, player2Y);
+			gfx_TransparentSprite(player2CharacterMoving1Flipped, player2X, player2Y);
+		}
+		else if(player2Flipped == 0 && player2MoveAnimation == 2)
+		{
+			gfx_TransparentSprite(player2CharacterMoving2, player2X, player2Y);
+		}
+		else if(player2Flipped == 1 && player2MoveAnimation == 2)
+		{
+			gfx_TransparentSprite(player2CharacterMoving2Flipped, player2X, player2Y);
+		}
+		else if(player2Flipped == 0 && player2MoveAnimation == 3)
+		{
+			gfx_TransparentSprite(player2CharacterMoving1, player2X, player2Y);
+		}
+		else if(player2Flipped == 1 && player2MoveAnimation == 3)
+		{
+			gfx_TransparentSprite(player2CharacterMoving1Flipped, player2X, player2Y);
 		}
 		
 		gfx_TransparentSprite(statusUi, 128, 208);
@@ -549,10 +772,10 @@ int main(void)
 	gfx_SetTextFGColor(WHITE);
 	gfx_SetTextBGColor(GRAY);
 	gfx_SetTextScale(2, 2);
-	gfx_PrintStringXY("Pause menu", 85, 76);
+	gfx_PrintStringXY("Pause menu", 80, 90);
 	gfx_SetTextScale(1, 1);
-	gfx_PrintStringXY("Press [clear] to continue...", 55, 110);
-	gfx_PrintStringXY("Press [del] to give up...", 62, 130);
+	gfx_PrintStringXY("Press [clear] to continue...", 55, 125);
+	gfx_PrintStringXY("Press [del] to give up...", 62, 145);
 	gfx_SwapDraw();
 	
 	while(1)
@@ -577,7 +800,7 @@ int main(void)
 	gfx_SetTextFGColor(WHITE);
 	gfx_SetTextBGColor(gfx_GetPixel(0, 0));
 	gfx_SetTextScale(1, 1);
-	gfx_PrintStringXY("Press [2nd] to go to the main menu...", 15, 225);
+	gfx_PrintStringXY("Press [2nd] to go to the main menu...", 15, 218);
 	gfx_SwapDraw();
 	while(os_GetCSC() != sk_2nd);
 	goto mainMenu;

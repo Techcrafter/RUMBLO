@@ -24,6 +24,14 @@ _mapYBlock:
 	DS	3
 _fighting:
 	DS	3
+_player:
+	DS	3
+_playerX:
+	DS	3
+_playerY:
+	DS	3
+_playerGrounded:
+	DS	3
 _player1CharacterSelection:
 	DS	3
 _player1X:
@@ -32,9 +40,21 @@ _player1Y:
 	DS	3
 _player1Flipped:
 	DS	3
+_player1MoveSpeed:
+	DS	3
+_player1FallSpeed:
+	DS	3
+_player1JumpSpeed:
+	DS	3
+_player1JumpHeight:
+	DS	3
 _player1MoveAnimation:
 	DS	3
+_player1MoveAnimationCount:
+	DS	3
 _player1Jumping:
+	DS	3
+_player1Grounded:
 	DS	3
 _player1ShieldActive:
 	DS	3
@@ -50,14 +70,62 @@ _player2Y:
 	DS	3
 _player2Flipped:
 	DS	3
+_player2MoveSpeed:
+	DS	3
+_player2FallSpeed:
+	DS	3
+_player2JumpSpeed:
+	DS	3
+_player2JumpHeight:
+	DS	3
 _player2MoveAnimation:
 	DS	3
+_player2MoveAnimationCount:
+	DS	3
 _player2Jumping:
+	DS	3
+_player2Grounded:
 	DS	3
 _player2ShieldActive:
 	DS	3
 _player2Lifes:
 	DS	3
+_key:
+	DS	1
+_player1Character:
+	DS	3
+_player1CharacterMoving1:
+	DS	3
+_player1CharacterMoving2:
+	DS	3
+_player1CharacterJumping:
+	DS	3
+_player1CharacterFlipped:
+	DS	3
+_player1CharacterMoving1Flipped:
+	DS	3
+_player1CharacterMoving2Flipped:
+	DS	3
+_player1CharacterJumpingFlipped:
+	DS	3
+_player2Character:
+	DS	3
+_player2CharacterMoving1:
+	DS	3
+_player2CharacterMoving2:
+	DS	3
+_player2CharacterJumping:
+	DS	3
+_player2CharacterFlipped:
+	DS	3
+_player2CharacterMoving1Flipped:
+	DS	3
+_player2CharacterMoving2Flipped:
+	DS	3
+_player2CharacterJumpingFlipped:
+	DS	3
+_tilemap:
+	DS	18
 ;    1	#include <fileioc.h>
 ;    2	#include <fontlibc.h>
 ;    3	#include "gfx/gfx.h"
@@ -102,35 +170,74 @@ _player2Lifes:
 ;   42	int mapYBlock;
 ;   43	int fighting;
 ;   44	
-;   45	int player1CharacterSelection;
-;   46	int player1X;
-;   47	int player1Y;
-;   48	int player1Flipped;
-;   49	int player1MoveAnimation;
-;   50	int player1Jumping;
-;   51	int player1ShieldActive;
-;   52	int player1Lifes;
-;   53	
-;   54	int player2IsAi;
-;   55	int player2CharacterSelection;
-;   56	int player2X;
-;   57	int player2Y;
-;   58	int player2Flipped;
-;   59	int player2MoveAnimation;
-;   60	int player2Jumping;
-;   61	int player2ShieldActive;
-;   62	int player2Lifes;
+;   45	int player;
+;   46	int playerX;
+;   47	int playerY;
+;   48	int playerGrounded;
+;   49	
+;   50	int player1CharacterSelection;
+;   51	int player1X;
+;   52	int player1Y;
+;   53	int player1Flipped;
+;   54	int player1MoveSpeed;
+;   55	int player1FallSpeed;
+;   56	int player1JumpSpeed;
+;   57	int player1JumpHeight;
+;   58	int player1MoveAnimation;
+;   59	int player1MoveAnimationCount;
+;   60	int player1Jumping;
+;   61	int player1Grounded;
+;   62	int player1ShieldActive;
+;   63	int player1Lifes;
+;   64	
+;   65	int player2IsAi;
+;   66	int player2CharacterSelection;
+;   67	int player2X;
+;   68	int player2Y;
+;   69	int player2Flipped;
+;   70	int player2MoveSpeed;
+;   71	int player2FallSpeed;
+;   72	int player2JumpSpeed;
+;   73	int player2JumpHeight;
+;   74	int player2MoveAnimation;
+;   75	int player2MoveAnimationCount;
+;   76	int player2Jumping;
+;   77	int player2Grounded;
+;   78	int player2ShieldActive;
+;   79	int player2Lifes;
+;   80	
+;   81	sk_key_t key;
+;   82	
+;   83	gfx_sprite_t *player1Character;
+;   84	gfx_sprite_t *player1CharacterMoving1;
+;   85	gfx_sprite_t *player1CharacterMoving2;
+;   86	gfx_sprite_t *player1CharacterJumping;
+;   87	gfx_sprite_t *player1CharacterFlipped;
+;   88	gfx_sprite_t *player1CharacterMoving1Flipped;
+;   89	gfx_sprite_t *player1CharacterMoving2Flipped;
+;   90	gfx_sprite_t *player1CharacterJumpingFlipped;
+;   91	
+;   92	gfx_sprite_t *player2Character;
+;   93	gfx_sprite_t *player2CharacterMoving1;
+;   94	gfx_sprite_t *player2CharacterMoving2;
+;   95	gfx_sprite_t *player2CharacterJumping;
+;   96	gfx_sprite_t *player2CharacterFlipped;
+;   97	gfx_sprite_t *player2CharacterMoving1Flipped;
+;   98	gfx_sprite_t *player2CharacterMoving2Flipped;
+;   99	gfx_sprite_t *player2CharacterJumpingFlipped;
+;  100	
+;  101	gfx_tilemap_t tilemap;
 	SEGMENT CODE
-;   63	
-;   64	int getXBlock(int xBlock)
-;   65	{
+;  102	
+;  103	int getXBlock(int xBlock)
+;  104	{
 _getXBlock:
 	CALL	__frameset0
-;   66		return TILE_WIDTH * TILEMAP_DRAW_WIDTH * xBlock;
+;  105		return TILE_WIDTH * TILEMAP_DRAW_WIDTH * xBlock;
 	LD	BC,320
 	LD	HL,(IX+6)
 	CALL	__imuls
-;   67	}
+;  106	}
 	LD	SP,IX
 	POP	IX
 	RET	
@@ -145,16 +252,16 @@ _getXBlock:
 ;       Spill Code: 0 (instruction)
 
 
-;   68	
-;   69	int getYBlock(int yBlock)
-;   70	{
+;  107	
+;  108	int getYBlock(int yBlock)
+;  109	{
 _getYBlock:
 	CALL	__frameset0
-;   71		return TILE_HEIGHT * TILEMAP_DRAW_HEIGHT * yBlock;
+;  110		return TILE_HEIGHT * TILEMAP_DRAW_HEIGHT * yBlock;
 	LD	HL,(IX+6)
 	LD	A,240
 	CALL	__imul_b
-;   72	}
+;  111	}
 	LD	SP,IX
 	POP	IX
 	RET	
@@ -169,16 +276,14 @@ _getYBlock:
 ;       Spill Code: 0 (instruction)
 
 
-;   73	
-;   74	int main(void)
-;   75	{
+;  112	
+;  113	int main(void)
+;  114	{
 _main:
-	LD	HL,-59
+	LD	HL,-4
 	CALL	__frameset
-;   76		//initialization
-;   77		sk_key_t key;
-;   78		
-;   79		gfx_sprite_t *player1Character = gfx_MallocSprite(32, 48);
+;  115		//initialization
+;  116		player1Character = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
@@ -189,177 +294,231 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-59),HL
-;   80		gfx_sprite_t *player1CharacterMoving = gfx_MallocSprite(32, 48);
+;  117		player1CharacterMoving1 = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player1Character),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-26),HL
-;   81		gfx_sprite_t *player1CharacterJumping = gfx_MallocSprite(32, 48);
+;  118		player1CharacterMoving2 = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player1CharacterMoving1),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-29),HL
-;   82		gfx_sprite_t *player1CharacterFlipped = gfx_MallocSprite(32, 48);
+;  119		player1CharacterJumping = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player1CharacterMoving2),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-32),HL
-;   83		gfx_sprite_t *player1CharacterMovingFlipped = gfx_MallocSprite(32, 48);
+;  120		player1CharacterFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player1CharacterJumping),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-35),HL
-;   84		gfx_sprite_t *player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+;  121		player1CharacterMoving1Flipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player1CharacterFlipped),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-38),HL
-;   85		
-;   86		gfx_sprite_t *player2Character = gfx_MallocSprite(32, 48);
+;  122		player1CharacterMoving2Flipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player1CharacterMoving1Flipped),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-41),HL
-;   87		gfx_sprite_t *player2CharacterMoving = gfx_MallocSprite(32, 48);
+;  123		player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player1CharacterMoving2Flipped),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-44),HL
-;   88		gfx_sprite_t *player2CharacterJumping = gfx_MallocSprite(32, 48);
+;  124		
+;  125		player2Character = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player1CharacterJumpingFlipped),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-47),HL
-;   89		gfx_sprite_t *player2CharacterFlipped = gfx_MallocSprite(32, 48);
+;  126		player2CharacterMoving1 = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player2Character),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-50),HL
-;   90		gfx_sprite_t *player2CharacterMovingFlipped = gfx_MallocSprite(32, 48);
+;  127		player2CharacterMoving2 = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player2CharacterMoving1),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-53),HL
-;   91		gfx_sprite_t *player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+;  128		player2CharacterJumping = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
+	LD	(_player2CharacterMoving2),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
 	POP	BC
-	LD	(IX+-56),HL
-;   92		
-;   93	    gfx_tilemap_t tilemap;
-;   94		tilemap.map         = tilemap_map;
+;  129		player2CharacterFlipped = gfx_MallocSprite(32, 48);
+	LD	BC,_malloc
+	PUSH	BC
+	LD	BC,48
+	PUSH	BC
+	LD	BC,32
+	PUSH	BC
+	LD	(_player2CharacterJumping),HL
+	CALL	_gfx_AllocSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  130		player2CharacterMoving1Flipped = gfx_MallocSprite(32, 48);
+	LD	BC,_malloc
+	PUSH	BC
+	LD	BC,48
+	PUSH	BC
+	LD	BC,32
+	PUSH	BC
+	LD	(_player2CharacterFlipped),HL
+	CALL	_gfx_AllocSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  131		player2CharacterMoving2Flipped = gfx_MallocSprite(32, 48);
+	LD	BC,_malloc
+	PUSH	BC
+	LD	BC,48
+	PUSH	BC
+	LD	BC,32
+	PUSH	BC
+	LD	(_player2CharacterMoving1Flipped),HL
+	CALL	_gfx_AllocSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  132		player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+	LD	BC,_malloc
+	PUSH	BC
+	LD	BC,48
+	PUSH	BC
+	LD	BC,32
+	PUSH	BC
+	LD	(_player2CharacterMoving2Flipped),HL
+	CALL	_gfx_AllocSprite
+	POP	BC
+	POP	BC
+	POP	BC
+	LD	(_player2CharacterJumpingFlipped),HL
+;  133		
+;  134		tilemap.map         = tilemap_map;
 	LD	BC,_tilemap_map
-	LD	(IX+-19),BC
-;   95	    tilemap.tiles       = tileset_tiles;
+	LD	(_tilemap),BC
+;  135	    tilemap.tiles       = tileset_tiles;
 	LD	BC,_tileset_tiles_data
-	LD	(IX+-16),BC
-;   96	    tilemap.type_width  = gfx_tile_16_pixel;
-	LD	(IX+-9),4
-;   97	    tilemap.type_height = gfx_tile_16_pixel;
-	LD	(IX+-8),4
-;   98	    tilemap.tile_height = TILE_HEIGHT;
-	LD	(IX+-13),16
-;   99	    tilemap.tile_width  = TILE_WIDTH;
-	LD	(IX+-12),16
-;  100	    tilemap.draw_height = TILEMAP_DRAW_HEIGHT;
-	LD	(IX+-11),15
-;  101	    tilemap.draw_width  = TILEMAP_DRAW_WIDTH;
-	LD	(IX+-10),20
-;  102	    tilemap.height      = TILEMAP_HEIGHT;
-	LD	(IX+-7),120
-;  103	    tilemap.width       = TILEMAP_WIDTH;
-	LD	(IX+-6),160
-;  104	    tilemap.y_loc       = Y_OFFSET;
-	LD	(IX+-5),0
-;  105	    tilemap.x_loc       = X_OFFSET;
+	LD	(_tilemap+3),BC
+;  136	    tilemap.type_width  = gfx_tile_16_pixel;
+	LD	A,4
+	LD	(_tilemap+10),A
+;  137	    tilemap.type_height = gfx_tile_16_pixel;
+	LD	(_tilemap+11),A
+;  138	    tilemap.tile_height = TILE_HEIGHT;
+	LD	A,16
+	LD	(_tilemap+6),A
+;  139	    tilemap.tile_width  = TILE_WIDTH;
+	LD	(_tilemap+7),A
+;  140	    tilemap.draw_height = TILEMAP_DRAW_HEIGHT;
+	LD	A,15
+	LD	(_tilemap+8),A
+;  141	    tilemap.draw_width  = TILEMAP_DRAW_WIDTH;
+	LD	A,20
+	LD	(_tilemap+9),A
+;  142	    tilemap.height      = TILEMAP_HEIGHT;
+	LD	A,120
+	LD	(_tilemap+12),A
+;  143	    tilemap.width       = TILEMAP_WIDTH;
+	LD	A,160
+	LD	(_tilemap+13),A
+;  144	    tilemap.y_loc       = Y_OFFSET;
+	XOR	A,A
+	LD	(_tilemap+14),A
+;  145	    tilemap.x_loc       = X_OFFSET;
 	LD	BC,0
-	LD	(IX+-4),BC
-;  106		
-;  107		gfx_Begin();
+	LD	(_tilemap+15),BC
+;  146		
+;  147		gfx_Begin();
 	CALL	_gfx_Begin
-;  108		
-;  109		gfx_SetPalette(global_palette, sizeof_global_palette, 0);
+;  148		
+;  149		gfx_SetPalette(global_palette, sizeof_global_palette, 0);
 	LD	BC,0
 	PUSH	BC
-	LD	BC,262
+	LD	BC,272
 	PUSH	BC
 	LD	BC,_global_palette
 	PUSH	BC
@@ -367,40 +526,40 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;  110		gfx_SetTransparentColor(TRANSPARENT);
+;  150		gfx_SetTransparentColor(TRANSPARENT);
 	LD	BC,0
 	PUSH	BC
 	CALL	_gfx_SetTransparentColor
 	POP	BC
-;  111	    gfx_SetColor(WHITE);
+;  151	    gfx_SetColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetColor
 	POP	BC
-;  112		
-;  113		gfx_SetDrawBuffer();
+;  152		
+;  153		gfx_SetDrawBuffer();
 	LD	BC,1
 	PUSH	BC
 	CALL	_gfx_SetDraw
 	POP	BC
-;  114		
-;  115		gfx_SetMonospaceFont(8);
+;  154		
+;  155		gfx_SetMonospaceFont(8);
 	LD	BC,8
 	PUSH	BC
 	CALL	_gfx_SetMonospaceFont
 	POP	BC
-;  116		gfx_SetTextFGColor(BLACK);
+;  156		gfx_SetTextFGColor(BLACK);
 	LD	BC,1
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  117	    gfx_SetTextBGColor(WHITE);
+;  157	    gfx_SetTextBGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  118		
-;  119		gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
+;  158		
+;  159		gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
@@ -411,12 +570,13 @@ _main:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  120		gfx_PrintStringXY(version, 296, 232);
+;  160		gfx_PrintStringXY(version, 296, 232);
 	LD	BC,232
 	PUSH	BC
 	LD	BC,296
@@ -427,21 +587,22 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;  121		gfx_SwapDraw();
+;  161		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  122		
-;  123		delay(2000);
+;  162		
+;  163		delay(2000);
 	LD	BC,2000
 	PUSH	BC
 	CALL	_delay
 	POP	BC
-;  124		
-;  125		//---------------------------------------------------------------
-;  126		
-;  127		//start screen
-;  128		startScreen:
-;  129		
-;  130		gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
+;  164		
+;  165		//---------------------------------------------------------------
+;  166		
+;  167		//start screen
+;  168		startScreen:
+L_2:
+;  169		
+;  170		gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
@@ -452,29 +613,30 @@ _main:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  131		gfx_SetTextFGColor(BLACK);
+;  171		gfx_SetTextFGColor(BLACK);
 	LD	BC,1
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  132	    gfx_SetTextBGColor(WHITE);
+;  172	    gfx_SetTextBGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  133		gfx_SetTextScale(1, 1);
+;  173		gfx_SetTextScale(1, 1);
 	LD	BC,1
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  134		gfx_PrintStringXY("Press [2nd] to start...", 78, 200);
+;  174		gfx_PrintStringXY("Press [2nd] to start...", 78, 200);
 	LD	BC,200
 	PUSH	BC
 	LD	BC,78
@@ -485,7 +647,7 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;  135		gfx_PrintStringXY(version, 296, 232);
+;  175		gfx_PrintStringXY(version, 296, 232);
 	LD	BC,232
 	PUSH	BC
 	LD	BC,296
@@ -496,9 +658,9 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;  136		gfx_SwapDraw();
+;  176		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  137		while(os_GetCSC() != sk_2nd);
+;  177		while(os_GetCSC() != sk_2nd);
 L_4:
 	CALL	_os_GetCSC
 	UEXT	HL
@@ -507,24 +669,24 @@ L_4:
 	LD	BC,54
 	SBC	HL,BC
 	JR	NZ,L_4
-;  138		
-;  139		//---------------------------------------------------------------
-;  140		
-;  141		//main menu
-;  142		mainMenu:
+;  178		
+;  179		//---------------------------------------------------------------
+;  180		
+;  181		//main menu
+;  182		mainMenu:
 L_5:
-;  143		
-;  144		selection = 0;
+;  183		
+;  184		selection = 0;
 	LD	BC,0
 	LD	(_selection),BC
-;  145		selecting = 1;
+;  185		selecting = 1;
 	LD	BC,1
 	LD	(_selecting),BC
-;  146		while(selecting)
-	JR	L_23
-L_24:
-;  147		{
-;  148			gfx_Tilemap(&tilemap, getXBlock(1), getYBlock(0));
+;  186		while(selecting)
+	JR	L_25
+L_26:
+;  187		{
+;  188			gfx_Tilemap(&tilemap, getXBlock(1), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
@@ -535,145 +697,137 @@ L_24:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  149			gfx_SetTextBGColor(WHITE);
+;  189			gfx_SetTextBGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  150			gfx_SetTextScale(1, 1);
+;  190			gfx_SetTextScale(1, 1);
 	LD	BC,1
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  151			
-;  152			key = os_GetCSC();
+;  191			
+;  192			key = os_GetCSC();
 	CALL	_os_GetCSC
-	LD	(IX+-1),A
-;  153			if(key == sk_2nd)
+;  193			if(key == sk_2nd)
 	CP	A,54
-	JR	NZ,L_15
-;  154			{
-;  155				selecting = 0;
+	LD	(_key),A
+	JR	NZ,L_17
+;  194			{
+;  195				selecting = 0;
 	LD	BC,0
 	LD	(_selecting),BC
-;  156			}
-;  157			else if(key == sk_Up && selection != 0)
-	JR	L_18
-L_15:
-	LD	A,(IX+-1)
+;  196			}
+;  197			else if(key == sk_Clear)
+	JR	L_20
+L_17:
+	LD	A,(_key)
+	CP	A,15
+	JR	Z,L_2
+;  198			{
+;  199				goto startScreen;
+;  200			}
+;  201			else if(key == sk_Up && selection != 0)
+	LD	A,(_key)
 	CP	A,4
 	JR	NZ,L_13
 	LD	HL,(_selection)
 	CALL	__icmpzero
 	JR	Z,L_13
-;  158			{
-;  159				selection--;
+;  202			{
+;  203				selection--;
 	LD	BC,(_selection)
 	DEC	BC
 	LD	(_selection),BC
-;  160			}
-;  161			else if(key == sk_Down && selection != 1)
-	JR	L_18
+;  204			}
+;  205			else if(key == sk_Down && selection != 1)
+	JR	L_20
 L_13:
-	LD	A,(IX+-1)
+	LD	A,(_key)
 	CP	A,1
-	JR	NZ,L_18
+	JR	NZ,L_20
 	LD	BC,1
 	LD	HL,(_selection)
 	OR	A,A
 	SBC	HL,BC
-	JR	Z,L_18
-;  162			{
-;  163				selection++;
+	JR	Z,L_20
+;  206			{
+;  207				selection++;
 	LD	BC,(_selection)
 	INC	BC
 	LD	(_selection),BC
-;  164			}
-L_18:
-;  165			
-;  166			if(selection == 0)
+;  208			}
+L_20:
+;  209			
+;  210			if(selection == 0)
 	LD	HL,(_selection)
 	CALL	__icmpzero
-	JR	NZ,L_17
-;  167			{
-;  168				gfx_SetTextFGColor(RED);
+	JR	NZ,L_19
+;  211			{
+;  212				gfx_SetTextFGColor(RED);
 	LD	BC,224
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  169			}
-;  170			else
-	JR	L_19
-L_17:
-;  171			{
-;  172				gfx_SetTextFGColor(BLACK);
+;  213			}
+;  214			else
+	JR	L_21
+L_19:
+;  215			{
+;  216				gfx_SetTextFGColor(BLACK);
 	LD	BC,1
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  173			}
-L_19:
-;  174			gfx_PrintStringXY("Singleplayer", 112, 68);
+;  217			}
+L_21:
+;  218			gfx_PrintStringXY("Singleplayer", 112, 68);
 	LD	BC,68
 	PUSH	BC
 	LD	BC,112
 	PUSH	BC
-	LD	BC,L__10
+	LD	BC,L__11
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  175			if(selection == 1)
+;  219			if(selection == 1)
 	LD	BC,1
 	LD	HL,(_selection)
 	OR	A,A
 	SBC	HL,BC
-	JR	NZ,L_21
-;  176			{
-;  177				gfx_SetTextFGColor(RED);
+	JR	NZ,L_23
+;  220			{
+;  221				gfx_SetTextFGColor(RED);
 	LD	BC,224
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  178			}
-;  179			else
-	JR	L_22
-L_21:
-;  180			{
-;  181				gfx_SetTextFGColor(BLACK);
+;  222			}
+;  223			else
+	JR	L_24
+L_23:
+;  224			{
+;  225				gfx_SetTextFGColor(BLACK);
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  182			}
-L_22:
-;  183			gfx_PrintStringXY("Quit game", 124, 100);
+;  226			}
+L_24:
+;  227			gfx_PrintStringXY("Quit game", 124, 100);
 	LD	BC,100
 	PUSH	BC
 	LD	BC,124
-	PUSH	BC
-	LD	BC,L__12
-	PUSH	BC
-	CALL	_gfx_PrintStringXY
-	POP	BC
-	POP	BC
-	POP	BC
-;  184			gfx_SetTextFGColor(BLACK);
-	LD	BC,1
-	PUSH	BC
-	CALL	_gfx_SetTextFGColor
-	POP	BC
-;  185			gfx_PrintStringXY("Star it on GitHub!", 90, 220);
-	LD	BC,220
-	PUSH	BC
-	LD	BC,90
 	PUSH	BC
 	LD	BC,L__13
 	PUSH	BC
@@ -681,60 +835,76 @@ L_22:
 	POP	BC
 	POP	BC
 	POP	BC
-;  186			
-;  187			gfx_SwapDraw();
+;  228			gfx_SetTextFGColor(BLACK);
+	LD	BC,1
+	PUSH	BC
+	CALL	_gfx_SetTextFGColor
+	POP	BC
+;  229			gfx_PrintStringXY("Star it on GitHub!", 90, 220);
+	LD	BC,220
+	PUSH	BC
+	LD	BC,90
+	PUSH	BC
+	LD	BC,L__14
+	PUSH	BC
+	CALL	_gfx_PrintStringXY
+	POP	BC
+	POP	BC
+	POP	BC
+;  230			
+;  231			gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  188		}
-L_23:
+;  232		}
+L_25:
 	LD	HL,(_selecting)
 	CALL	__icmpzero
-	JR	NZ,L_24
-;  189		
-;  190		switch(selection)
+	JR	NZ,L_26
+;  233		
+;  234		switch(selection)
 	LD	HL,(_selection)
 	CALL	__case8
-L__15:
+L__16:
 	DW	2
 	DB	0
-	DW24	L_25	
+	DW24	L_27	
 
 	DB	1
-	DW24	L_28	
-
 	DW24	L_30	
 
-;  191		{
-;  192			case 0:
-L_25:
-;  193				players = 1;
+	DW24	L_32	
+
+;  235		{
+;  236			case 0:
+L_27:
+;  237				players = 1;
 	LD	BC,1
 	LD	(_players),BC
-;  194				goto mapSelector;
-L_26:
-;  195				break;
-;  196			case 1:
-;  197				goto quitGame;
-;  198				break;
-;  199		}
-;  200		
-;  201		goto error;
-;  202		
-;  203		//---------------------------------------------------------------
-;  204		
-;  205		//map selector
-;  206		mapSelector:
-;  207		
-;  208		selection = 0;
+;  238				goto mapSelector;
+L_28:
+;  239				break;
+;  240			case 1:
+;  241				goto quitGame;
+;  242				break;
+;  243		}
+;  244		
+;  245		goto error;
+;  246		
+;  247		//---------------------------------------------------------------
+;  248		
+;  249		//map selector
+;  250		mapSelector:
+;  251		
+;  252		selection = 0;
 	LD	BC,0
 	LD	(_selection),BC
-;  209		selecting = 1;
+;  253		selecting = 1;
 	LD	BC,1
 	LD	(_selecting),BC
-;  210		while(selecting)
-	JR	L_47
-L_48:
-;  211		{
-;  212			gfx_Tilemap(&tilemap, getXBlock(2), getYBlock(0));
+;  254		while(selecting)
+	JR	L_49
+L_50:
+;  255		{
+;  256			gfx_Tilemap(&tilemap, getXBlock(2), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
@@ -745,109 +915,110 @@ L_48:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  213			gfx_SetTextFGColor(WHITE);
+;  257			gfx_SetTextFGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  214			gfx_SetTextBGColor(BLACK);
+;  258			gfx_SetTextBGColor(BLACK);
 	LD	BC,1
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  215			gfx_SetTextScale(2, 2);
+;  259			gfx_SetTextScale(2, 2);
 	LD	BC,2
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  216			gfx_PrintStringXY("Select a map:", 62, 10);
+;  260			gfx_PrintStringXY("Select a map:", 62, 10);
 	LD	BC,10
 	PUSH	BC
 	LD	BC,62
 	PUSH	BC
-	LD	BC,L__16
+	LD	BC,L__17
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  217			
-;  218			key = os_GetCSC();
+;  261			
+;  262			key = os_GetCSC();
 	CALL	_os_GetCSC
-	LD	(IX+-1),A
-;  219			if(key == sk_2nd)
+;  263			if(key == sk_2nd)
 	CP	A,54
-	JR	NZ,L_42
-;  220			{
-;  221				selecting = 0;
+	LD	(_key),A
+	JR	NZ,L_44
+;  264			{
+;  265				selecting = 0;
 	LD	BC,0
 	LD	(_selecting),BC
-;  222			}
-;  223			else if(key == sk_Clear)
-	JR	L_45
-L_42:
-	LD	A,(IX+-1)
+;  266			}
+;  267			else if(key == sk_Clear)
+	JR	L_47
+L_44:
+	LD	A,(_key)
 	CP	A,15
 	JR	Z,L_5
-;  224			{
-;  225				goto mainMenu;
-;  226			}
-;  227			else if(key == sk_Left && selection != 0)
-	LD	A,(IX+-1)
+;  268			{
+;  269				goto mainMenu;
+;  270			}
+;  271			else if(key == sk_Left && selection != 0)
+	LD	A,(_key)
 	CP	A,2
-	JR	NZ,L_38
+	JR	NZ,L_40
 	LD	HL,(_selection)
 	CALL	__icmpzero
-	JR	Z,L_38
-;  228			{
-;  229				selection--;
+	JR	Z,L_40
+;  272			{
+;  273				selection--;
 	LD	BC,(_selection)
 	DEC	BC
 	LD	(_selection),BC
-;  230			}
-;  231			else if(key == sk_Right && selection != 1)
-	JR	L_45
-L_38:
-	LD	A,(IX+-1)
+;  274			}
+;  275			else if(key == sk_Right && selection != 1)
+	JR	L_47
+L_40:
+	LD	A,(_key)
 	CP	A,3
-	JR	NZ,L_45
+	JR	NZ,L_47
 	LD	BC,1
 	LD	HL,(_selection)
 	OR	A,A
 	SBC	HL,BC
-	JR	Z,L_45
-;  232			{
-;  233				selection++;
+	JR	Z,L_47
+;  276			{
+;  277				selection++;
 	LD	BC,(_selection)
 	INC	BC
 	LD	(_selection),BC
-;  234			}
-L_45:
-;  235			
-;  236			switch(selection)
+;  278			}
+L_47:
+;  279			
+;  280			switch(selection)
 	LD	HL,(_selection)
 	CALL	__case8
-L__23:
+L__24:
 	DW	2
 	DB	0
-	DW24	L_43	
+	DW24	L_45	
 
 	DB	1
-	DW24	L_44	
-
 	DW24	L_46	
 
-;  237			{
-;  238				case 0:
-L_43:
-;  239					gfx_TransparentSprite(mapHighlighter, 32, 64);
+	DW24	L_48	
+
+;  281			{
+;  282				case 0:
+L_45:
+;  283					gfx_TransparentSprite(mapHighlighter, 32, 64);
 	LD	BC,64
 	PUSH	BC
 	LD	BC,32
@@ -858,11 +1029,11 @@ L_43:
 	POP	BC
 	POP	BC
 	POP	BC
-;  240					break;
-	JR	L_46
-;  241				case 1:
-L_44:
-;  242					gfx_TransparentSprite(mapHighlighter, 96, 64);
+;  284					break;
+	JR	L_48
+;  285				case 1:
+L_46:
+;  286					gfx_TransparentSprite(mapHighlighter, 96, 64);
 	LD	BC,64
 	PUSH	BC
 	LD	BC,96
@@ -873,82 +1044,82 @@ L_44:
 	POP	BC
 	POP	BC
 	POP	BC
-;  243					break;
-;  244			}
-L_46:
-;  245			gfx_SwapDraw();
+;  287					break;
+;  288			}
+L_48:
+;  289			gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  246		}
-L_47:
+;  290		}
+L_49:
 	LD	HL,(_selecting)
 	CALL	__icmpzero
-	JR	NZ,L_48
-;  247		map = selection;
+	JR	NZ,L_50
+;  291		map = selection;
 	LD	BC,(_selection)
 	LD	(_map),BC
-;  248		switch(map)
-	LD	HL,(_map)
-	CALL	__case8
-L__25:
-	DW	2
-	DB	0
-	DW24	L_50	
-
-	DB	1
-	DW24	L_53	
-
-	DW24	L_52	
-
-;  249		{
-;  250			case 0:
-L_50:
-;  251				mapXBlock = 3;
-	LD	BC,3
-	LD	(_mapXBlock),BC
-;  252				mapYBlock = 0;
-	LD	BC,0
-	LD	(_mapYBlock),BC
-;  253				break;
-;  254			case 1:
-;  255				break;
-;  256		}
-L_53:
-;  257		
-;  258		goto characterSelector;
-L_52:
-;  259		
-;  260		//---------------------------------------------------------------
-;  261		
-;  262		//character selector
-;  263		characterSelector:
-;  264		
-;  265		selection = 0;
-	LD	(_selection),BC
-;  266		selecting = 1;
-	LD	BC,1
-	LD	(_selecting),BC
-;  267		
-;  268		while(selecting)
-	JR	L_78
-L_79:
-;  269		{
-;  270			switch(map)
+;  292		switch(map)
 	LD	HL,(_map)
 	CALL	__case8
 L__26:
 	DW	2
 	DB	0
-	DW24	L_54	
+	DW24	L_52	
 
 	DB	1
-	DW24	L_30	
+	DW24	L_55	
 
+	DW24	L_54	
+
+;  293		{
+;  294			case 0:
+L_52:
+;  295				mapXBlock = 3;
+	LD	BC,3
+	LD	(_mapXBlock),BC
+;  296				mapYBlock = 0;
+	LD	BC,0
+	LD	(_mapYBlock),BC
+;  297				break;
+;  298			case 1:
+;  299				break;
+;  300		}
+L_55:
+;  301		
+;  302		goto characterSelector;
+L_54:
+;  303		
+;  304		//---------------------------------------------------------------
+;  305		
+;  306		//character selector
+;  307		characterSelector:
+;  308		
+;  309		selection = 0;
+	LD	(_selection),BC
+;  310		selecting = 1;
+	LD	BC,1
+	LD	(_selecting),BC
+;  311		
+;  312		while(selecting)
+	JR	L_80
+L_81:
+;  313		{
+;  314			switch(map)
+	LD	HL,(_map)
+	CALL	__case8
+L__27:
+	DW	2
+	DB	0
 	DW24	L_56	
 
-;  271			{
-;  272				case 0:
-L_54:
-;  273					gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+	DB	1
+	DW24	L_32	
+
+	DW24	L_58	
+
+;  315			{
+;  316				case 0:
+L_56:
+;  317					gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 	LD	BC,(_mapYBlock)
 	PUSH	BC
 	CALL	_getYBlock
@@ -959,23 +1130,24 @@ L_54:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  274					break;
-;  275				case 1:
-;  276					goto error;
-;  277					break;
-;  278			}
-L_56:
-;  279			gfx_SetColor(GRAY);
+;  318					break;
+;  319				case 1:
+;  320					goto error;
+;  321					break;
+;  322			}
+L_58:
+;  323			gfx_SetColor(GRAY);
 	LD	BC,3
 	PUSH	BC
 	CALL	_gfx_SetColor
 	POP	BC
-;  280			gfx_FillRectangle(0, 70, 320, 105);
+;  324			gfx_FillRectangle(0, 70, 320, 105);
 	LD	BC,105
 	PUSH	BC
 	LD	BC,320
@@ -989,35 +1161,35 @@ L_56:
 	POP	BC
 	POP	BC
 	POP	BC
-;  281			gfx_SetTextFGColor(WHITE);
+;  325			gfx_SetTextFGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  282			gfx_SetTextBGColor(GRAY);
+;  326			gfx_SetTextBGColor(GRAY);
 	LD	BC,3
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  283			gfx_SetTextScale(2, 2);
+;  327			gfx_SetTextScale(2, 2);
 	LD	BC,2
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  284			gfx_PrintStringXY("Select a character:", 10, 76);
+;  328			gfx_PrintStringXY("Select a character:", 10, 76);
 	LD	BC,76
 	PUSH	BC
 	LD	BC,10
 	PUSH	BC
-	LD	BC,L__27
+	LD	BC,L__28
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  285			gfx_TransparentSprite(characterHighlighter, 138, 100);
+;  329			gfx_TransparentSprite(characterHighlighter, 138, 100);
 	LD	BC,100
 	PUSH	BC
 	LD	BC,138
@@ -1028,106 +1200,106 @@ L_56:
 	POP	BC
 	POP	BC
 	POP	BC
-;  286			
-;  287			key = os_GetCSC();
+;  330			
+;  331			key = os_GetCSC();
 	CALL	_os_GetCSC
-	LD	(IX+-1),A
-;  288			if(key == sk_2nd)
+;  332			if(key == sk_2nd)
 	CP	A,54
-	JR	NZ,L_73
-;  289			{
-;  290				selecting = 0;
+	LD	(_key),A
+	JR	NZ,L_75
+;  333			{
+;  334				selecting = 0;
 	LD	BC,0
 	LD	(_selecting),BC
-;  291			}
-;  292			else if(key == sk_Clear)
-	JR	L_76
-L_73:
-	LD	A,(IX+-1)
+;  335			}
+;  336			else if(key == sk_Clear)
+	JR	L_78
+L_75:
+	LD	A,(_key)
 	CP	A,15
-	JR	Z,L_26
-;  293			{
-;  294				goto mapSelector;
-;  295			}
-;  296			else if(key == sk_Left && selection != 0)
-	LD	A,(IX+-1)
+	JR	Z,L_28
+;  337			{
+;  338				goto mapSelector;
+;  339			}
+;  340			else if(key == sk_Left && selection != 0)
+	LD	A,(_key)
+	CP	A,2
+	JR	NZ,L_71
+	LD	HL,(_selection)
+	CALL	__icmpzero
+	JR	Z,L_71
+;  341			{
+;  342				selection--;
+	LD	BC,(_selection)
+	DEC	BC
+	LD	(_selection),BC
+;  343			}
+;  344			else if(key == sk_Left && selection == 0)
+	JR	L_78
+L_71:
+	LD	A,(_key)
 	CP	A,2
 	JR	NZ,L_69
 	LD	HL,(_selection)
 	CALL	__icmpzero
-	JR	Z,L_69
-;  297			{
-;  298				selection--;
-	LD	BC,(_selection)
-	DEC	BC
-	LD	(_selection),BC
-;  299			}
-;  300			else if(key == sk_Left && selection == 0)
-	JR	L_76
-L_69:
-	LD	A,(IX+-1)
-	CP	A,2
-	JR	NZ,L_67
-	LD	HL,(_selection)
-	CALL	__icmpzero
-	JR	NZ,L_67
-;  301			{
-;  302				selection = 1;
+	JR	NZ,L_69
+;  345			{
+;  346				selection = 1;
 	LD	BC,1
 	LD	(_selection),BC
-;  303			}
-;  304			else if(key == sk_Right && selection != 1)
-	JR	L_76
-L_67:
-	LD	A,(IX+-1)
+;  347			}
+;  348			else if(key == sk_Right && selection != 1)
+	JR	L_78
+L_69:
+	LD	A,(_key)
 	CP	A,3
-	JR	NZ,L_65
+	JR	NZ,L_67
 	LD	BC,1
 	LD	HL,(_selection)
 	OR	A,A
 	SBC	HL,BC
-	JR	Z,L_65
-;  305			{
-;  306				selection++;
+	JR	Z,L_67
+;  349			{
+;  350				selection++;
 	LD	BC,(_selection)
 	INC	BC
 	LD	(_selection),BC
-;  307			}
-;  308			else if(key == sk_Right && selection == 1)
-	JR	L_76
-L_65:
-	LD	A,(IX+-1)
+;  351			}
+;  352			else if(key == sk_Right && selection == 1)
+	JR	L_78
+L_67:
+	LD	A,(_key)
 	CP	A,3
-	JR	NZ,L_76
+	JR	NZ,L_78
 	LD	BC,1
 	LD	HL,(_selection)
 	OR	A,A
 	SBC	HL,BC
-	JR	NZ,L_76
-;  309			{
-;  310				selection = 0;
+	JR	NZ,L_78
+;  353			{
+;  354				selection = 0;
 	LD	BC,0
 	LD	(_selection),BC
-;  311			}
-L_76:
-;  312			
-;  313			switch(selection)
+;  355			}
+L_78:
+;  356			
+;  357			switch(selection)
 	LD	HL,(_selection)
 	CALL	__case8
-L__38:
+L__39:
 	DW	2
 	DB	0
-	DW24	L_74	
+	DW24	L_76	
 
 	DB	1
-	DW24	L_75	
-
 	DW24	L_77	
 
-;  314			{
-;  315				case 0:
-L_74:
-;  316					gfx_TransparentSprite(character1, 77, 108);
+	DW24	L_79	
+
+;  358			{
+;  359				case 0:
+L_76:
+;  360					gfx_TransparentSprite(character1, 77, 108);
 	LD	BC,108
 	PUSH	BC
 	LD	BC,77
@@ -1138,7 +1310,7 @@ L_74:
 	POP	BC
 	POP	BC
 	POP	BC
-;  317					gfx_TransparentSprite(character0, 146, 108);
+;  361					gfx_TransparentSprite(character0, 146, 108);
 	LD	BC,108
 	PUSH	BC
 	LD	BC,146
@@ -1149,7 +1321,7 @@ L_74:
 	POP	BC
 	POP	BC
 	POP	BC
-;  318					gfx_TransparentSprite(character1, 215, 108);
+;  362					gfx_TransparentSprite(character1, 215, 108);
 	LD	BC,108
 	PUSH	BC
 	LD	BC,215
@@ -1160,328 +1332,427 @@ L_74:
 	POP	BC
 	POP	BC
 	POP	BC
-;  319					break;
-	JR	L_77
-;  320				case 1:
-L_75:
-;  321					gfx_TransparentSprite(character0, 77, 108);
-	LD	BC,108
-	PUSH	BC
-	LD	BC,77
-	PUSH	BC
-	LD	BC,_character0_data
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  322					gfx_TransparentSprite(character1, 146, 108);
-	LD	BC,108
-	PUSH	BC
-	LD	BC,146
-	PUSH	BC
-	LD	BC,_character1_data
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  323					gfx_TransparentSprite(character0, 215, 108);
-	LD	BC,108
-	PUSH	BC
-	LD	BC,215
-	PUSH	BC
-	LD	BC,_character0_data
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  324					break;
-;  325			}
+;  363					break;
+	JR	L_79
+;  364				case 1:
 L_77:
-;  326			
-;  327			gfx_SwapDraw();
+;  365					gfx_TransparentSprite(character0, 77, 108);
+	LD	BC,108
+	PUSH	BC
+	LD	BC,77
+	PUSH	BC
+	LD	BC,_character0_data
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  366					gfx_TransparentSprite(character1, 146, 108);
+	LD	BC,108
+	PUSH	BC
+	LD	BC,146
+	PUSH	BC
+	LD	BC,_character1_data
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  367					gfx_TransparentSprite(character0, 215, 108);
+	LD	BC,108
+	PUSH	BC
+	LD	BC,215
+	PUSH	BC
+	LD	BC,_character0_data
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  368					break;
+;  369			}
+L_79:
+;  370			
+;  371			gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  328		}
-L_78:
+;  372		}
+L_80:
 	LD	HL,(_selecting)
 	CALL	__icmpzero
-	JR	NZ,L_79
-;  329		player1CharacterSelection = selection;
+	JR	NZ,L_81
+;  373		player1CharacterSelection = selection;
 	LD	BC,(_selection)
 	LD	(_player1CharacterSelection),BC
-;  330		
-;  331		goto prepareFight;
-;  332		
-;  333		//---------------------------------------------------------------
-;  334		
-;  335		//prepareFight
-;  336		prepareFight:
-;  337		
-;  338		fighting = 1;
+;  374		
+;  375		goto prepareFight;
+;  376		
+;  377		//---------------------------------------------------------------
+;  378		
+;  379		//prepareFight
+;  380		prepareFight:
+;  381		
+;  382		fighting = 1;
 	LD	BC,1
 	LD	(_fighting),BC
-;  339		player1Flipped = 0;
+;  383		player1Flipped = 0;
 	LD	BC,0
 	LD	(_player1Flipped),BC
-;  340		player1MoveAnimation = 0;
+;  384		player1MoveAnimation = 0;
 	LD	(_player1MoveAnimation),BC
-;  341		player1Jumping = 0;
+;  385		player1Jumping = 0;
 	LD	(_player1Jumping),BC
-;  342		player1ShieldActive = 0;
+;  386		player1Grounded = 1;
+	LD	BC,1
+	LD	(_player1Grounded),BC
+;  387		player1ShieldActive = 0;
+	LD	BC,0
 	LD	(_player1ShieldActive),BC
-;  343		player1Lifes = 3;
+;  388		player1Lifes = 3;
 	LD	BC,3
 	LD	(_player1Lifes),BC
-;  344		player2Flipped = 0;
-	LD	BC,0
+;  389		player2Flipped = 1;
+	LD	BC,1
 	LD	(_player2Flipped),BC
-;  345		player2MoveAnimation = 0;
+;  390		player2MoveAnimation = 0;
+	LD	BC,0
 	LD	(_player2MoveAnimation),BC
-;  346		player2Jumping = 0;
+;  391		player2Jumping = 0;
 	LD	(_player2Jumping),BC
-;  347		player2ShieldActive = 0;
+;  392		player2Grounded = 1;
+	LD	BC,1
+	LD	(_player2Grounded),BC
+;  393		player2ShieldActive = 0;
+	LD	BC,0
 	LD	(_player2ShieldActive),BC
-;  348		player2Lifes = 3;
+;  394		player2Lifes = 3;
 	LD	BC,3
 	LD	(_player2Lifes),BC
-;  349		switch(map)
+;  395		switch(map)
 	LD	HL,(_map)
 	CALL	__case8
-L__40:
+L__41:
 	DW	2
 	DB	0
-	DW24	L_82	
-
-	DB	1
-	DW24	L_90	
-
-	DW24	L_90	
-
-;  350		{
-;  351			case 0:
-L_82:
-;  352				player1X = 100;
-	LD	BC,100
-	LD	(_player1X),BC
-;  353				player1Y = 100;
-	LD	(_player1Y),BC
-;  354				if(players == 1)
-	LD	HL,(_players)
-	LD	BC,1
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_85
-;  355				{
-;  356					player2IsAi = 1;
-	LD	(_player2IsAi),BC
-;  357				}
-;  358				else if(players == 2)
-	JR	L_86
-L_85:
-	LD	BC,2
-	LD	HL,(_players)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_86
-;  359				{
-;  360					player2IsAi = 0;
-	LD	BC,0
-	LD	(_player2IsAi),BC
-;  361				}
-L_86:
-;  362				player2X = 200;
-	LD	BC,200
-	LD	(_player2X),BC
-;  363				player2Y = 200;
-	LD	(_player2Y),BC
-;  364				break;
-;  365			case 1:
-;  366				break;
-;  367		}
-L_90:
-;  368		
-;  369		switch(player1CharacterSelection)
-	LD	HL,(_player1CharacterSelection)
-	CALL	__case8
-L__43:
-	DW	2
-	DB	0
-	DW24	L_88	
-
-	DB	1
-	DW24	L_89	
-
-	DW24	L_93	
-
-;  370		{
-;  371			case 0:
-L_88:
-;  372				player1Character = character0;
-	LD	BC,_character0_data
-	LD	(IX+-59),BC
-;  373				player1CharacterMoving = character0Moving;
-	LD	BC,_character0Moving_data
-	LD	(IX+-26),BC
-;  374				player1CharacterJumping = character0Jumping;
-	LD	BC,_character0Jumping_data
-	LD	(IX+-29),BC
-;  375				gfx_FlipSpriteY(character0, player1CharacterFlipped);
-	LD	BC,(IX+-32)
-	PUSH	BC
-	LD	BC,_character0_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  376				gfx_FlipSpriteY(character0Moving, player1CharacterMovingFlipped);
-	LD	BC,(IX+-35)
-	PUSH	BC
-	LD	BC,_character0Moving_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  377				gfx_FlipSpriteY(character0Jumping, player1CharacterJumpingFlipped);
-	LD	BC,(IX+-38)
-	PUSH	BC
-	LD	BC,_character0Jumping_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  378				break;
-	JR	L_93
-;  379			case 1:
-L_89:
-;  380				player1Character = character1;
-	LD	BC,_character1_data
-	LD	(IX+-59),BC
-;  381				player1CharacterMoving = character1Moving;
-	LD	BC,_character1Moving_data
-	LD	(IX+-26),BC
-;  382				player1CharacterJumping = character1Jumping;
-	LD	BC,_character1Jumping_data
-	LD	(IX+-29),BC
-;  383				gfx_FlipSpriteY(character1, player1CharacterFlipped);
-	LD	BC,(IX+-32)
-	PUSH	BC
-	LD	BC,_character1_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  384				gfx_FlipSpriteY(character1Moving, player1CharacterMovingFlipped);
-	LD	BC,(IX+-35)
-	PUSH	BC
-	LD	BC,_character1Moving_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  385				gfx_FlipSpriteY(character1Jumping, player1CharacterJumpingFlipped);
-	LD	BC,(IX+-38)
-	PUSH	BC
-	LD	BC,_character1Jumping_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  386				break;
-;  387		}
-L_93:
-;  388		switch(player2CharacterSelection)
-	LD	HL,(_player2CharacterSelection)
-	CALL	__case8
-L__44:
-	DW	2
-	DB	0
-	DW24	L_91	
+	DW24	L_84	
 
 	DB	1
 	DW24	L_92	
 
+	DW24	L_92	
+
+;  396		{
+;  397			case 0:
+L_84:
+;  398				player1X = 80;
+	LD	BC,80
+	LD	(_player1X),BC
+;  399				player1Y = 132;
+	LD	BC,132
+	LD	(_player1Y),BC
+;  400				if(players == 1)
+	LD	HL,(_players)
+	LD	BC,1
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_87
+;  401				{
+;  402					player2IsAi = 1;
+	LD	(_player2IsAi),BC
+;  403				}
+;  404				else if(players == 2)
+	JR	L_88
+L_87:
+	LD	BC,2
+	LD	HL,(_players)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_88
+;  405				{
+;  406					player2IsAi = 0;
+	LD	BC,0
+	LD	(_player2IsAi),BC
+;  407				}
+L_88:
+;  408				player2X = 220;
+	LD	BC,220
+	LD	(_player2X),BC
+;  409				player2Y = 132;
+	LD	BC,132
+	LD	(_player2Y),BC
+;  410				break;
+;  411			case 1:
+;  412				break;
+;  413		}
+L_92:
+;  414		
+;  415		switch(player1CharacterSelection)
+	LD	HL,(_player1CharacterSelection)
+	CALL	__case8
+L__44:
+	DW	2
+	DB	0
+	DW24	L_90	
+
+	DB	1
+	DW24	L_91	
+
+	DW24	L_95	
+
+;  416		{
+;  417			case 0:
+L_90:
+;  418				player1Character = character0;
+	LD	BC,_character0_data
+	LD	(_player1Character),BC
+;  419				player1CharacterMoving1 = character0Moving1;
+	LD	BC,_character0Moving1_data
+	LD	(_player1CharacterMoving1),BC
+;  420				player1CharacterMoving2 = character0Moving2;
+	LD	BC,_character0Moving2_data
+	LD	(_player1CharacterMoving2),BC
+;  421				player1CharacterJumping = character0Jumping;
+	LD	BC,_character0Jumping_data
+	LD	(_player1CharacterJumping),BC
+;  422				gfx_FlipSpriteY(character0, player1CharacterFlipped);
+	LD	BC,(_player1CharacterFlipped)
+	PUSH	BC
+	LD	BC,_character0_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  423				gfx_FlipSpriteY(character0Moving1, player1CharacterMoving1Flipped);
+	LD	BC,(_player1CharacterMoving1Flipped)
+	PUSH	BC
+	LD	BC,_character0Moving1_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  424				gfx_FlipSpriteY(character0Moving2, player1CharacterMoving2Flipped);
+	LD	BC,(_player1CharacterMoving2Flipped)
+	PUSH	BC
+	LD	BC,_character0Moving2_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  425				gfx_FlipSpriteY(character0Jumping, player1CharacterJumpingFlipped);
+	LD	BC,(_player1CharacterJumpingFlipped)
+	PUSH	BC
+	LD	BC,_character0Jumping_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  426				player1MoveSpeed = 4;
+	LD	BC,4
+	LD	(_player1MoveSpeed),BC
+;  427				player1FallSpeed = 4;
+	LD	(_player1FallSpeed),BC
+;  428				player1JumpSpeed = 8;
+	LD	BC,8
+	LD	(_player1JumpSpeed),BC
+;  429				player1JumpHeight = 10;
+	LD	BC,10
+	LD	(_player1JumpHeight),BC
+;  430				break;
+	JR	L_95
+;  431			case 1:
+L_91:
+;  432				player1Character = character1;
+	LD	BC,_character1_data
+	LD	(_player1Character),BC
+;  433				player1CharacterMoving1 = character1Moving1;
+	LD	BC,_character1Moving1_data
+	LD	(_player1CharacterMoving1),BC
+;  434				player1CharacterMoving2 = character1Moving2;
+	LD	BC,_character1Moving2_data
+	LD	(_player1CharacterMoving2),BC
+;  435				player1CharacterJumping = character1Jumping;
+	LD	BC,_character1Jumping_data
+	LD	(_player1CharacterJumping),BC
+;  436				gfx_FlipSpriteY(character1, player1CharacterFlipped);
+	LD	BC,(_player1CharacterFlipped)
+	PUSH	BC
+	LD	BC,_character1_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  437				gfx_FlipSpriteY(character1Moving1, player1CharacterMoving1Flipped);
+	LD	BC,(_player1CharacterMoving1Flipped)
+	PUSH	BC
+	LD	BC,_character1Moving1_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  438				gfx_FlipSpriteY(character1Moving2, player1CharacterMoving2Flipped);
+	LD	BC,(_player1CharacterMoving2Flipped)
+	PUSH	BC
+	LD	BC,_character1Moving2_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  439				gfx_FlipSpriteY(character1Jumping, player1CharacterJumpingFlipped);
+	LD	BC,(_player1CharacterJumpingFlipped)
+	PUSH	BC
+	LD	BC,_character1Jumping_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  440				player1MoveSpeed = 8;
+	LD	BC,8
+	LD	(_player1MoveSpeed),BC
+;  441				player1FallSpeed = 4;
+	LD	BC,4
+	LD	(_player1FallSpeed),BC
+;  442				player1JumpSpeed = 4;
+	LD	(_player1JumpSpeed),BC
+;  443				player1JumpHeight = 12;
+	LD	BC,12
+	LD	(_player1JumpHeight),BC
+;  444				break;
+;  445		}
+L_95:
+;  446		switch(player2CharacterSelection)
+	LD	HL,(_player2CharacterSelection)
+	CALL	__case8
+L__45:
+	DW	2
+	DB	0
+	DW24	L_93	
+
+	DB	1
 	DW24	L_94	
 
-;  389		{
-;  390			case 0:
-L_91:
-;  391				player2Character = character0;
+	DW24	L_96	
+
+;  447		{
+;  448			case 0:
+L_93:
+;  449				player2Character = character0;
 	LD	BC,_character0_data
-	LD	(IX+-41),BC
-;  392				player2CharacterMoving = character0Moving;
-	LD	BC,_character0Moving_data
-	LD	(IX+-44),BC
-;  393				player2CharacterJumping = character0Jumping;
+	LD	(_player2Character),BC
+;  450				player2CharacterMoving1 = character0Moving1;
+	LD	BC,_character0Moving1_data
+	LD	(_player2CharacterMoving1),BC
+;  451				player2CharacterMoving2 = character0Moving2;
+	LD	BC,_character0Moving2_data
+	LD	(_player2CharacterMoving2),BC
+;  452				player2CharacterJumping = character0Jumping;
 	LD	BC,_character0Jumping_data
-	LD	(IX+-47),BC
-;  394				gfx_FlipSpriteY(character0, player2CharacterFlipped);
-	LD	BC,(IX+-50)
+	LD	(_player2CharacterJumping),BC
+;  453				gfx_FlipSpriteY(character0, player2CharacterFlipped);
+	LD	BC,(_player2CharacterFlipped)
 	PUSH	BC
 	LD	BC,_character0_data
 	PUSH	BC
 	CALL	_gfx_FlipSpriteY
 	POP	BC
 	POP	BC
-;  395				gfx_FlipSpriteY(character0Moving, player2CharacterMovingFlipped);
-	LD	BC,(IX+-53)
+;  454				gfx_FlipSpriteY(character0Moving1, player2CharacterMoving1Flipped);
+	LD	BC,(_player2CharacterMoving1Flipped)
 	PUSH	BC
-	LD	BC,_character0Moving_data
+	LD	BC,_character0Moving1_data
 	PUSH	BC
 	CALL	_gfx_FlipSpriteY
 	POP	BC
 	POP	BC
-;  396				gfx_FlipSpriteY(character0Jumping, player2CharacterJumpingFlipped);
-	LD	BC,(IX+-56)
+;  455				gfx_FlipSpriteY(character0Moving2, player2CharacterMoving2Flipped);
+	LD	BC,(_player2CharacterMoving2Flipped)
+	PUSH	BC
+	LD	BC,_character0Moving2_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  456				gfx_FlipSpriteY(character0Jumping, player2CharacterJumpingFlipped);
+	LD	BC,(_player2CharacterJumpingFlipped)
 	PUSH	BC
 	LD	BC,_character0Jumping_data
 	PUSH	BC
 	CALL	_gfx_FlipSpriteY
 	POP	BC
 	POP	BC
-;  397				break;
-	JR	L_94
-;  398			case 1:
-L_92:
-;  399				player2Character = character1;
-	LD	BC,_character1_data
-	LD	(IX+-41),BC
-;  400				player2CharacterMoving = character1Moving;
-	LD	BC,_character1Moving_data
-	LD	(IX+-44),BC
-;  401				player2CharacterJumping = character1Jumping;
-	LD	BC,_character1Jumping_data
-	LD	(IX+-47),BC
-;  402				gfx_FlipSpriteY(character1, player2CharacterFlipped);
-	LD	BC,(IX+-50)
-	PUSH	BC
-	LD	BC,_character1_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  403				gfx_FlipSpriteY(character1Moving, player2CharacterMovingFlipped);
-	LD	BC,(IX+-53)
-	PUSH	BC
-	LD	BC,_character1Moving_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  404				gfx_FlipSpriteY(character1Jumping, player2CharacterJumpingFlipped);
-	LD	BC,(IX+-56)
-	PUSH	BC
-	LD	BC,_character1Jumping_data
-	PUSH	BC
-	CALL	_gfx_FlipSpriteY
-	POP	BC
-	POP	BC
-;  405				break;
-;  406		}
+;  457				player2MoveSpeed = 4;
+	LD	BC,4
+	LD	(_player2MoveSpeed),BC
+;  458				player2FallSpeed = 4;
+	LD	(_player2FallSpeed),BC
+;  459				player2JumpSpeed = 8;
+	LD	BC,8
+	LD	(_player2JumpSpeed),BC
+;  460				player2JumpHeight = 10;
+	LD	BC,10
+	LD	(_player2JumpHeight),BC
+;  461				break;
+	JR	L_96
+;  462			case 1:
 L_94:
-;  407		
-;  408		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+;  463				player2Character = character1;
+	LD	BC,_character1_data
+	LD	(_player2Character),BC
+;  464				player2CharacterMoving1 = character1Moving1;
+	LD	BC,_character1Moving1_data
+	LD	(_player2CharacterMoving1),BC
+;  465				player2CharacterMoving2 = character1Moving2;
+	LD	BC,_character1Moving2_data
+	LD	(_player2CharacterMoving2),BC
+;  466				player2CharacterJumping = character1Jumping;
+	LD	BC,_character1Jumping_data
+	LD	(_player2CharacterJumping),BC
+;  467				gfx_FlipSpriteY(character1, player2CharacterFlipped);
+	LD	BC,(_player2CharacterFlipped)
+	PUSH	BC
+	LD	BC,_character1_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  468				gfx_FlipSpriteY(character1Moving1, player2CharacterMoving1Flipped);
+	LD	BC,(_player2CharacterMoving1Flipped)
+	PUSH	BC
+	LD	BC,_character1Moving1_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  469				gfx_FlipSpriteY(character1Moving2, player2CharacterMoving2Flipped);
+	LD	BC,(_player2CharacterMoving2Flipped)
+	PUSH	BC
+	LD	BC,_character1Moving2_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  470				gfx_FlipSpriteY(character1Jumping, player2CharacterJumpingFlipped);
+	LD	BC,(_player2CharacterJumpingFlipped)
+	PUSH	BC
+	LD	BC,_character1Jumping_data
+	PUSH	BC
+	CALL	_gfx_FlipSpriteY
+	POP	BC
+	POP	BC
+;  471				player2MoveSpeed = 8;
+	LD	BC,8
+	LD	(_player2MoveSpeed),BC
+;  472				player2FallSpeed = 4;
+	LD	BC,4
+	LD	(_player2FallSpeed),BC
+;  473				player2JumpSpeed = 4;
+	LD	(_player2JumpSpeed),BC
+;  474				player2JumpHeight = 12;
+	LD	BC,12
+	LD	(_player2JumpHeight),BC
+;  475				break;
+;  476		}
+L_96:
+;  477		
+;  478		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 	LD	BC,(_mapYBlock)
 	PUSH	BC
 	CALL	_getYBlock
@@ -1492,12 +1763,13 @@ L_94:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  409		gfx_TransparentSprite(counter3, 136, 104);
+;  479		gfx_TransparentSprite(counter3, 136, 104);
 	LD	BC,104
 	PUSH	BC
 	LD	BC,136
@@ -1508,14 +1780,14 @@ L_94:
 	POP	BC
 	POP	BC
 	POP	BC
-;  410		gfx_SwapDraw();
+;  480		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  411		delay(1000);
+;  481		delay(1000);
 	LD	BC,1000
 	PUSH	BC
 	CALL	_delay
 	POP	BC
-;  412		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+;  482		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 	LD	BC,(_mapYBlock)
 	PUSH	BC
 	CALL	_getYBlock
@@ -1526,12 +1798,13 @@ L_94:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  413		gfx_TransparentSprite(counter2, 136, 104);
+;  483		gfx_TransparentSprite(counter2, 136, 104);
 	LD	BC,104
 	PUSH	BC
 	LD	BC,136
@@ -1542,14 +1815,14 @@ L_94:
 	POP	BC
 	POP	BC
 	POP	BC
-;  414		gfx_SwapDraw();
+;  484		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  415		delay(1000);
+;  485		delay(1000);
 	LD	BC,1000
 	PUSH	BC
 	CALL	_delay
 	POP	BC
-;  416		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+;  486		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 	LD	BC,(_mapYBlock)
 	PUSH	BC
 	CALL	_getYBlock
@@ -1560,12 +1833,13 @@ L_94:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  417		gfx_TransparentSprite(counter1, 136, 104);
+;  487		gfx_TransparentSprite(counter1, 136, 104);
 	LD	BC,104
 	PUSH	BC
 	LD	BC,136
@@ -1576,14 +1850,14 @@ L_94:
 	POP	BC
 	POP	BC
 	POP	BC
-;  418		gfx_SwapDraw();
+;  488		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  419		delay(1000);
+;  489		delay(1000);
 	LD	BC,1000
 	PUSH	BC
 	CALL	_delay
 	POP	BC
-;  420		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+;  490		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 	LD	BC,(_mapYBlock)
 	PUSH	BC
 	CALL	_getYBlock
@@ -1594,12 +1868,13 @@ L_94:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  421		gfx_TransparentSprite(counterFight, 136, 104);
+;  491		gfx_TransparentSprite(counterFight, 136, 104);
 	LD	BC,104
 	PUSH	BC
 	LD	BC,136
@@ -1610,23 +1885,23 @@ L_94:
 	POP	BC
 	POP	BC
 	POP	BC
-;  422		gfx_SwapDraw();
+;  492		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  423		delay(1000);
+;  493		delay(1000);
 	LD	BC,1000
 	PUSH	BC
 	CALL	_delay
 	POP	BC
-;  424		
-;  425		goto fight;
-L_95:
-;  426		
-;  427		//---------------------------------------------------------------
-;  428		
-;  429		//fight
-;  430		fight:
-;  431		
-;  432		gfx_TransparentSprite(statusUi, 128, 208);
+;  494		
+;  495		goto fight;
+L_97:
+;  496		
+;  497		//---------------------------------------------------------------
+;  498		
+;  499		//fight
+;  500		fight:
+;  501		
+;  502		gfx_TransparentSprite(statusUi, 128, 208);
 	LD	BC,208
 	PUSH	BC
 	LD	BC,128
@@ -1637,12 +1912,12 @@ L_95:
 	POP	BC
 	POP	BC
 	POP	BC
-;  433		gfx_SetTextFGColor(BLACK);
+;  503		gfx_SetTextFGColor(BLACK);
 	LD	BC,1
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  434		gfx_SetTextBGColor(gfx_GetPixel(150, 224));
+;  504		gfx_SetTextBGColor(gfx_GetPixel(150, 224));
 	LD	BC,224
 	PUSH	BC
 	LD	BC,150
@@ -1655,12 +1930,12 @@ L_95:
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  435		
-;  436		while(fighting)
-	JR	L_151
-L_152:
-;  437		{
-;  438			gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+;  505		
+;  506		while(fighting)
+	JR	L_229
+L_230:
+;  507		{
+;  508			gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 	LD	BC,(_mapYBlock)
 	PUSH	BC
 	CALL	_getYBlock
@@ -1671,414 +1946,996 @@ L_152:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  439			
-;  440			key = os_GetCSC();
+;  509			
+;  510			key = os_GetCSC();
 	CALL	_os_GetCSC
-	LD	(IX+-1),A
-;  441			if(key == sk_2nd)
-;  442			{
-;  443				//jump
-;  444			}
-;  445			if(key == sk_Alpha)
-;  446			{
-;  447				//shoot
-;  448			}
-;  449			if(key == sk_Clear)
+;  511			if(key == sk_2nd)
+	CP	A,54
+	LD	(_key),A
+	JR	NZ,L_104
+;  512			{
+;  513				if(player1Grounded == 1)
+	LD	BC,1
+	LD	HL,(_player1Grounded)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_104
+;  514				{
+;  515					player1Jumping = player1JumpHeight;
+	LD	BC,(_player1JumpHeight)
+	LD	(_player1Jumping),BC
+;  516				}
+;  517			}
+;  518			if(key == sk_Alpha)
+;  519			{
+;  520				//shoot
+;  521			}
+L_104:
+;  522			if(key == sk_Clear)
+	LD	A,(_key)
 	CP	A,15
-	JR	Z,L_99
-;  450			{
-;  451				goto pause;
-;  452			}
-;  453			
-;  454			kb_Scan();
+	JR	Z,L_102
+;  523			{
+;  524				goto pause;
+;  525			}
+;  526			
+;  527			kb_Scan();
 	CALL	_kb_Scan
-;  455	        key = kb_Data[7];
+;  528	        key = kb_Data[7];
 	LD	A,(16056350)
-	LD	(IX+-1),A
-;  456			if(key & kb_Up)
-	AND	A,8
-	JR	Z,L_107
-;  457			{
-;  458				player1Y--;
-	LD	BC,(_player1Y)
-	DEC	BC
-	LD	(_player1Y),BC
-;  459			}
-L_107:
-;  460			if(key & kb_Down)
-	LD	A,(IX+-1)
+	LD	(_key),A
+;  529			if(key & kb_Up)
+;  530			{
+;  531				
+;  532			}
+;  533			if(key & kb_Down)
 	AND	A,1
-	JR	Z,L_110
-;  461			{
-;  462				player1Y++;
-	LD	BC,(_player1Y)
-	INC	BC
-	LD	(_player1Y),BC
-;  463			}
-L_110:
-;  464			if(key & kb_Left)
-	LD	A,(IX+-1)
+	JR	Z,L_109
+;  534			{
+;  535				player1Jumping = 0;
+	LD	BC,0
+	LD	(_player1Jumping),BC
+;  536				if(player1Grounded == 1)
+	LD	HL,(_player1Grounded)
+	LD	BC,1
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_120
+;  537				{
+;  538					player1ShieldActive = 1;
+	LD	(_player1ShieldActive),BC
+;  539				}
+;  540			}
+;  541			else
+	JR	L_120
+L_109:
+;  542			{
+;  543				player1ShieldActive = 0;
+	LD	BC,0
+	LD	(_player1ShieldActive),BC
+;  544			}
+L_120:
+;  545			if(key & kb_Left)
+	LD	A,(_key)
 	AND	A,2
-	JR	Z,L_113
-;  465			{
-;  466				player1X--;
-	LD	BC,(_player1X)
-	DEC	BC
-	LD	(_player1X),BC
-;  467				player1Flipped = 1;
+	JR	Z,L_130
+;  546			{
+;  547				player1X -= player1MoveSpeed;
+	LD	HL,(_player1X)
+	LD	BC,(_player1MoveSpeed)
+	OR	A,A
+	SBC	HL,BC
+	LD	(_player1X),HL
+;  548				if(player1Flipped == 0)
+	LD	HL,(_player1Flipped)
+	CALL	__icmpzero
+	JR	NZ,L_113
+;  549				{
+;  550					player1Flipped = 1;
 	LD	BC,1
 	LD	(_player1Flipped),BC
-;  468			}
+;  551					player1MoveAnimation = 0;
+	LD	BC,0
+	LD	(_player1MoveAnimation),BC
+;  552					player1MoveAnimationCount = 0;
+	LD	(_player1MoveAnimationCount),BC
+;  553				}
 L_113:
-;  469			if(key & kb_Right)
-	LD	A,(IX+-1)
-	AND	A,4
-	JR	Z,L_131
-;  470			{
-;  471				player1X++;
-	LD	BC,(_player1X)
+;  554				player1MoveAnimationCount++;
+	LD	BC,(_player1MoveAnimationCount)
 	INC	BC
-	LD	(_player1X),BC
-;  472				player1Flipped = 0;
+	LD	(_player1MoveAnimationCount),BC
+;  555				if(player1MoveAnimationCount == 3)
+	LD	HL,(_player1MoveAnimationCount)
+	OR	A,A
+	LD	BC,3
+	SBC	HL,BC
+	JR	NZ,L_130
+;  556				{
+;  557					if(player1MoveAnimation != 3)
+	LD	HL,(_player1MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	Z,L_116
+;  558					{
+;  559						player1MoveAnimation++;
+	LD	BC,(_player1MoveAnimation)
+	INC	BC
+	LD	(_player1MoveAnimation),BC
+;  560					}
+;  561					else
+	JR	L_117
+L_116:
+;  562					{
+;  563						player1MoveAnimation = 0;
+	LD	BC,0
+	LD	(_player1MoveAnimation),BC
+;  564					}
+L_117:
+;  565					player1MoveAnimationCount = 0;
+	LD	BC,0
+	LD	(_player1MoveAnimationCount),BC
+;  566				}
+;  567			}
+L_130:
+;  568			if(key & kb_Right)
+	LD	A,(_key)
+	AND	A,4
+	JR	Z,L_157
+;  569			{
+;  570				player1X += player1MoveSpeed;
+	LD	BC,(_player1MoveSpeed)
+	LD	HL,(_player1X)
+	ADD	HL,BC
+	LD	(_player1X),HL
+;  571				if(player1Flipped == 1)
+	LD	HL,(_player1Flipped)
+	OR	A,A
+	LD	BC,1
+	SBC	HL,BC
+	JR	NZ,L_123
+;  572				{
+;  573					player1Flipped = 0;
 	LD	BC,0
 	LD	(_player1Flipped),BC
-;  473			}
-L_131:
-;  474			
-;  475			if(player1Flipped == 0 && player1Jumping == 1)
-	LD	HL,(_player1Flipped)
-	CALL	__icmpzero
-	JR	Z,L__51
-	LD	A,1
-	JR	L__52
-L__51:
-	XOR	A,A
-L__52:
-	LD	(IX+-23),A
-	OR	A,A
-	JR	NZ,L_130
-	LD	BC,1
-	LD	HL,(_player1Jumping)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_130
-;  476			{
-;  477				gfx_TransparentSprite(player1CharacterJumping, player1X, player1Y);
-	LD	BC,(_player1Y)
-	PUSH	BC
-	LD	BC,(_player1X)
-	PUSH	BC
-	LD	BC,(IX+-29)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  478				player1MoveAnimation = 0;
-	LD	BC,0
+;  574					player1MoveAnimation = 0;
 	LD	(_player1MoveAnimation),BC
-;  479			}
-;  480			else if(player1Flipped == 1 && player1Jumping == 1)
-	JR	L_149
-L_130:
-	LD	BC,1
-	LD	HL,(_player1Flipped)
+;  575					player1MoveAnimationCount = 0;
+	LD	(_player1MoveAnimationCount),BC
+;  576				}
+L_123:
+;  577				player1MoveAnimationCount++;
+	LD	BC,(_player1MoveAnimationCount)
+	INC	BC
+	LD	(_player1MoveAnimationCount),BC
+;  578				if(player1MoveAnimationCount == 3)
+	LD	HL,(_player1MoveAnimationCount)
 	OR	A,A
+	LD	BC,3
 	SBC	HL,BC
-	JR	Z,L__56
-	LD	A,1
-	JR	L__57
-L__56:
-	XOR	A,A
-L__57:
-	LD	(IX+-20),A
-	OR	A,A
-	JR	NZ,L_128
-	LD	BC,1
-	LD	HL,(_player1Jumping)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_128
-;  481			{
-;  482				gfx_TransparentSprite(player1CharacterJumpingFlipped, player1X, player1Y);
-	LD	BC,(_player1Y)
-	PUSH	BC
-	LD	BC,(_player1X)
-	PUSH	BC
-	LD	BC,(IX+-38)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  483				player1MoveAnimation = 0;
-	LD	BC,0
-	LD	(_player1MoveAnimation),BC
-;  484			}
-;  485			else if(player1Flipped == 0 && player1MoveAnimation == 0)
-	JR	L_149
-L_128:
-	LD	A,(IX+-23)
-	OR	A,A
-	JR	NZ,L_126
+	JR	NZ,L_157
+;  579				{
+;  580					if(player1MoveAnimation != 3)
 	LD	HL,(_player1MoveAnimation)
-	CALL	__icmpzero
-	JR	NZ,L_126
-;  486			{
-;  487				gfx_TransparentSprite(player1Character, player1X, player1Y);
-	LD	BC,(_player1Y)
-	PUSH	BC
-	LD	BC,(_player1X)
-	PUSH	BC
-	LD	BC,(IX+-59)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  488			}
-;  489			else if(player1Flipped == 1 && player1MoveAnimation == 0)
-	JR	L_149
+	OR	A,A
+	SBC	HL,BC
+	JR	Z,L_126
+;  581					{
+;  582						player1MoveAnimation++;
+	LD	BC,(_player1MoveAnimation)
+	INC	BC
+	LD	(_player1MoveAnimation),BC
+;  583					}
+;  584					else
+	JR	L_127
 L_126:
-	LD	A,(IX+-20)
-	OR	A,A
-	JR	NZ,L_124
-	LD	HL,(_player1MoveAnimation)
-	CALL	__icmpzero
-	JR	NZ,L_124
-;  490			{
-;  491				gfx_TransparentSprite(player1CharacterFlipped, player1X, player1Y);
-	LD	BC,(_player1Y)
-	PUSH	BC
-	LD	BC,(_player1X)
-	PUSH	BC
-	LD	BC,(IX+-32)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  492			}
-;  493			else if(player1Flipped == 0 && player1MoveAnimation == 1)
-	JR	L_149
-L_124:
-	LD	A,(IX+-23)
-	OR	A,A
-	JR	NZ,L_122
-	LD	BC,1
-	LD	HL,(_player1MoveAnimation)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_122
-;  494			{
-;  495				gfx_TransparentSprite(player1CharacterMoving, player1X, player1Y);
-	LD	BC,(_player1Y)
-	PUSH	BC
-	LD	BC,(_player1X)
-	PUSH	BC
-	LD	BC,(IX+-26)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  496			}
-;  497			else if(player1Flipped == 1 && player1MoveAnimation == 1)
-	JR	L_149
-L_122:
-	LD	A,(IX+-20)
-	OR	A,A
-	JR	NZ,L_149
-	LD	BC,1
-	LD	HL,(_player1MoveAnimation)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_149
-;  498			{
-;  499				gfx_TransparentSprite(player1CharacterMovingFlipped, player1X, player1Y);
-	LD	BC,(_player1Y)
-	PUSH	BC
-	LD	BC,(_player1X)
-	PUSH	BC
-	LD	BC,(IX+-35)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  500			}
-L_149:
-;  501			
-;  502			if(player2Flipped == 0 && player2Jumping == 1)
-	LD	HL,(_player2Flipped)
-	CALL	__icmpzero
-	JR	Z,L__69
-	LD	A,1
-	JR	L__70
-L__69:
-	XOR	A,A
-L__70:
-	LD	(IX+-21),A
-	OR	A,A
-	JR	NZ,L_148
-	LD	BC,1
-	LD	HL,(_player2Jumping)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_148
-;  503			{
-;  504				gfx_TransparentSprite(player2CharacterJumping, player2X, player2Y);
-	LD	BC,(_player2Y)
-	PUSH	BC
-	LD	BC,(_player2X)
-	PUSH	BC
-	LD	BC,(IX+-47)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  505				player2MoveAnimation = 0;
+;  585					{
+;  586						player1MoveAnimation = 0;
 	LD	BC,0
-	LD	(_player2MoveAnimation),BC
-;  506			}
-;  507			else if(player2Flipped == 1 && player2Jumping == 1)
-	JR	L_150
-L_148:
-	LD	BC,1
-	LD	HL,(_player2Flipped)
-	OR	A,A
-	SBC	HL,BC
-	JR	Z,L__74
-	LD	A,1
-	JR	L__75
-L__74:
-	XOR	A,A
-L__75:
-	LD	(IX+-22),A
-	OR	A,A
-	JR	NZ,L_146
-	LD	BC,1
-	LD	HL,(_player2Jumping)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_146
-;  508			{
-;  509				gfx_TransparentSprite(player2CharacterJumpingFlipped, player2X, player2Y);
-	LD	BC,(_player2Y)
-	PUSH	BC
-	LD	BC,(_player2X)
-	PUSH	BC
-	LD	BC,(IX+-56)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  510				player2MoveAnimation = 0;
+	LD	(_player1MoveAnimation),BC
+;  587					}
+L_127:
+;  588					player1MoveAnimationCount = 0;
 	LD	BC,0
-	LD	(_player2MoveAnimation),BC
-;  511			}
-;  512			else if(player2Flipped == 0 && player2MoveAnimation == 0)
-	JR	L_150
-L_146:
-	LD	A,(IX+-21)
-	OR	A,A
-	JR	NZ,L_144
-	LD	HL,(_player2MoveAnimation)
-	CALL	__icmpzero
-	JR	NZ,L_144
-;  513			{
-;  514				gfx_TransparentSprite(player2Character, player2X, player2Y);
-	LD	BC,(_player2Y)
-	PUSH	BC
-	LD	BC,(_player2X)
-	PUSH	BC
-	LD	BC,(IX+-41)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  515			}
-;  516			else if(player2Flipped == 1 && player2MoveAnimation == 0)
-	JR	L_150
-L_144:
-	LD	A,(IX+-22)
-	OR	A,A
-	JR	NZ,L_142
-	LD	HL,(_player2MoveAnimation)
-	CALL	__icmpzero
-	JR	NZ,L_142
-;  517			{
-;  518				gfx_TransparentSprite(player2CharacterFlipped, player2X, player2Y);
-	LD	BC,(_player2Y)
-	PUSH	BC
-	LD	BC,(_player2X)
-	PUSH	BC
-	LD	BC,(IX+-50)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  519			}
-;  520			else if(player2Flipped == 0 && player2MoveAnimation == 1)
-	JR	L_150
-L_142:
-	LD	A,(IX+-21)
-	OR	A,A
-	JR	NZ,L_140
+	LD	(_player1MoveAnimationCount),BC
+;  589				}
+;  590			}
+L_157:
+;  591			
+;  592			for(player = 1; player < 3; ++player)
 	LD	BC,1
-	LD	HL,(_player2MoveAnimation)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_140
-;  521			{
-;  522				gfx_TransparentSprite(player2CharacterMoving, player2X, player2Y);
-	LD	BC,(_player2Y)
-	PUSH	BC
-	LD	BC,(_player2X)
-	PUSH	BC
-	LD	BC,(IX+-44)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  523			}
-;  524			else if(player2Flipped == 1 && player2MoveAnimation == 1)
+	LD	(_player),BC
+	JR	L_156
+L_154:
+;  593			{
+;  594				switch(player)
+	LD	HL,(_player)
+	CALL	__case8
+L__59:
+	DW	2
+	DB	1
+	DW24	L_131	
+
+	DB	2
+	DW24	L_132	
+
+	DW24	L_150	
+
+;  595				{
+;  596					case 1:
+L_131:
+;  597						playerX = player1X;
+	LD	BC,(_player1X)
+	LD	(_playerX),BC
+;  598						playerY = player1Y;
+	LD	BC,(_player1Y)
+	LD	(_playerY),BC
+;  599						break;
 	JR	L_150
-L_140:
-	LD	A,(IX+-22)
-	OR	A,A
-	JR	NZ,L_150
-	LD	BC,1
-	LD	HL,(_player2MoveAnimation)
-	OR	A,A
-	SBC	HL,BC
-	JR	NZ,L_150
-;  525			{
-;  526				gfx_TransparentSprite(player2CharacterMovingFlipped, player2X, player2Y);
-	LD	BC,(_player2Y)
-	PUSH	BC
+;  600					case 2:
+L_132:
+;  601						playerX = player2X;
 	LD	BC,(_player2X)
-	PUSH	BC
-	LD	BC,(IX+-53)
-	PUSH	BC
-	CALL	_gfx_TransparentSprite
-	POP	BC
-	POP	BC
-	POP	BC
-;  527			}
+	LD	(_playerX),BC
+;  602						playerY = player2Y;
+	LD	BC,(_player2Y)
+	LD	(_playerY),BC
+;  603						break;
+;  604				}
 L_150:
-;  528			
-;  529			gfx_TransparentSprite(statusUi, 128, 208);
+;  605				
+;  606				if(map == 0)
+	LD	HL,(_map)
+	CALL	__icmpzero
+	JR	NZ,L_153
+;  607				{
+;  608					if(playerX >= 24 && playerX <= 264 && playerY == 132)
+	LD	BC,24
+	LD	HL,(_playerX)
+	OR	A,A
+	SBC	HL,BC
+	JP	M,L_148
+	LD	BC,(_playerX)
+	LD	HL,264
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	M,L_148
+	LD	BC,132
+	LD	HL,(_playerY)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_148
+;  609					{
+;  610						playerGrounded = 1;
+	LD	BC,1
+	LD	(_playerGrounded),BC
+;  611					}
+;  612					else if(playerX >= 72 && playerX <= 216 && playerY == 64)
+	JR	L_153
+L_148:
+	LD	BC,72
+	LD	HL,(_playerX)
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	M,L_146
+	LD	BC,(_playerX)
+	LD	HL,216
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	M,L_146
+	LD	BC,64
+	LD	HL,(_playerY)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_146
+;  613					{
+;  614						playerGrounded = 1;
+	LD	BC,1
+	LD	(_playerGrounded),BC
+;  615					}
+;  616					else if(playerX >= -8 && playerX <= 40 && playerY == 40)
+	JR	L_153
+L_146:
+	LD	BC,16777208
+	LD	HL,(_playerX)
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	M,L_144
+	LD	BC,(_playerX)
+	LD	HL,40
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	M,L_144
+	LD	BC,40
+	LD	HL,(_playerY)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_144
+;  617					{
+;  618						playerGrounded = 1;
+	LD	BC,1
+	LD	(_playerGrounded),BC
+;  619					}
+;  620					else if(playerX >= 248 && playerX <= 296 && playerY == 40)
+	JR	L_153
+L_144:
+	LD	BC,248
+	LD	HL,(_playerX)
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	M,L_142
+	LD	BC,(_playerX)
+	LD	HL,296
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	M,L_142
+	LD	BC,40
+	LD	HL,(_playerY)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_142
+;  621					{
+;  622						playerGrounded = 1;
+	LD	BC,1
+	LD	(_playerGrounded),BC
+;  623					}
+;  624					else
+	JR	L_153
+L_142:
+;  625					{
+;  626						playerGrounded = 0;
+	LD	BC,0
+	LD	(_playerGrounded),BC
+;  627					}
+;  628				}
+L_153:
+;  629				
+;  630				switch(player)
+	LD	HL,(_player)
+	CALL	__case8
+L__73:
+	DW	2
+	DB	1
+	DW24	L_151	
+
+	DB	2
+	DW24	L_152	
+
+	DW24	L_155	
+
+;  631				{
+;  632					case 1:
+L_151:
+;  633						player1Grounded = playerGrounded;
+	LD	BC,(_playerGrounded)
+	LD	(_player1Grounded),BC
+;  634						break;
+	JR	L_155
+;  635					case 2:
+L_152:
+;  636						player2Grounded = playerGrounded;
+	LD	BC,(_playerGrounded)
+	LD	(_player2Grounded),BC
+;  637						break;
+;  638				}
+;  639			}
+L_155:
+	LD	BC,(_player)
+	INC	BC
+	LD	(_player),BC
+L_156:
+	LD	BC,3
+	LD	HL,(_player)
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	M,L_154
+;  640			
+;  641			if(player1Jumping > 0)
+	LD	BC,(_player1Jumping)
+	OR	A,A
+	SBC	HL,HL
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	P,L_161
+;  642			{
+;  643				player1Jumping--;
+	LD	BC,(_player1Jumping)
+	DEC	BC
+	LD	(_player1Jumping),BC
+;  644				player1Y -= player1JumpSpeed;
+	LD	HL,(_player1Y)
+	LD	BC,(_player1JumpSpeed)
+	OR	A,A
+	SBC	HL,BC
+	LD	(_player1Y),HL
+;  645			}
+;  646			else if(player1Grounded == 0)
+	JR	L_167
+L_161:
+	LD	HL,(_player1Grounded)
+	CALL	__icmpzero
+	JR	NZ,L_167
+;  647			{
+;  648				player1Y += player1FallSpeed;
+	LD	BC,(_player1FallSpeed)
+	LD	HL,(_player1Y)
+	ADD	HL,BC
+	LD	(_player1Y),HL
+;  649			}
+L_167:
+;  650			
+;  651			if(player2Jumping > 0)
+	LD	BC,(_player2Jumping)
+	OR	A,A
+	SBC	HL,HL
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	P,L_166
+;  652			{
+;  653				player2Jumping--;
+	LD	BC,(_player2Jumping)
+	DEC	BC
+	LD	(_player2Jumping),BC
+;  654				player2Y -= player2JumpSpeed;
+	LD	HL,(_player2Y)
+	LD	BC,(_player2JumpSpeed)
+	OR	A,A
+	SBC	HL,BC
+	LD	(_player2Y),HL
+;  655			}
+;  656			else if(player2Grounded == 0)
+	JR	L_197
+L_166:
+	LD	HL,(_player2Grounded)
+	CALL	__icmpzero
+	JR	NZ,L_197
+;  657			{
+;  658				player2Y += player2FallSpeed;
+	LD	BC,(_player2FallSpeed)
+	LD	HL,(_player2Y)
+	ADD	HL,BC
+	LD	(_player2Y),HL
+;  659			}
+L_197:
+;  660			
+;  661			if(player1Flipped == 0 && player1Grounded == 0)
+	LD	HL,(_player1Flipped)
+	CALL	__icmpzero
+	JR	Z,L__80
+	LD	A,1
+	JR	L__81
+L__80:
+	XOR	A,A
+L__81:
+	LD	(IX+-1),A
+	OR	A,A
+	JR	NZ,L_196
+	LD	HL,(_player1Grounded)
+	CALL	__icmpzero
+	JR	NZ,L_196
+;  662			{
+;  663				gfx_TransparentSprite(player1CharacterJumping, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterJumping)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  664				player1MoveAnimation = 0;
+	LD	BC,0
+	LD	(_player1MoveAnimation),BC
+;  665				player1MoveAnimationCount = 0;
+	LD	(_player1MoveAnimationCount),BC
+;  666			}
+;  667			else if(player1Flipped == 1 && player1Grounded == 0)
+	JR	L_227
+L_196:
+	LD	BC,1
+	LD	HL,(_player1Flipped)
+	OR	A,A
+	SBC	HL,BC
+	JR	Z,L__85
+	LD	A,1
+	JR	L__86
+L__85:
+	XOR	A,A
+L__86:
+	LD	(IX+-2),A
+	OR	A,A
+	JR	NZ,L_194
+	LD	HL,(_player1Grounded)
+	CALL	__icmpzero
+	JR	NZ,L_194
+;  668			{
+;  669				gfx_TransparentSprite(player1CharacterJumpingFlipped, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterJumpingFlipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  670				player1MoveAnimation = 0;
+	LD	BC,0
+	LD	(_player1MoveAnimation),BC
+;  671				player1MoveAnimationCount = 0;
+	LD	(_player1MoveAnimationCount),BC
+;  672			}
+;  673			else if(player1Flipped == 0 && player1MoveAnimation == 0)
+	JR	L_227
+L_194:
+	LD	A,(IX+-1)
+	OR	A,A
+	JR	NZ,L_192
+	LD	HL,(_player1MoveAnimation)
+	CALL	__icmpzero
+	JR	NZ,L_192
+;  674			{
+;  675				gfx_TransparentSprite(player1Character, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1Character)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  676			}
+;  677			else if(player1Flipped == 1 && player1MoveAnimation == 0)
+	JR	L_227
+L_192:
+	LD	A,(IX+-2)
+	OR	A,A
+	JR	NZ,L_190
+	LD	HL,(_player1MoveAnimation)
+	CALL	__icmpzero
+	JR	NZ,L_190
+;  678			{
+;  679				gfx_TransparentSprite(player1CharacterFlipped, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterFlipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  680			}
+;  681			else if(player1Flipped == 0 && player1MoveAnimation == 1)
+	JR	L_227
+L_190:
+	LD	A,(IX+-1)
+	OR	A,A
+	JR	NZ,L_188
+	LD	BC,1
+	LD	HL,(_player1MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_188
+;  682			{
+;  683				gfx_TransparentSprite(player1CharacterMoving1, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterMoving1)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  684			}
+;  685			else if(player1Flipped == 1 && player1MoveAnimation == 1)
+	JR	L_227
+L_188:
+	LD	A,(IX+-2)
+	OR	A,A
+	JR	NZ,L_186
+	LD	BC,1
+	LD	HL,(_player1MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_186
+;  686			{
+;  687				gfx_TransparentSprite(player1CharacterMoving1Flipped, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterMoving1Flipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  688			}
+;  689			else if(player1Flipped == 0 && player1MoveAnimation == 2)
+	JR	L_227
+L_186:
+	LD	A,(IX+-1)
+	OR	A,A
+	JR	NZ,L_184
+	LD	BC,2
+	LD	HL,(_player1MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_184
+;  690			{
+;  691				gfx_TransparentSprite(player1CharacterMoving2, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterMoving2)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  692			}
+;  693			else if(player1Flipped == 1 && player1MoveAnimation == 2)
+	JR	L_227
+L_184:
+	LD	A,(IX+-2)
+	OR	A,A
+	JR	NZ,L_182
+	LD	BC,2
+	LD	HL,(_player1MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_182
+;  694			{
+;  695				gfx_TransparentSprite(player1CharacterMoving2Flipped, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterMoving2Flipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  696			}
+;  697			else if(player1Flipped == 0 && player1MoveAnimation == 3)
+	JR	L_227
+L_182:
+	LD	A,(IX+-1)
+	OR	A,A
+	JR	NZ,L_180
+	LD	BC,3
+	LD	HL,(_player1MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_180
+;  698			{
+;  699				gfx_TransparentSprite(player1CharacterMoving1, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterMoving1)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  700			}
+;  701			else if(player1Flipped == 1 && player1MoveAnimation == 3)
+	JR	L_227
+L_180:
+	LD	A,(IX+-2)
+	OR	A,A
+	JR	NZ,L_227
+	LD	BC,3
+	LD	HL,(_player1MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_227
+;  702			{
+;  703				gfx_TransparentSprite(player1CharacterMoving1Flipped, player1X, player1Y);
+	LD	BC,(_player1Y)
+	PUSH	BC
+	LD	BC,(_player1X)
+	PUSH	BC
+	LD	BC,(_player1CharacterMoving1Flipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  704			}
+L_227:
+;  705			
+;  706			
+;  707			if(player2Flipped == 0 && player2Grounded == 0)
+	LD	HL,(_player2Flipped)
+	CALL	__icmpzero
+	JR	Z,L__106
+	LD	A,1
+	JR	L__107
+L__106:
+	XOR	A,A
+L__107:
+	LD	(IX+-3),A
+	OR	A,A
+	JR	NZ,L_226
+	LD	HL,(_player2Grounded)
+	CALL	__icmpzero
+	JR	NZ,L_226
+;  708			{
+;  709				gfx_TransparentSprite(player2CharacterJumping, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterJumping)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  710				player2MoveAnimation = 0;
+	LD	BC,0
+	LD	(_player2MoveAnimation),BC
+;  711				player2MoveAnimationCount = 0;
+	LD	(_player2MoveAnimationCount),BC
+;  712			}
+;  713			else if(player2Flipped == 1 && player2Grounded == 0)
+	JR	L_228
+L_226:
+	LD	BC,1
+	LD	HL,(_player2Flipped)
+	OR	A,A
+	SBC	HL,BC
+	JR	Z,L__111
+	LD	A,1
+	JR	L__112
+L__111:
+	XOR	A,A
+L__112:
+	LD	(IX+-4),A
+	OR	A,A
+	JR	NZ,L_224
+	LD	HL,(_player2Grounded)
+	CALL	__icmpzero
+	JR	NZ,L_224
+;  714			{
+;  715				gfx_TransparentSprite(player2CharacterJumpingFlipped, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterJumpingFlipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  716				player2MoveAnimation = 0;
+	LD	BC,0
+	LD	(_player2MoveAnimation),BC
+;  717				player2MoveAnimationCount = 0;
+	LD	(_player2MoveAnimationCount),BC
+;  718			}
+;  719			else if(player2Flipped == 0 && player2MoveAnimation == 0)
+	JR	L_228
+L_224:
+	LD	A,(IX+-3)
+	OR	A,A
+	JR	NZ,L_222
+	LD	HL,(_player2MoveAnimation)
+	CALL	__icmpzero
+	JR	NZ,L_222
+;  720			{
+;  721				gfx_TransparentSprite(player2Character, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2Character)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  722			}
+;  723			else if(player2Flipped == 1 && player2MoveAnimation == 0)
+	JR	L_228
+L_222:
+	LD	A,(IX+-4)
+	OR	A,A
+	JR	NZ,L_220
+	LD	HL,(_player2MoveAnimation)
+	CALL	__icmpzero
+	JR	NZ,L_220
+;  724			{
+;  725				gfx_TransparentSprite(player2CharacterFlipped, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterFlipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  726			}
+;  727			else if(player2Flipped == 0 && player2MoveAnimation == 1)
+	JR	L_228
+L_220:
+	LD	A,(IX+-3)
+	OR	A,A
+	JR	NZ,L_218
+	LD	BC,1
+	LD	HL,(_player2MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_218
+;  728			{
+;  729				gfx_TransparentSprite(player2CharacterMoving1, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterMoving1)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  730			}
+;  731			else if(player2Flipped == 1 && player2MoveAnimation == 1)
+	JR	L_228
+L_218:
+	LD	A,(IX+-4)
+	OR	A,A
+	JR	NZ,L_216
+	LD	BC,1
+	LD	HL,(_player2MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_216
+;  732			{
+;  733				gfx_TransparentSprite(player2CharacterMoving1Flipped, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterMoving1Flipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  734			}
+;  735			else if(player2Flipped == 0 && player2MoveAnimation == 2)
+	JR	L_228
+L_216:
+	LD	A,(IX+-3)
+	OR	A,A
+	JR	NZ,L_214
+	LD	BC,2
+	LD	HL,(_player2MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_214
+;  736			{
+;  737				gfx_TransparentSprite(player2CharacterMoving2, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterMoving2)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  738			}
+;  739			else if(player2Flipped == 1 && player2MoveAnimation == 2)
+	JR	L_228
+L_214:
+	LD	A,(IX+-4)
+	OR	A,A
+	JR	NZ,L_212
+	LD	BC,2
+	LD	HL,(_player2MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_212
+;  740			{
+;  741				gfx_TransparentSprite(player2CharacterMoving2Flipped, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterMoving2Flipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  742			}
+;  743			else if(player2Flipped == 0 && player2MoveAnimation == 3)
+	JR	L_228
+L_212:
+	LD	A,(IX+-3)
+	OR	A,A
+	JR	NZ,L_210
+	LD	BC,3
+	LD	HL,(_player2MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_210
+;  744			{
+;  745				gfx_TransparentSprite(player2CharacterMoving1, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterMoving1)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  746			}
+;  747			else if(player2Flipped == 1 && player2MoveAnimation == 3)
+	JR	L_228
+L_210:
+	LD	A,(IX+-4)
+	OR	A,A
+	JR	NZ,L_228
+	LD	BC,3
+	LD	HL,(_player2MoveAnimation)
+	OR	A,A
+	SBC	HL,BC
+	JR	NZ,L_228
+;  748			{
+;  749				gfx_TransparentSprite(player2CharacterMoving1Flipped, player2X, player2Y);
+	LD	BC,(_player2Y)
+	PUSH	BC
+	LD	BC,(_player2X)
+	PUSH	BC
+	LD	BC,(_player2CharacterMoving1Flipped)
+	PUSH	BC
+	CALL	_gfx_TransparentSprite
+	POP	BC
+	POP	BC
+	POP	BC
+;  750			}
+L_228:
+;  751			
+;  752			gfx_TransparentSprite(statusUi, 128, 208);
 	LD	BC,208
 	PUSH	BC
 	LD	BC,128
@@ -2089,21 +2946,21 @@ L_150:
 	POP	BC
 	POP	BC
 	POP	BC
-;  530			gfx_SetTextXY(10, 10);
+;  753			gfx_SetTextXY(10, 10);
 	LD	BC,10
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextXY
 	POP	BC
 	POP	BC
-;  531			gfx_SetTextScale(2, 2);
+;  754			gfx_SetTextScale(2, 2);
 	LD	BC,2
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  532			gfx_PrintInt(player1X, 3);
+;  755			gfx_PrintInt(player1X, 3);
 	LD	BC,3
 	PUSH	BC
 	LD	BC,(_player1X)
@@ -2111,12 +2968,12 @@ L_150:
 	CALL	_gfx_PrintInt
 	POP	BC
 	POP	BC
-;  533			gfx_PrintString(" ");
-	LD	BC,L__86
+;  756			gfx_PrintString(" ");
+	LD	BC,L__131
 	PUSH	BC
 	CALL	_gfx_PrintString
 	POP	BC
-;  534			gfx_PrintInt(player1Y, 3);
+;  757			gfx_PrintInt(player1Y, 3);
 	LD	BC,3
 	PUSH	BC
 	LD	BC,(_player1Y)
@@ -2124,25 +2981,25 @@ L_150:
 	CALL	_gfx_PrintInt
 	POP	BC
 	POP	BC
-;  535			
-;  536			gfx_SwapDraw();
+;  758			
+;  759			gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  537		}
-L_151:
+;  760		}
+L_229:
 	LD	HL,(_fighting)
 	CALL	__icmpzero
-	JR	NZ,L_152
-;  538		
-;  539		goto error;
-	JR	L_30
-L_99:
-;  540		
-;  541		//---------------------------------------------------------------
-;  542		
-;  543		//pause
-;  544		pause:
-;  545		
-;  546		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
+	JR	NZ,L_230
+;  761		
+;  762		goto error;
+	JR	L_32
+L_102:
+;  763		
+;  764		//---------------------------------------------------------------
+;  765		
+;  766		//pause
+;  767		pause:
+;  768		
+;  769		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 	LD	BC,(_mapYBlock)
 	PUSH	BC
 	CALL	_getYBlock
@@ -2153,17 +3010,18 @@ L_99:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  547		gfx_SetColor(GRAY);
+;  770		gfx_SetColor(GRAY);
 	LD	BC,3
 	PUSH	BC
 	CALL	_gfx_SetColor
 	POP	BC
-;  548		gfx_FillRectangle(0, 70, 320, 105);
+;  771		gfx_FillRectangle(0, 70, 320, 105);
 	LD	BC,105
 	PUSH	BC
 	LD	BC,320
@@ -2177,93 +3035,93 @@ L_99:
 	POP	BC
 	POP	BC
 	POP	BC
-;  549		gfx_SetTextFGColor(WHITE);
+;  772		gfx_SetTextFGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  550		gfx_SetTextBGColor(GRAY);
+;  773		gfx_SetTextBGColor(GRAY);
 	LD	BC,3
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  551		gfx_SetTextScale(2, 2);
+;  774		gfx_SetTextScale(2, 2);
 	LD	BC,2
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  552		gfx_PrintStringXY("Pause menu", 85, 76);
-	LD	BC,76
+;  775		gfx_PrintStringXY("Pause menu", 80, 90);
+	LD	BC,90
 	PUSH	BC
-	LD	BC,85
+	LD	BC,80
 	PUSH	BC
-	LD	BC,L__88
+	LD	BC,L__133
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  553		gfx_SetTextScale(1, 1);
+;  776		gfx_SetTextScale(1, 1);
 	LD	BC,1
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  554		gfx_PrintStringXY("Press [clear] to continue...", 55, 110);
-	LD	BC,110
+;  777		gfx_PrintStringXY("Press [clear] to continue...", 55, 125);
+	LD	BC,125
 	PUSH	BC
 	LD	BC,55
 	PUSH	BC
-	LD	BC,L__89
+	LD	BC,L__134
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  555		gfx_PrintStringXY("Press [del] to give up...", 62, 130);
-	LD	BC,130
+;  778		gfx_PrintStringXY("Press [del] to give up...", 62, 145);
+	LD	BC,145
 	PUSH	BC
 	LD	BC,62
 	PUSH	BC
-	LD	BC,L__90
+	LD	BC,L__135
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  556		gfx_SwapDraw();
+;  779		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  557		
-;  558		while(1)
-L_159:
-;  559		{
-;  560			key = os_GetCSC();
+;  780		
+;  781		while(1)
+L_237:
+;  782		{
+;  783			key = os_GetCSC();
 	CALL	_os_GetCSC
-	LD	(IX+-1),A
-;  561			if(key == sk_Clear)
+;  784			if(key == sk_Clear)
 	CP	A,15
-	JR	Z,L_95
-;  562			{
-;  563				goto fight;
-;  564			}
-;  565			else if(key == sk_Del)
-	LD	A,(IX+-1)
+	LD	(_key),A
+	JR	Z,L_97
+;  785			{
+;  786				goto fight;
+;  787			}
+;  788			else if(key == sk_Del)
+	LD	A,(_key)
 	CP	A,56
-	JR	NZ,L_159
-;  566			{
-;  567				goto gameOver;
-;  568			}
-;  569		}
-;  570		
-;  571		//---------------------------------------------------------------
-;  572		
-;  573		//gameOver
-;  574		gameOver:
-;  575		
-;  576		gfx_Tilemap(&tilemap, getXBlock(4), getYBlock(0));
+	JR	NZ,L_237
+;  789			{
+;  790				goto gameOver;
+;  791			}
+;  792		}
+;  793		
+;  794		//---------------------------------------------------------------
+;  795		
+;  796		//gameOver
+;  797		gameOver:
+;  798		
+;  799		gfx_Tilemap(&tilemap, getXBlock(4), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
@@ -2274,17 +3132,18 @@ L_159:
 	CALL	_getXBlock
 	POP	BC
 	PUSH	HL
-	PEA	IX+-19
+	LD	BC,_tilemap
+	PUSH	BC
 	CALL	_gfx_Tilemap
 	POP	BC
 	POP	BC
 	POP	BC
-;  577		gfx_SetTextFGColor(WHITE);
+;  800		gfx_SetTextFGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  578		gfx_SetTextBGColor(gfx_GetPixel(0, 0));
+;  801		gfx_SetTextBGColor(gfx_GetPixel(0, 0));
 	LD	BC,0
 	PUSH	BC
 	PUSH	BC
@@ -2296,112 +3155,112 @@ L_159:
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  579		gfx_SetTextScale(1, 1);
+;  802		gfx_SetTextScale(1, 1);
 	LD	BC,1
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  580		gfx_PrintStringXY("Press [2nd] to go to the main menu...", 15, 225);
-	LD	BC,225
+;  803		gfx_PrintStringXY("Press [2nd] to go to the main menu...", 15, 218);
+	LD	BC,218
 	PUSH	BC
 	LD	BC,15
 	PUSH	BC
-	LD	BC,L__93
+	LD	BC,L__138
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  581		gfx_SwapDraw();
+;  804		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  582		while(os_GetCSC() != sk_2nd);
-L_162:
+;  805		while(os_GetCSC() != sk_2nd);
+L_240:
 	CALL	_os_GetCSC
 	UEXT	HL
 	LD	L,A
 	OR	A,A
 	LD	BC,54
 	SBC	HL,BC
-	JR	NZ,L_162
-;  583		goto mainMenu;
+	JR	NZ,L_240
+;  806		goto mainMenu;
 	JR	L_5
-L_30:
-;  584		
-;  585		
-;  586		//---------------------------------------------------------------
-;  587		
-;  588		//error
-;  589		error:
-;  590		
-;  591		gfx_FillScreen(RED);
+L_32:
+;  807		
+;  808		
+;  809		//---------------------------------------------------------------
+;  810		
+;  811		//error
+;  812		error:
+;  813		
+;  814		gfx_FillScreen(RED);
 	LD	BC,224
 	PUSH	BC
 	CALL	_gfx_FillScreen
 	POP	BC
-;  592		gfx_SetTextFGColor(WHITE);
+;  815		gfx_SetTextFGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-;  593		gfx_SetTextBGColor(RED);
+;  816		gfx_SetTextBGColor(RED);
 	LD	BC,224
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-;  594		gfx_SetTextScale(1, 1);
+;  817		gfx_SetTextScale(1, 1);
 	LD	BC,1
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-;  595		gfx_PrintStringXY("An error has occurred!", 0, 0);
+;  818		gfx_PrintStringXY("An error has occurred!", 0, 0);
 	LD	BC,0
 	PUSH	BC
 	PUSH	BC
-	LD	BC,L__95
+	LD	BC,L__140
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  596		gfx_PrintStringXY("Press [2nd] to go to the main menu...", 0, 10);
+;  819		gfx_PrintStringXY("Press [2nd] to go to the main menu...", 0, 10);
 	LD	BC,10
 	PUSH	BC
 	LD	BC,0
 	PUSH	BC
-	LD	BC,L__96
+	LD	BC,L__141
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-;  597		gfx_SwapDraw();
+;  820		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-;  598		while(os_GetCSC() != sk_2nd);
-L_165:
+;  821		while(os_GetCSC() != sk_2nd);
+L_243:
 	CALL	_os_GetCSC
 	UEXT	HL
 	LD	L,A
 	OR	A,A
 	LD	BC,54
 	SBC	HL,BC
-	JR	NZ,L_165
-;  599		goto mainMenu;
+	JR	NZ,L_243
+;  822		goto mainMenu;
 	JR	L_5
-L_28:
-;  600		
-;  601		//---------------------------------------------------------------
-;  602		
-;  603		//quit game
-;  604		quitGame:
-;  605		
-;  606		gfx_End();
+L_30:
+;  823		
+;  824		//---------------------------------------------------------------
+;  825		
+;  826		//quit game
+;  827		quitGame:
+;  828		
+;  829		gfx_End();
 	CALL	_gfx_End
 	OR	A,A
-;  607		return 0;
+;  830		return 0;
 	SBC	HL,HL
 	LD	SP,IX
 	POP	IX
@@ -2415,6 +3274,12 @@ L_28:
 ;_gfx_PrintString                    IMPORT  -----   function
 ;_gfx_PrintInt                       IMPORT  -----   function
 ;_gfx_SetTextXY                      IMPORT  -----   function
+;_player2MoveAnimationCount          STATIC      3   variable
+;_playerGrounded                     STATIC      3   variable
+;_playerY                            STATIC      3   variable
+;_playerX                            STATIC      3   variable
+;_player                             STATIC      3   variable
+;_player1MoveAnimationCount          STATIC      3   variable
 ;_kb_Scan                            IMPORT  -----   function
 ;_gfx_GetPixel                       IMPORT  -----   function
 ;_statusUi_data                      IMPORT   2050   variable
@@ -2422,12 +3287,22 @@ L_28:
 ;_counter1_data                      IMPORT   1538   variable
 ;_counter2_data                      IMPORT   1538   variable
 ;_counter3_data                      IMPORT   1538   variable
+;_player2JumpHeight                  STATIC      3   variable
+;_player2JumpSpeed                   STATIC      3   variable
+;_player2FallSpeed                   STATIC      3   variable
+;_player2MoveSpeed                   STATIC      3   variable
 ;_player2CharacterSelection          STATIC      3   variable
 ;_character1Jumping_data             IMPORT   1538   variable
-;_character1Moving_data              IMPORT   1538   variable
+;_character1Moving2_data             IMPORT   1538   variable
+;_character1Moving1_data             IMPORT   1538   variable
+;_player1JumpHeight                  STATIC      3   variable
+;_player1JumpSpeed                   STATIC      3   variable
+;_player1FallSpeed                   STATIC      3   variable
+;_player1MoveSpeed                   STATIC      3   variable
 ;_gfx_FlipSpriteY                    IMPORT  -----   function
 ;_character0Jumping_data             IMPORT   1538   variable
-;_character0Moving_data              IMPORT   1538   variable
+;_character0Moving2_data             IMPORT   1538   variable
+;_character0Moving1_data             IMPORT   1538   variable
 ;_player2Y                           STATIC      3   variable
 ;_player2X                           STATIC      3   variable
 ;_player2IsAi                        STATIC      3   variable
@@ -2435,11 +3310,13 @@ L_28:
 ;_player1X                           STATIC      3   variable
 ;_player2Lifes                       STATIC      3   variable
 ;_player2ShieldActive                STATIC      3   variable
+;_player2Grounded                    STATIC      3   variable
 ;_player2Jumping                     STATIC      3   variable
 ;_player2MoveAnimation               STATIC      3   variable
 ;_player2Flipped                     STATIC      3   variable
 ;_player1Lifes                       STATIC      3   variable
 ;_player1ShieldActive                STATIC      3   variable
+;_player1Grounded                    STATIC      3   variable
 ;_player1Jumping                     STATIC      3   variable
 ;_player1MoveAnimation               STATIC      3   variable
 ;_player1Flipped                     STATIC      3   variable
@@ -2455,6 +3332,7 @@ L_28:
 ;_mapHighlighter_data                IMPORT   1026   variable
 ;_gfx_TransparentSprite              IMPORT  -----   function
 ;_players                            STATIC      3   variable
+;_key                                STATIC      1   variable
 ;_selecting                          STATIC      3   variable
 ;_selection                          STATIC      3   variable
 ;_os_GetCSC                          IMPORT  -----   function
@@ -2470,34 +3348,37 @@ L_28:
 ;_gfx_SetDraw                        IMPORT  -----   function
 ;_gfx_SetColor                       IMPORT  -----   function
 ;_gfx_SetTransparentColor            IMPORT  -----   function
-;_global_palette                     IMPORT    262   variable
+;_global_palette                     IMPORT    272   variable
 ;_gfx_SetPalette                     IMPORT  -----   function
 ;_gfx_Begin                          IMPORT  -----   function
 ;_tileset_tiles_data                 IMPORT    180   variable
+;_tilemap                            STATIC     18   variable
 ;_tilemap_map                        IMPORT  unknown variable
+;_player2CharacterJumpingFlipped      STATIC      3   variable
+;_player2CharacterMoving2Flipped      STATIC      3   variable
+;_player2CharacterMoving1Flipped      STATIC      3   variable
+;_player2CharacterFlipped            STATIC      3   variable
+;_player2CharacterJumping            STATIC      3   variable
+;_player2CharacterMoving2            STATIC      3   variable
+;_player2CharacterMoving1            STATIC      3   variable
+;_player2Character                   STATIC      3   variable
+;_player1CharacterJumpingFlipped      STATIC      3   variable
+;_player1CharacterMoving2Flipped      STATIC      3   variable
+;_player1CharacterMoving1Flipped      STATIC      3   variable
+;_player1CharacterFlipped            STATIC      3   variable
+;_player1CharacterJumping            STATIC      3   variable
+;_player1CharacterMoving2            STATIC      3   variable
+;_player1CharacterMoving1            STATIC      3   variable
+;_player1Character                   STATIC      3   variable
 ;_malloc                             IMPORT  -----   function
 ;_gfx_AllocSprite                    IMPORT  -----   function
-;player1Character                     IX-59      3   variable
-;player2CharacterJumpingFlipped       IX-56      3   variable
-;player2CharacterMovingFlipped        IX-53      3   variable
-;player2CharacterFlipped              IX-50      3   variable
-;player2CharacterJumping              IX-47      3   variable
-;player2CharacterMoving               IX-44      3   variable
-;player2Character                     IX-41      3   variable
-;player1CharacterJumpingFlipped       IX-38      3   variable
-;player1CharacterMovingFlipped        IX-35      3   variable
-;player1CharacterFlipped              IX-32      3   variable
-;player1CharacterJumping              IX-29      3   variable
-;player1CharacterMoving               IX-26      3   variable
-;G_0                                  IX-23      1   variable
-;G_5                                  IX-22      1   variable
-;G_4                                  IX-21      1   variable
-;G_1                                  IX-20      1   variable
-;tilemap                              IX-19     18   variable
-;key                                   IX-1      1   variable
+;G_9                                   IX-4      1   variable
+;G_8                                   IX-3      1   variable
+;G_1                                   IX-2      1   variable
+;G_0                                   IX-1      1   variable
 
 
-; Stack Frame Size: 65 (bytes)
+; Stack Frame Size: 10 (bytes)
 ;       Spill Code: 0 (instruction)
 
 
@@ -2505,40 +3386,40 @@ L_28:
 L__2:
 	DB	"Press [2nd] to start..."
 	DB	0
-L__10:
+L__11:
 	DB	"Singleplayer"
 	DB	0
-L__12:
+L__13:
 	DB	"Quit game"
 	DB	0
-L__13:
+L__14:
 	DB	"Star it on GitHub!"
 	DB	0
-L__16:
+L__17:
 	DB	"Select a map:"
 	DB	0
-L__27:
+L__28:
 	DB	"Select a character:"
 	DB	0
-L__86:
+L__131:
 	DB	" "
 	DB	0
-L__88:
+L__133:
 	DB	"Pause menu"
 	DB	0
-L__89:
+L__134:
 	DB	"Press [clear] to continue..."
 	DB	0
-L__90:
+L__135:
 	DB	"Press [del] to give up..."
 	DB	0
-L__93:
+L__138:
 	DB	"Press [2nd] to go to the main menu..."
 	DB	0
-L__95:
+L__140:
 	DB	"An error has occurred!"
 	DB	0
-L__96:
+L__141:
 	DB	"Press [2nd] to go to the main menu..."
 	DB	0
 	XREF _tilemap_map:ROM
@@ -2572,10 +3453,12 @@ L__96:
 	XREF _counter2_data:ROM
 	XREF _counter1_data:ROM
 	XREF _characterHighlighter_data:ROM
-	XREF _character1Moving_data:ROM
+	XREF _character1Moving2_data:ROM
+	XREF _character1Moving1_data:ROM
 	XREF _character1Jumping_data:ROM
 	XREF _character1_data:ROM
-	XREF _character0Moving_data:ROM
+	XREF _character0Moving2_data:ROM
+	XREF _character0Moving1_data:ROM
 	XREF _character0Jumping_data:ROM
 	XREF _character0_data:ROM
 	XREF _tileset_tiles_data:ROM
@@ -2586,16 +3469,41 @@ L__96:
 	XREF __imuls:ROM
 	XREF __frameset0:ROM
 	XREF __frameset:ROM
+	XREF __setflag:ROM
 	XREF __icmpzero:ROM
 	XREF __case8:ROM
 	XREF __imul_b:ROM
 	XDEF _main
 	XDEF _getYBlock
 	XDEF _getXBlock
+	XDEF _tilemap
+	XDEF _player2CharacterJumpingFlipped
+	XDEF _player2CharacterMoving2Flipped
+	XDEF _player2CharacterMoving1Flipped
+	XDEF _player2CharacterFlipped
+	XDEF _player2CharacterJumping
+	XDEF _player2CharacterMoving2
+	XDEF _player2CharacterMoving1
+	XDEF _player2Character
+	XDEF _player1CharacterJumpingFlipped
+	XDEF _player1CharacterMoving2Flipped
+	XDEF _player1CharacterMoving1Flipped
+	XDEF _player1CharacterFlipped
+	XDEF _player1CharacterJumping
+	XDEF _player1CharacterMoving2
+	XDEF _player1CharacterMoving1
+	XDEF _player1Character
+	XDEF _key
 	XDEF _player2Lifes
 	XDEF _player2ShieldActive
+	XDEF _player2Grounded
 	XDEF _player2Jumping
+	XDEF _player2MoveAnimationCount
 	XDEF _player2MoveAnimation
+	XDEF _player2JumpHeight
+	XDEF _player2JumpSpeed
+	XDEF _player2FallSpeed
+	XDEF _player2MoveSpeed
 	XDEF _player2Flipped
 	XDEF _player2Y
 	XDEF _player2X
@@ -2603,12 +3511,22 @@ L__96:
 	XDEF _player2IsAi
 	XDEF _player1Lifes
 	XDEF _player1ShieldActive
+	XDEF _player1Grounded
 	XDEF _player1Jumping
+	XDEF _player1MoveAnimationCount
 	XDEF _player1MoveAnimation
+	XDEF _player1JumpHeight
+	XDEF _player1JumpSpeed
+	XDEF _player1FallSpeed
+	XDEF _player1MoveSpeed
 	XDEF _player1Flipped
 	XDEF _player1Y
 	XDEF _player1X
 	XDEF _player1CharacterSelection
+	XDEF _playerGrounded
+	XDEF _playerY
+	XDEF _playerX
+	XDEF _player
 	XDEF _fighting
 	XDEF _mapYBlock
 	XDEF _mapXBlock

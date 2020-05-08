@@ -1,10 +1,10 @@
 ; Zilog eZ80 ANSI C Compiler Release 3.4
 ; -optsize -noreduceopt -nomodsect -peephole -globalopt
 ; -localcse -const=ROM 
-	FILE	"SRC\GFX\CHARACTER0.C"
+	FILE	"SRC\GFX\CHARACTER0MOVING2.C"
 	.assume ADL=1
 	SEGMENT DATA
-_character0_data:
+_character0Moving2_data:
 	DB	32
 	DB	48
 	DB	0
@@ -906,52 +906,20 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
 	DB	13
-	DB	13
-	DB	13
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
 	DB	1
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -970,7 +938,7 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
+	DB	1
 	DB	13
 	DB	1
 	DB	1
@@ -1002,45 +970,13 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
 	DB	13
 	DB	13
 	DB	1
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
 	DB	13
 	DB	13
@@ -1065,141 +1001,12 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
 	DB	0
 	DB	1
 	DB	13
 	DB	13
 	DB	1
 	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
 	DB	0
 	DB	1
 	DB	13
@@ -1224,46 +1031,14 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	1
-	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
 	DB	13
 	DB	13
 	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	0
 	DB	1
 	DB	13
@@ -1288,6 +1063,78 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	13
+	DB	13
+	DB	1
+	DB	0
+	DB	1
+	DB	13
+	DB	13
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	13
+	DB	13
+	DB	1
+	DB	1
+	DB	13
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	13
+	DB	13
 	DB	1
 	DB	13
 	DB	13
@@ -1297,6 +1144,92 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	13
+	DB	13
+	DB	1
+	DB	13
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	13
+	DB	13
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
 	DB	1
 	DB	13
 	DB	13
@@ -1320,83 +1253,152 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	13
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	13
+	DB	13
+	DB	1
+	DB	13
+	DB	13
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	13
+	DB	13
+	DB	1
+	DB	13
+	DB	13
+	DB	13
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	13
+	DB	13
+	DB	13
+	DB	1
+	DB	1
+	DB	13
+	DB	13
+	DB	13
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
 	DB	1
 	DB	13
 	DB	13
 	DB	1
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
 	DB	1
 	DB	1
 	DB	1
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1423,13 +1425,13 @@ _character0_data:
 	DB	1
 	DB	0
 	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1454,8 +1456,6 @@ _character0_data:
 	DB	1
 	DB	1
 	DB	1
-	DB	1
-	DB	0
 	DB	0
 	DB	1
 	DB	7
@@ -1480,13 +1480,6 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	7
-	DB	7
-	DB	7
-	DB	1
-	DB	1
-	DB	1
 	DB	0
 	DB	0
 	DB	1
@@ -1496,6 +1489,15 @@ _character0_data:
 	DB	1
 	DB	1
 	DB	0
+	DB	1
+	DB	7
+	DB	7
+	DB	7
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1518,8 +1520,6 @@ _character0_data:
 	DB	1
 	DB	1
 	DB	1
-	DB	1
-	DB	0
 	DB	0
 	DB	1
 	DB	1
@@ -1527,6 +1527,7 @@ _character0_data:
 	DB	1
 	DB	1
 	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1542,8 +1543,7 @@ _character0_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	XDEF _character0_data
-;    1	unsigned char character0_data[1538] = 
+	XDEF _character0Moving2_data
+;    1	unsigned char character0Moving2_data[1538] = 
 ;    2	{ 
 	END
