@@ -46,12 +46,12 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
 	DB	1
 	DB	1
 	DB	0
@@ -77,14 +77,14 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	14
-	DB	14
+	DB	16
+	DB	16
 	DB	1
-	DB	14
-	DB	14
+	DB	16
+	DB	16
 	DB	1
-	DB	14
-	DB	14
+	DB	16
+	DB	16
 	DB	1
 	DB	0
 	DB	0
@@ -109,14 +109,14 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	14
-	DB	14
+	DB	16
+	DB	16
 	DB	1
-	DB	14
-	DB	14
+	DB	16
+	DB	16
 	DB	1
-	DB	14
-	DB	14
+	DB	16
+	DB	16
 	DB	1
 	DB	0
 	DB	0
@@ -141,14 +141,14 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
 	DB	1
 	DB	0
 	DB	0
@@ -173,14 +173,14 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	14
-	DB	14
-	DB	14
+	DB	16
+	DB	16
+	DB	16
 	DB	1
 	DB	1
-	DB	14
-	DB	14
-	DB	14
+	DB	16
+	DB	16
+	DB	16
 	DB	1
 	DB	0
 	DB	0
@@ -205,13 +205,13 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
 	DB	1
 	DB	1
 	DB	0
@@ -238,11 +238,11 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	14
-	DB	14
-	DB	14
-	DB	14
-	DB	14
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	16
 	DB	1
 	DB	1
 	DB	0
@@ -300,403 +300,403 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	20
-	DB	20
-	DB	20
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	20
-	DB	20
-	DB	20
-	DB	20
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	20
-	DB	20
-	DB	20
-	DB	1
-	DB	1
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	24
-	DB	23
-	DB	24
-	DB	23
-	DB	23
-	DB	23
-	DB	23
 	DB	5
 	DB	5
 	DB	5
-	DB	0
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	20
-	DB	20
-	DB	20
-	DB	1
-	DB	1
-	DB	1
-	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	23
-	DB	24
-	DB	23
-	DB	24
-	DB	23
-	DB	24
-	DB	23
 	DB	5
-	DB	79
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	24
+	DB	23
+	DB	24
+	DB	23
+	DB	23
+	DB	23
+	DB	23
+	DB	7
+	DB	7
+	DB	7
+	DB	0
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	23
+	DB	24
+	DB	23
+	DB	24
+	DB	23
+	DB	24
+	DB	23
 	DB	7
 	DB	79
-	DB	5
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	20
-	DB	20
-	DB	20
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	24
-	DB	24
-	DB	23
-	DB	24
-	DB	23
-	DB	24
-	DB	23
-	DB	24
-	DB	23
-	DB	5
-	DB	7
-	DB	114
-	DB	7
-	DB	5
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	20
-	DB	20
-	DB	20
-	DB	1
-	DB	14
-	DB	1
-	DB	1
-	DB	24
-	DB	23
-	DB	24
-	DB	23
-	DB	24
-	DB	23
-	DB	24
-	DB	23
-	DB	5
+	DB	128
 	DB	79
 	DB	7
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	24
+	DB	24
+	DB	23
+	DB	24
+	DB	23
+	DB	24
+	DB	23
+	DB	24
+	DB	23
+	DB	7
+	DB	128
+	DB	115
+	DB	128
+	DB	7
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	16
+	DB	1
+	DB	1
+	DB	24
+	DB	23
+	DB	24
+	DB	23
+	DB	24
+	DB	23
+	DB	24
+	DB	23
+	DB	7
 	DB	79
+	DB	128
+	DB	79
+	DB	7
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
 	DB	5
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
 	DB	1
 	DB	1
+	DB	17
 	DB	1
-	DB	20
-	DB	1
-	DB	14
-	DB	14
+	DB	16
+	DB	16
 	DB	1
 	DB	1
 	DB	1
@@ -707,23 +707,23 @@ _character0Moving1_data:
 	DB	23
 	DB	23
 	DB	23
+	DB	7
+	DB	7
+	DB	7
+	DB	0
+	DB	1
+	DB	1
 	DB	5
 	DB	5
 	DB	5
-	DB	0
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
 	DB	1
 	DB	1
 	DB	1
@@ -745,19 +745,19 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
 	DB	1
 	DB	0
 	DB	0
@@ -777,18 +777,18 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
 	DB	1
 	DB	1
 	DB	0
@@ -809,18 +809,18 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
 	DB	1
 	DB	0
 	DB	0
@@ -842,17 +842,17 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
 	DB	1
 	DB	0
 	DB	0
@@ -880,9 +880,9 @@ _character0Moving1_data:
 	DB	1
 	DB	1
 	DB	1
-	DB	8
-	DB	8
-	DB	8
+	DB	5
+	DB	5
+	DB	5
 	DB	1
 	DB	1
 	DB	1
@@ -906,8 +906,8 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	1
 	DB	0
@@ -938,16 +938,16 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -970,16 +970,16 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	13
+	DB	15
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1002,16 +1002,16 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	13
+	DB	15
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
 	DB	1
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1035,15 +1035,15 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
 	DB	1
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1067,15 +1067,15 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	13
+	DB	15
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1100,13 +1100,13 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	13
+	DB	15
 	DB	1
 	DB	1
 	DB	0
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1132,13 +1132,13 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	25
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1164,45 +1164,13 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	1
 	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	1
-	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1228,44 +1196,13 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	13
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	1
-	DB	13
 	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	13
-	DB	13
-	DB	13
-	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1290,14 +1227,45 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	15
+	DB	15
+	DB	15
+	DB	1
+	DB	1
+	DB	15
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	1
+	DB	15
+	DB	15
+	DB	15
 	DB	1
-	DB	13
-	DB	13
-	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1325,11 +1293,11 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
-	DB	13
-	DB	13
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1355,13 +1323,13 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	13
 	DB	1
 	DB	1
+	DB	15
+	DB	15
 	DB	1
+	DB	15
+	DB	15
 	DB	1
 	DB	0
 	DB	0
@@ -1390,6 +1358,7 @@ _character0Moving1_data:
 	DB	0
 	DB	1
 	DB	1
+	DB	15
 	DB	1
 	DB	1
 	DB	1
@@ -1425,8 +1394,6 @@ _character0Moving1_data:
 	DB	1
 	DB	1
 	DB	1
-	DB	1
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1451,13 +1418,13 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	7
+	DB	0
 	DB	1
 	DB	1
 	DB	1
-	DB	7
-	DB	7
+	DB	1
+	DB	1
+	DB	1
 	DB	1
 	DB	1
 	DB	0
@@ -1483,14 +1450,47 @@ _character0Moving1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
 	DB	1
-	DB	7
+	DB	128
 	DB	1
 	DB	1
 	DB	1
-	DB	7
-	DB	7
-	DB	7
+	DB	128
+	DB	128
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	128
+	DB	1
+	DB	1
+	DB	1
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	0

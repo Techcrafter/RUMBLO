@@ -26,14 +26,17 @@ convert: sprites
     - character0Jumping.png
     - character0Moving1.png
     - character0Moving2.png
+    - character0Weapon.png
     - character1.png
     - character1Jumping.png
     - character1Moving1.png
     - character1Moving2.png
+    - character1Weapon.png
     - characterHighlighter
     - counter1.png
     - counter2.png
     - counter3.png
     - counterFight.png
     - mapHighlighter.png
+    - shield.png
     - statusUi.png

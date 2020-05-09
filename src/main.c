@@ -32,6 +32,7 @@ extern unsigned char tilemap_map[];
 #define WHITE				2
 
 char version[] = "1.0";
+int testMode = 0;
 
 int selection;
 int selecting;
@@ -40,12 +41,35 @@ int players;
 int map;
 int mapXBlock;
 int mapYBlock;
-int fighting;
+
+int character0MoveSpeed;
+int character0FallSpeed;
+int character0JumpSpeed;
+int character0JumpHeight;
+
+int character0WeaponSpeed;
+int character0WeaponKnockback;
+int character0WeaponKnockbackStrength;
+
+int character1MoveSpeed;
+int character1FallSpeed;
+int character1JumpSpeed;
+int character1JumpHeight;
+
+int character1WeaponSpeed;
+int character1WeaponKnockback;
+int character1WeaponKnockbackStrength;
 
 int player;
 int playerX;
 int playerY;
 int playerGrounded;
+int playerDeath;
+
+int player1SpawnX;
+int player1SpawnY;
+int player2SpawnX;
+int player2SpawnY;
 
 int player1CharacterSelection;
 int player1X;
@@ -60,7 +84,24 @@ int player1MoveAnimationCount;
 int player1Jumping;
 int player1Grounded;
 int player1ShieldActive;
+int player1XKnockback;
 int player1Lifes;
+
+int player1WeaponSpeed;
+int player1WeaponKnockback;
+int player1WeaponKnockbackStrength;
+int player1Weapon1;
+int player1Weapon1X;
+int player1Weapon1Y;
+int player1Weapon1Flipped;
+int player1Weapon2;
+int player1Weapon2X;
+int player1Weapon2Y;
+int player1Weapon2Flipped;
+int player1Weapon3;
+int player1Weapon3X;
+int player1Weapon3Y;
+int player1Weapon3Flipped;
 
 int player2IsAi;
 int player2CharacterSelection;
@@ -76,7 +117,24 @@ int player2MoveAnimationCount;
 int player2Jumping;
 int player2Grounded;
 int player2ShieldActive;
+int player2XKnockback;
 int player2Lifes;
+
+int player2WeaponSpeed;
+int player2WeaponKnockback;
+int player2WeaponKnockbackStrength;
+int player2Weapon1;
+int player2Weapon1X;
+int player2Weapon1Y;
+int player2Weapon1Flipped;
+int player2Weapon2;
+int player2Weapon2X;
+int player2Weapon2Y;
+int player2Weapon2Flipped;
+int player2Weapon3;
+int player2Weapon3X;
+int player2Weapon3Y;
+int player2Weapon3Flipped;
 
 sk_key_t key;
 
@@ -89,6 +147,9 @@ gfx_sprite_t *player1CharacterMoving1Flipped;
 gfx_sprite_t *player1CharacterMoving2Flipped;
 gfx_sprite_t *player1CharacterJumpingFlipped;
 
+gfx_sprite_t *player1Weapon;
+gfx_sprite_t *player1WeaponFlipped;
+
 gfx_sprite_t *player2Character;
 gfx_sprite_t *player2CharacterMoving1;
 gfx_sprite_t *player2CharacterMoving2;
@@ -97,6 +158,9 @@ gfx_sprite_t *player2CharacterFlipped;
 gfx_sprite_t *player2CharacterMoving1Flipped;
 gfx_sprite_t *player2CharacterMoving2Flipped;
 gfx_sprite_t *player2CharacterJumpingFlipped;
+
+gfx_sprite_t *player2Weapon;
+gfx_sprite_t *player2WeaponFlipped;
 
 gfx_tilemap_t tilemap;
 
@@ -122,6 +186,9 @@ int main(void)
 	player1CharacterMoving2Flipped = gfx_MallocSprite(32, 48);
 	player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
 	
+	player1Weapon = gfx_MallocSprite(8, 8);
+	player1WeaponFlipped = gfx_MallocSprite(8, 8);
+	
 	player2Character = gfx_MallocSprite(32, 48);
 	player2CharacterMoving1 = gfx_MallocSprite(32, 48);
 	player2CharacterMoving2 = gfx_MallocSprite(32, 48);
@@ -130,6 +197,9 @@ int main(void)
 	player2CharacterMoving1Flipped = gfx_MallocSprite(32, 48);
 	player2CharacterMoving2Flipped = gfx_MallocSprite(32, 48);
 	player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+	
+	player2Weapon = gfx_MallocSprite(8, 8);
+	player2WeaponFlipped = gfx_MallocSprite(8, 8);
 	
 	tilemap.map         = tilemap_map;
     tilemap.tiles       = tileset_tiles;
@@ -159,6 +229,24 @@ int main(void)
 	gfx_Tilemap(&tilemap, getXBlock(0), getYBlock(0));
 	gfx_PrintStringXY(version, 296, 232);
 	gfx_SwapDraw();
+	
+	character0MoveSpeed = 4;
+	character0FallSpeed = 4;
+	character0JumpSpeed = 8;
+	character0JumpHeight = 10;
+			
+	character0WeaponSpeed = 8;
+	character0WeaponKnockback = 4;
+	character0WeaponKnockbackStrength = 6;
+	
+	character1MoveSpeed = 8;
+	character1FallSpeed = 4;
+	character1JumpSpeed = 8;
+	character1JumpHeight = 15;
+	
+	character1WeaponSpeed = 6;
+	character1WeaponKnockback = 4;
+	character1WeaponKnockbackStrength = 4;
 	
 	delay(2000);
 	
@@ -296,6 +384,8 @@ int main(void)
 			mapYBlock = 0;
 			break;
 		case 1:
+			mapXBlock = 5;
+			mapYBlock = 0;
 			break;
 	}
 	
@@ -311,15 +401,7 @@ int main(void)
 	
 	while(selecting)
 	{
-		switch(map)
-		{
-			case 0:
-				gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
-				break;
-			case 1:
-				goto error;
-				break;
-		}
+		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 		gfx_SetColor(GRAY);
 		gfx_FillRectangle(0, 70, 320, 105);
 		gfx_SetTextFGColor(WHITE);
@@ -379,7 +461,6 @@ int main(void)
 	//prepareFight
 	prepareFight:
 	
-	fighting = 1;
 	player1Flipped = 0;
 	player1MoveAnimation = 0;
 	player1Jumping = 0;
@@ -392,25 +473,35 @@ int main(void)
 	player2Grounded = 1;
 	player2ShieldActive = 0;
 	player2Lifes = 3;
+	if(players == 1)
+	{
+		player2IsAi = 1;
+	}
+	else if(players == 2)
+	{
+		player2IsAi = 0;
+	}
 	switch(map)
 	{
 		case 0:
-			player1X = 80;
-			player1Y = 132;
-			if(players == 1)
-			{
-				player2IsAi = 1;
-			}
-			else if(players == 2)
-			{
-				player2IsAi = 0;
-			}
-			player2X = 220;
-			player2Y = 132;
+			player1SpawnX = 80;
+			player1SpawnY = 132;
+			
+			player2SpawnX = 220;
+			player2SpawnY = 132;
 			break;
 		case 1:
+			player1SpawnX = 32;
+			player1SpawnY = 96;
+			
+			player2SpawnX = 256;
+			player2SpawnY = 96;
 			break;
 	}
+	player1X = player1SpawnX;
+	player1Y = player1SpawnY;
+	player2X = player2SpawnX;
+	player2Y = player2SpawnY;
 	
 	switch(player1CharacterSelection)
 	{
@@ -423,10 +514,18 @@ int main(void)
 			gfx_FlipSpriteY(character0Moving1, player1CharacterMoving1Flipped);
 			gfx_FlipSpriteY(character0Moving2, player1CharacterMoving2Flipped);
 			gfx_FlipSpriteY(character0Jumping, player1CharacterJumpingFlipped);
-			player1MoveSpeed = 4;
-			player1FallSpeed = 4;
-			player1JumpSpeed = 8;
-			player1JumpHeight = 10;
+			
+			player1Weapon = character0Weapon;
+			gfx_FlipSpriteY(character0Weapon, player1WeaponFlipped);
+			
+			player1MoveSpeed = character0MoveSpeed;
+			player1FallSpeed = character0FallSpeed;
+			player1JumpSpeed = character0JumpSpeed;
+			player1JumpHeight = character0JumpHeight;
+			
+			player1WeaponSpeed = character0WeaponSpeed;
+			player1WeaponKnockback = character0WeaponKnockback;
+			player1WeaponKnockbackStrength = character0WeaponKnockbackStrength;
 			break;
 		case 1:
 			player1Character = character1;
@@ -437,10 +536,18 @@ int main(void)
 			gfx_FlipSpriteY(character1Moving1, player1CharacterMoving1Flipped);
 			gfx_FlipSpriteY(character1Moving2, player1CharacterMoving2Flipped);
 			gfx_FlipSpriteY(character1Jumping, player1CharacterJumpingFlipped);
-			player1MoveSpeed = 8;
-			player1FallSpeed = 4;
-			player1JumpSpeed = 4;
-			player1JumpHeight = 12;
+			
+			player1Weapon = character1Weapon;
+			gfx_FlipSpriteY(character1Weapon, player1WeaponFlipped);
+			
+			player1MoveSpeed = character1MoveSpeed;
+			player1FallSpeed = character1FallSpeed;
+			player1JumpSpeed = character1JumpSpeed;
+			player1JumpHeight = character1JumpHeight;
+			
+			player1WeaponSpeed = character1WeaponSpeed;
+			player1WeaponKnockback = character1WeaponKnockback;
+			player1WeaponKnockbackStrength = character1WeaponKnockbackStrength;
 			break;
 	}
 	switch(player2CharacterSelection)
@@ -454,10 +561,18 @@ int main(void)
 			gfx_FlipSpriteY(character0Moving1, player2CharacterMoving1Flipped);
 			gfx_FlipSpriteY(character0Moving2, player2CharacterMoving2Flipped);
 			gfx_FlipSpriteY(character0Jumping, player2CharacterJumpingFlipped);
-			player2MoveSpeed = 4;
-			player2FallSpeed = 4;
-			player2JumpSpeed = 8;
-			player2JumpHeight = 10;
+			
+			player2Weapon = character0Weapon;
+			gfx_FlipSpriteY(character0Weapon, player2WeaponFlipped);
+			
+			player2MoveSpeed = character0MoveSpeed;
+			player2FallSpeed = character0FallSpeed;
+			player2JumpSpeed = character0JumpSpeed;
+			player2JumpHeight = character0JumpHeight;
+			
+			player2WeaponSpeed = character0WeaponSpeed;
+			player2WeaponKnockback = character0WeaponKnockback;
+			player2WeaponKnockbackStrength = character0WeaponKnockbackStrength;
 			break;
 		case 1:
 			player2Character = character1;
@@ -468,10 +583,18 @@ int main(void)
 			gfx_FlipSpriteY(character1Moving1, player2CharacterMoving1Flipped);
 			gfx_FlipSpriteY(character1Moving2, player2CharacterMoving2Flipped);
 			gfx_FlipSpriteY(character1Jumping, player2CharacterJumpingFlipped);
-			player2MoveSpeed = 8;
-			player2FallSpeed = 4;
-			player2JumpSpeed = 4;
-			player2JumpHeight = 12;
+			
+			player2Weapon = character1Weapon;
+			gfx_FlipSpriteY(character1Weapon, player2WeaponFlipped);
+			
+			player2MoveSpeed = character1MoveSpeed;
+			player2FallSpeed = character1FallSpeed;
+			player2JumpSpeed = character1JumpSpeed;
+			player2JumpHeight = character1JumpHeight;
+			
+			player2WeaponSpeed = character1WeaponSpeed;
+			player2WeaponKnockback = character1WeaponKnockback;
+			player2WeaponKnockbackStrength = character1WeaponKnockbackStrength;
 			break;
 	}
 	
@@ -503,10 +626,12 @@ int main(void)
 	gfx_SetTextFGColor(BLACK);
 	gfx_SetTextBGColor(gfx_GetPixel(150, 224));
 	
-	while(fighting)
+	while(1)
 	{
+		//fight - draw map
 		gfx_Tilemap(&tilemap, getXBlock(mapXBlock), getYBlock(mapYBlock));
 		
+		//fight - get keys (player 1)
 		key = os_GetCSC();
 		if(key == sk_2nd)
 		{
@@ -517,7 +642,48 @@ int main(void)
 		}
 		if(key == sk_Alpha)
 		{
-			//shoot
+			if(player1Weapon1 == 0)
+			{
+				player1Weapon1 = 1;
+				player1Weapon1Flipped = player1Flipped;
+				if(player1Flipped == 0)
+				{
+					player1Weapon1X = player1X + 8;
+				}
+				else
+				{
+					player1Weapon1X = player1X - 8;
+				}
+				player1Weapon1Y = player1Y + 17;
+			}
+			else if(player1Weapon2 == 0)
+			{
+				player1Weapon2 = 1;
+				player1Weapon2Flipped = player1Flipped;
+				if(player1Flipped == 0)
+				{
+					player1Weapon2X = player1X + 8;
+				}
+				else
+				{
+					player1Weapon2X = player1X - 8;
+				}
+				player1Weapon2Y = player1Y + 17;
+			}
+			else if(player1Weapon3 == 0)
+			{
+				player1Weapon3 = 1;
+				player1Weapon3Flipped = player1Flipped;
+				if(player1Flipped == 0)
+				{
+					player1Weapon3X = player1X + 8;
+				}
+				else
+				{
+					player1Weapon3X = player1X - 8;
+				}
+				player1Weapon3Y = player1Y + 17;
+			}
 		}
 		if(key == sk_Clear)
 		{
@@ -528,10 +694,17 @@ int main(void)
         key = kb_Data[7];
 		if(key & kb_Up)
 		{
-			
+			if(testMode == 1)
+			{
+				player1Y -= 4;
+			}
 		}
 		if(key & kb_Down)
 		{
+			if(testMode == 1)
+			{
+				player1Y += 4;
+			}
 			player1Jumping = 0;
 			if(player1Grounded == 1)
 			{
@@ -542,7 +715,7 @@ int main(void)
 		{
 			player1ShieldActive = 0;
 		}
-		if(key & kb_Left)
+		if(key & kb_Left && player1ShieldActive == 0)
 		{
 			player1X -= player1MoveSpeed;
 			if(player1Flipped == 0)
@@ -565,7 +738,7 @@ int main(void)
 				player1MoveAnimationCount = 0;
 			}
 		}
-		if(key & kb_Right)
+		if(key & kb_Right && player1ShieldActive == 0)
 		{
 			player1X += player1MoveSpeed;
 			if(player1Flipped == 1)
@@ -589,6 +762,7 @@ int main(void)
 			}
 		}
 		
+		//fight - check for grounded and death
 		for(player = 1; player < 3; ++player)
 		{
 			switch(player)
@@ -602,6 +776,9 @@ int main(void)
 					playerY = player2Y;
 					break;
 			}
+			
+			playerGrounded = 0;
+			playerDeath = 0;
 			
 			if(map == 0)
 			{
@@ -621,9 +798,32 @@ int main(void)
 				{
 					playerGrounded = 1;
 				}
-				else
+				else if(playerY >= 240)
 				{
-					playerGrounded = 0;
+					playerDeath = 1;
+				}
+			}
+			else if(map == 1)
+			{
+				if(playerX >= -8 && playerX <= 56 && playerY == 96)
+				{
+					playerGrounded = 1;
+				}
+				else if(playerX >= 232 && playerX <= 296 && playerY == 96)
+				{
+					playerGrounded = 1;
+				}
+				else if(playerX >= 88 && playerX <= 200 && playerY == 80)
+				{
+					playerGrounded = 1;
+				}
+				else if(playerX >= 104 && playerX <= 184 && playerY == 16)
+				{
+					playerGrounded = 1;
+				}
+				else if(playerY > 160)
+				{
+					playerDeath = 1;
 				}
 			}
 			
@@ -636,8 +836,50 @@ int main(void)
 					player2Grounded = playerGrounded;
 					break;
 			}
+			
+			if(playerDeath == 1)
+			{
+				switch(player)
+				{
+					case 1:
+						player1Lifes--;
+						if(player1Lifes <= 0)
+						{
+							goto gameOver;
+						}
+						player1X = player1SpawnX;
+						player1Y = player1SpawnY;
+						player1Flipped = 0;
+						player1MoveAnimation = 0;
+						player1MoveAnimationCount = 0;
+						player1ShieldActive = 0;
+						player1Grounded = 1;
+						break;
+					case 2:
+						player2Lifes--;
+						if(player2Lifes <= 0)
+						{
+							goto gameOver;
+						}
+						player2X = player2SpawnX;
+						player2Y = player2SpawnY;
+						player2Flipped = 1;
+						player2MoveAnimation = 0;
+						player2MoveAnimationCount = 0;
+						player2ShieldActive = 0;
+						player2Grounded = 1;
+						break;
+				}
+			}
 		}
 		
+		//fight - player 1 always grounded in test mode
+		if(testMode == 1)
+		{
+			player1Grounded = 1;
+		}
+		
+		//fight - calculate jumps (player 1)
 		if(player1Jumping > 0)
 		{
 			player1Jumping--;
@@ -648,6 +890,7 @@ int main(void)
 			player1Y += player1FallSpeed;
 		}
 		
+		//fight - calculate jumps (player 2)
 		if(player2Jumping > 0)
 		{
 			player2Jumping--;
@@ -658,6 +901,131 @@ int main(void)
 			player2Y += player2FallSpeed;
 		}
 		
+		//fight - calculate knockback (player 1)
+		if(player1XKnockback < 0)
+		{
+			player1XKnockback++;
+			player1X -= player2WeaponKnockbackStrength;
+		}
+		else if(player1XKnockback > 0)
+		{
+			player1XKnockback--;
+			player1X += player2WeaponKnockbackStrength;
+		}
+		
+		//fight - calculate knockback (player 2)
+		if(player2XKnockback < 0)
+		{
+			player2XKnockback++;
+			player2X -= player1WeaponKnockbackStrength;
+		}
+		else if(player2XKnockback > 0)
+		{
+			player2XKnockback--;
+			player2X += player1WeaponKnockbackStrength;
+		}
+		
+		//fight - calculate weapons (player 1)
+		if(player1Weapon1 == 1)
+		{
+			if(player1Weapon1Flipped == 0)
+			{
+				player1Weapon1X += player1WeaponSpeed;
+			}
+			else
+			{
+				player1Weapon1X -= player1WeaponSpeed;
+			}
+			
+			if(player1Weapon1X <= -8 || player1Weapon1X >= 320)
+			{
+				player1Weapon1 = 0;
+			}
+		}
+		if(player1Weapon2 == 1)
+		{
+			if(player1Weapon2Flipped == 0)
+			{
+				player1Weapon2X += player1WeaponSpeed;
+			}
+			else
+			{
+				player1Weapon2X -= player1WeaponSpeed;
+			}
+			
+			if(player1Weapon2X <= -8 || player1Weapon2X >= 320)
+			{
+				player1Weapon2 = 0;
+			}
+		}
+		if(player1Weapon3 == 1)
+		{
+			if(player1Weapon3Flipped == 0)
+			{
+				player1Weapon3X += player1WeaponSpeed;
+			}
+			else
+			{
+				player1Weapon3X -= player1WeaponSpeed;
+			}
+			
+			if(player1Weapon3X <= -8 || player1Weapon3X >= 320)
+			{
+				player1Weapon3 = 0;
+			}
+		}
+		
+		//fight - calculate weapons (player 2)
+		if(player2Weapon1 == 1)
+		{
+			if(player2Weapon1Flipped == 0)
+			{
+				player2Weapon1X += player2WeaponSpeed;
+			}
+			else
+			{
+				player2Weapon1X -= player2WeaponSpeed;
+			}
+			
+			if(player2Weapon1X <= -8 || player2Weapon1X >= 320)
+			{
+				player2Weapon1 = 0;
+			}
+		}
+		if(player2Weapon2 == 1)
+		{
+			if(player2Weapon2Flipped == 0)
+			{
+				player2Weapon2X += player2WeaponSpeed;
+			}
+			else
+			{
+				player2Weapon2X -= player2WeaponSpeed;
+			}
+			
+			if(player2Weapon2X <= -8 || player2Weapon2X >= 320)
+			{
+				player2Weapon2 = 0;
+			}
+		}
+		if(player2Weapon3 == 1)
+		{
+			if(player2Weapon3Flipped == 0)
+			{
+				player2Weapon3X += player2WeaponSpeed;
+			}
+			else
+			{
+				player2Weapon3X -= player2WeaponSpeed;
+			}
+			
+			if(player2Weapon3X <= -8 || player2Weapon3X >= 320)
+			{
+				player2Weapon3 = 0;
+			}
+		}
+		
+		//fight - draw character (player 1)
 		if(player1Flipped == 0 && player1Grounded == 0)
 		{
 			gfx_TransparentSprite(player1CharacterJumping, player1X, player1Y);
@@ -703,7 +1071,13 @@ int main(void)
 			gfx_TransparentSprite(player1CharacterMoving1Flipped, player1X, player1Y);
 		}
 		
+		//fight - draw shield (player 1)
+		if(player1ShieldActive == 1)
+		{
+			gfx_TransparentSprite(shield, player1X - 12, player1Y - 4);
+		}
 		
+		//fight - draw character (player 2)
 		if(player2Flipped == 0 && player2Grounded == 0)
 		{
 			gfx_TransparentSprite(player2CharacterJumping, player2X, player2Y);
@@ -749,17 +1123,178 @@ int main(void)
 			gfx_TransparentSprite(player2CharacterMoving1Flipped, player2X, player2Y);
 		}
 		
-		gfx_TransparentSprite(statusUi, 128, 208);
-		gfx_SetTextXY(10, 10);
-		gfx_SetTextScale(2, 2);
-		gfx_PrintInt(player1X, 3);
-		gfx_PrintString(" ");
-		gfx_PrintInt(player1Y, 3);
+		//fight - draw shield (player 2)
+		if(player2ShieldActive == 1)
+		{
+			gfx_TransparentSprite(shield, player2X - 12, player2Y - 4);
+		}
 		
+		//fight - draw weapons (player 1)
+		if(player1Weapon1 == 1)
+		{
+			gfx_TransparentSprite(player1Weapon, player1Weapon1X, player1Weapon1Y);
+		}
+		if(player1Weapon2 == 1)
+		{
+			gfx_TransparentSprite(player1Weapon, player1Weapon2X, player1Weapon2Y);
+		}
+		if(player1Weapon3 == 1)
+		{
+			gfx_TransparentSprite(player1Weapon, player1Weapon3X, player1Weapon3Y);
+		}
+		
+		//fight - draw weapons (player 2)
+		if(player2Weapon1 == 1)
+		{
+			gfx_TransparentSprite(player2Weapon, player2Weapon1X, player2Weapon1Y);
+		}
+		if(player2Weapon2 == 1)
+		{
+			gfx_TransparentSprite(player2Weapon, player2Weapon2X, player2Weapon2Y);
+		}
+		if(player2Weapon3 == 1)
+		{
+			gfx_TransparentSprite(player2Weapon, player2Weapon3X, player2Weapon3Y);
+		}
+		
+		//fight - check for weapon hits (player 1)
+		if(player1Weapon1 == 1 && player1Weapon1Y + 8 >= player2Y && player1Weapon1Y <= player2Y + 48)
+		{
+			if(player1Weapon1Flipped == 0 && player1Weapon1X + 8 >= player2X && player1Weapon1X <= player2X + 32)
+			{
+				if(player2ShieldActive == 0)
+				{
+					player2XKnockback += player1WeaponKnockback;
+				}
+				player1Weapon1 = 0;
+			}
+			else if(player1Weapon1Flipped == 1 && player1Weapon1X <= player2X + 32 && player1Weapon1X + 8 >= player2X)
+			{
+				if(player2ShieldActive == 0)
+				{
+					player2XKnockback -= player1WeaponKnockback;
+				}
+				player1Weapon1 = 0;
+			}
+		}
+		if(player1Weapon2 == 1 && player1Weapon2Y + 8 >= player2Y && player1Weapon2Y <= player2Y + 48)
+		{
+			if(player1Weapon2Flipped == 0 && player1Weapon2X + 8 >= player2X && player1Weapon2X <= player2X + 32)
+			{
+				if(player2ShieldActive == 0)
+				{
+					player2XKnockback += player1WeaponKnockback;
+				}
+				player1Weapon2 = 0;
+			}
+			else if(player1Weapon2Flipped == 1 && player1Weapon2X <= player2X + 32 && player1Weapon2X + 8 >= player2X)
+			{
+				if(player2ShieldActive == 0)
+				{
+					player2XKnockback -= player1WeaponKnockback;
+				}
+				player1Weapon2 = 0;
+			}
+		}
+		if(player1Weapon3 == 1 && player1Weapon3Y + 8 >= player2Y && player1Weapon3Y <= player2Y + 48)
+		{
+			if(player1Weapon3Flipped == 0 && player1Weapon3X + 8 >= player2X && player1Weapon3X <= player2X + 32)
+			{
+				if(player2ShieldActive == 0)
+				{
+					player2XKnockback += player1WeaponKnockback;
+				}
+				player1Weapon3 = 0;
+			}
+			else if(player1Weapon3Flipped == 1 && player1Weapon3X <= player2X + 32 && player1Weapon3X + 8 >= player2X)
+			{
+				if(player2ShieldActive == 0)
+				{
+					player2XKnockback -= player1WeaponKnockback;
+				}
+				player1Weapon3 = 0;
+			}
+		}
+		
+		//fight - check for weapon hits (player 2)
+		if(player2Weapon1 == 1 && player2Weapon1Y + 8 >= player1Y && player2Weapon1Y <= player1Y + 48)
+		{
+			if(player2Weapon1Flipped == 0 && player2Weapon1X + 8 >= player1X && player2Weapon1X <= player1X + 32)
+			{
+				if(player1ShieldActive == 0)
+				{
+					player1XKnockback += player2WeaponKnockback;
+				}
+				player2Weapon1 = 0;
+			}
+			else if(player2Weapon1Flipped == 1 && player2Weapon1X <= player1X + 32 && player2Weapon1X + 8 >= player1X)
+			{
+				if(player1ShieldActive == 0)
+				{
+					player1XKnockback -= player2WeaponKnockback;
+				}
+				player2Weapon1 = 0;
+			}
+		}
+		if(player2Weapon2 == 1 && player2Weapon2Y + 8 >= player1Y && player2Weapon2Y <= player1Y + 48)
+		{
+			if(player2Weapon2Flipped == 0 && player2Weapon2X + 8 >= player1X && player2Weapon2X <= player1X + 32)
+			{
+				if(player1ShieldActive == 0)
+				{
+					player1XKnockback += player2WeaponKnockback;
+				}
+				player2Weapon2 = 0;
+			}
+			else if(player2Weapon2Flipped == 1 && player2Weapon2X <= player1X + 32 && player2Weapon2X + 8 >= player1X)
+			{
+				if(player1ShieldActive == 0)
+				{
+					player1XKnockback -= player2WeaponKnockback;
+				}
+				player2Weapon2 = 0;
+			}
+		}
+		if(player2Weapon3 == 1 && player2Weapon3Y + 8 >= player1Y && player2Weapon3Y <= player1Y + 48)
+		{
+			if(player2Weapon3Flipped == 0 && player2Weapon3X + 8 >= player1X && player2Weapon3X <= player1X + 32)
+			{
+				if(player1ShieldActive == 0)
+				{
+					player1XKnockback += player2WeaponKnockback;
+				}
+				player2Weapon3 = 0;
+			}
+			else if(player2Weapon3Flipped == 1 && player2Weapon3X <= player1X + 32 && player2Weapon3X + 8 >= player1X)
+			{
+				if(player1ShieldActive == 0)
+				{
+					player1XKnockback -= player2WeaponKnockback;
+				}
+				player2Weapon3 = 0;
+			}
+		}
+		
+		//fight - draw UI
+		gfx_TransparentSprite(statusUi, 128, 208);
+		gfx_SetTextScale(2, 2);
+		gfx_SetTextXY(134, 216);
+		gfx_PrintInt(player1Lifes, 1);
+		gfx_SetTextXY(171, 216);
+		gfx_PrintInt(player2Lifes, 1);
+		
+		//fight - draw player 1 position
+		if(testMode == 1)
+		{
+			gfx_SetTextXY(10, 10);
+			gfx_PrintInt(player1X, 3);
+			gfx_PrintString(" ");
+			gfx_PrintInt(player1Y, 3);
+		}
+		
+		//fight - swap draw
 		gfx_SwapDraw();
 	}
-	
-	goto error;
 	
 	//---------------------------------------------------------------
 	

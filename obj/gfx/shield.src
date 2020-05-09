@@ -1,357 +1,12 @@
 ; Zilog eZ80 ANSI C Compiler Release 3.4
 ; -optsize -noreduceopt -nomodsect -peephole -globalopt
 ; -localcse -const=ROM 
-	FILE	"SRC\GFX\CHARACTERHIGHLIGHTER.C"
+	FILE	"SRC\GFX\SHIELD.C"
 	.assume ADL=1
 	SEGMENT DATA
-_characterHighlighter_data:
-	DB	48
-	DB	64
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	7
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	7
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	7
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	7
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+_shield_data:
+	DB	56
+	DB	56
 	DB	0
 	DB	0
 	DB	0
@@ -364,6 +19,38 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -384,26 +71,50 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -415,14 +126,48 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
 	DB	0
+	DB	5
+	DB	5
+	DB	5
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	0
+	DB	5
+	DB	5
+	DB	5
 	DB	0
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -435,110 +180,52 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	1
+	DB	5
+	DB	5
 	DB	0
-	DB	7
+	DB	128
 	DB	128
+	DB	128
 	DB	7
 	DB	7
-	DB	128
 	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	7
-	DB	128
 	DB	7
 	DB	7
-	DB	128
 	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	7
-	DB	128
 	DB	7
 	DB	7
-	DB	128
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
 	DB	7
+	DB	7
+	DB	128
+	DB	128
+	DB	128
 	DB	0
+	DB	5
+	DB	5
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -548,8 +235,15 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
 	DB	0
+	DB	5
 	DB	0
+	DB	128
+	DB	128
+	DB	7
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
@@ -581,39 +275,14 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	7
-	DB	128
 	DB	7
 	DB	7
 	DB	128
-	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	128
 	DB	0
+	DB	5
 	DB	0
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -621,19 +290,17 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
 	DB	0
+	DB	5
 	DB	0
+	DB	128
 	DB	0
+	DB	7
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	7
 	DB	0
 	DB	0
 	DB	0
@@ -666,23 +333,25 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	7
 	DB	0
+	DB	128
 	DB	0
+	DB	5
 	DB	0
+	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	5
 	DB	0
-	DB	7
 	DB	128
-	DB	7
 	DB	7
-	DB	128
 	DB	7
-	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -721,61 +390,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	7
-	DB	128
 	DB	7
 	DB	7
 	DB	128
-	DB	7
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	0
+	DB	5
+	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	5
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	7
-	DB	128
-	DB	7
-	DB	7
 	DB	128
 	DB	7
 	DB	0
@@ -822,9 +450,17 @@ _characterHighlighter_data:
 	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	0
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	0
+	DB	5
 	DB	128
+	DB	0
 	DB	7
 	DB	0
 	DB	0
@@ -869,11 +505,19 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	7
+	DB	0
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	0
+	DB	1
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	0
 	DB	128
 	DB	7
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -916,12 +560,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	0
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -964,12 +616,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1012,12 +672,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	0
+	DB	1
+	DB	5
+	DB	0
 	DB	128
 	DB	7
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1060,12 +728,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	0
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1108,12 +784,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1156,12 +840,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1204,12 +896,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1252,12 +952,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1300,12 +1008,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1348,12 +1064,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1396,12 +1120,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1444,12 +1176,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1492,12 +1232,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1540,12 +1288,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1588,12 +1344,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1636,12 +1400,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1684,12 +1456,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1732,12 +1512,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1780,12 +1568,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1828,12 +1624,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1876,12 +1680,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1924,12 +1736,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1972,12 +1792,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2020,12 +1848,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2068,12 +1904,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2116,12 +1960,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2164,12 +2016,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2212,12 +2072,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2260,12 +2128,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2308,12 +2184,21 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2356,12 +2241,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2404,12 +2297,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2452,12 +2353,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2500,12 +2409,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	1
+	DB	5
+	DB	0
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2548,12 +2465,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	0
+	DB	5
+	DB	1
+	DB	0
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2596,12 +2521,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	1
+	DB	5
 	DB	128
 	DB	7
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2644,12 +2577,20 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	0
 	DB	128
 	DB	7
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2694,9 +2635,16 @@ _characterHighlighter_data:
 	DB	0
 	DB	7
 	DB	128
-	DB	7
-	DB	7
+	DB	0
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	1
+	DB	0
+	DB	5
 	DB	128
+	DB	0
 	DB	7
 	DB	0
 	DB	0
@@ -2741,9 +2689,17 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	7
+	DB	0
 	DB	128
-	DB	7
-	DB	7
+	DB	5
+	DB	0
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	5
+	DB	0
 	DB	128
 	DB	7
 	DB	0
@@ -2788,19 +2744,22 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	128
-	DB	7
 	DB	7
 	DB	128
-	DB	7
 	DB	0
+	DB	5
+	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	5
 	DB	0
+	DB	128
+	DB	7
+	DB	7
 	DB	0
 	DB	0
 	DB	0
@@ -2836,18 +2795,28 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
-	DB	128
+	DB	0
+	DB	0
+	DB	0
 	DB	7
 	DB	7
 	DB	128
-	DB	7
+	DB	0
+	DB	5
+	DB	1
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
+	DB	1
 	DB	0
+	DB	5
 	DB	0
+	DB	128
 	DB	0
+	DB	7
 	DB	0
 	DB	0
 	DB	0
@@ -2885,10 +2854,27 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	7
+	DB	0
+	DB	128
+	DB	0
+	DB	5
+	DB	0
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	0
+	DB	5
+	DB	0
+	DB	128
 	DB	128
 	DB	7
 	DB	7
-	DB	128
 	DB	7
 	DB	0
 	DB	0
@@ -2920,8 +2906,15 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	7
+	DB	7
+	DB	7
+	DB	128
+	DB	128
 	DB	0
+	DB	5
 	DB	0
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -2931,28 +2924,14 @@ _characterHighlighter_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	1
+	DB	5
+	DB	5
 	DB	0
-	DB	7
 	DB	128
-	DB	7
-	DB	7
 	DB	128
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
+	DB	128
 	DB	7
 	DB	7
 	DB	7
@@ -2981,25 +2960,34 @@ _characterHighlighter_data:
 	DB	7
 	DB	7
 	DB	7
-	DB	128
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	128
 	DB	128
 	DB	128
+	DB	0
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	0
+	DB	5
+	DB	5
+	DB	5
+	DB	0
 	DB	128
 	DB	128
 	DB	128
@@ -3030,56 +3018,132 @@ _characterHighlighter_data:
 	DB	128
 	DB	128
 	DB	128
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	DB	7
-	XDEF _characterHighlighter_data
-;    1	unsigned char characterHighlighter_data[3074] = 
+	DB	0
+	DB	5
+	DB	5
+	DB	5
+	DB	0
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	XDEF _shield_data
+;    1	unsigned char shield_data[3138] = 
 ;    2	{ 
 	END

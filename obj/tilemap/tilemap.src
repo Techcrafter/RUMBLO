@@ -105,26 +105,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -265,26 +265,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -425,26 +425,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -585,26 +585,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -745,26 +745,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	55
+	DB	56
+	DB	56
+	DB	57
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -905,26 +905,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -1065,26 +1065,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -1225,26 +1225,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -1385,26 +1385,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	55
+	DB	56
+	DB	56
+	DB	56
+	DB	56
+	DB	57
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -1545,26 +1545,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	55
+	DB	56
+	DB	57
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	54
+	DB	54
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	55
+	DB	56
+	DB	57
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -1705,26 +1705,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	54
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	54
+	DB	54
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	54
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -1865,26 +1865,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	54
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	54
+	DB	54
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	54
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -2025,26 +2025,26 @@ _tilemap_map:
 	DB	51
 	DB	51
 	DB	51
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	52
+	DB	52
+	DB	54
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	54
+	DB	54
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	52
+	DB	54
+	DB	52
+	DB	52
 	DB	0
 	DB	0
 	DB	0
@@ -2185,26 +2185,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
 	DB	0
 	DB	0
 	DB	0
@@ -2345,26 +2345,26 @@ _tilemap_map:
 	DB	43
 	DB	43
 	DB	43
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
+	DB	53
 	DB	0
 	DB	0
 	DB	0
