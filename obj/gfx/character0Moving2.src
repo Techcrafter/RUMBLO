@@ -300,14 +300,14 @@ _character0Moving2_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	0
 	DB	0
@@ -331,15 +331,15 @@ _character0Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	0
 	DB	0
@@ -363,16 +363,16 @@ _character0Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	0
 	DB	0
@@ -395,16 +395,16 @@ _character0Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	0
@@ -427,49 +427,17 @@ _character0Moving2_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	0
 	DB	0
@@ -488,20 +456,20 @@ _character0Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	1
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
-	DB	133
-	DB	133
 	DB	1
 	DB	1
-	DB	18
-	DB	18
-	DB	18
 	DB	1
-	DB	1
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	0
 	DB	0
@@ -521,43 +489,9 @@ _character0Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	133
-	DB	133
-	DB	133
 	DB	1
-	DB	1
-	DB	18
-	DB	18
-	DB	18
-	DB	18
-	DB	1
-	DB	1
-	DB	133
-	DB	133
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	18
@@ -565,7 +499,73 @@ _character0Moving2_data:
 	DB	18
 	DB	1
 	DB	1
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	128
+	DB	128
+	DB	128
+	DB	1
+	DB	1
+	DB	18
+	DB	18
+	DB	18
+	DB	18
+	DB	1
+	DB	1
+	DB	128
+	DB	128
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	1
+	DB	1
+	DB	18
+	DB	18
+	DB	18
+	DB	1
+	DB	1
+	DB	128
 	DB	1
 	DB	0
 	DB	0
@@ -585,12 +585,12 @@ _character0Moving2_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	18
@@ -616,14 +616,14 @@ _character0Moving2_data:
 	DB	80
 	DB	9
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	18
@@ -644,19 +644,19 @@ _character0Moving2_data:
 	DB	24
 	DB	9
 	DB	7
-	DB	116
+	DB	115
 	DB	7
 	DB	9
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	18
@@ -680,16 +680,16 @@ _character0Moving2_data:
 	DB	80
 	DB	9
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	1
@@ -713,17 +713,17 @@ _character0Moving2_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	1
@@ -745,19 +745,19 @@ _character0Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	0
 	DB	0
@@ -777,18 +777,18 @@ _character0Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	0
@@ -809,50 +809,18 @@ _character0Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
-	DB	133
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	0
 	DB	0
@@ -874,15 +842,47 @@ _character0Moving2_data:
 	DB	0
 	DB	1
 	DB	1
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	128
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	1
 	DB	1
 	DB	1
 	DB	1
 	DB	1
 	DB	1
-	DB	133
-	DB	133
-	DB	133
+	DB	1
+	DB	1
+	DB	128
+	DB	128
+	DB	128
 	DB	1
 	DB	1
 	DB	1

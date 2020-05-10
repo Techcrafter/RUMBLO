@@ -61,10 +61,10 @@ _global_palette:
 	DB	8
 	DB	64
 	DB	35
-	DB	99
-	DB	12
 	DB	33
 	DB	4
+	DB	99
+	DB	12
 	DB	254
 	DB	123
 	DB	222
@@ -181,8 +181,6 @@ _global_palette:
 	DB	53
 	DB	9
 	DB	165
-	DB	198
-	DB	24
 	DB	115
 	DB	78
 	DB	140
@@ -197,6 +195,8 @@ _global_palette:
 	DB	161
 	DB	1
 	DB	2
+	DB	198
+	DB	24
 	DB	98
 	DB	187
 	DB	247
@@ -229,8 +229,6 @@ _global_palette:
 	DB	148
 	DB	155
 	DB	111
-	DB	14
-	DB	242
 	DB	199
 	DB	156
 	DB	114
@@ -259,14 +257,6 @@ _global_palette:
 	DB	1
 	DB	224
 	DB	0
-	DB	99
-	DB	109
-	DB	99
-	DB	89
-	DB	70
-	DB	61
-	DB	246
-	DB	246
 	DB	141
 	DB	181
 	DB	31
@@ -278,6 +268,6 @@ _global_palette:
 	DB	255
 	DB	243
 	XDEF _global_palette
-;    1	unsigned char global_palette[272] = 
+;    1	unsigned char global_palette[262] = 
 ;    2	{ 
 	END

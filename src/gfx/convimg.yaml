@@ -38,5 +38,6 @@ convert: sprites
     - counter3.png
     - counterFight.png
     - mapHighlighter.png
+    - randomCharacter.png
     - shield.png
     - statusUi.png

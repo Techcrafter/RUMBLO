@@ -695,8 +695,8 @@ _tilemap_map:
 	DB	34
 	DB	27
 	DB	27
-	DB	27
-	DB	27
+	DB	67
+	DB	68
 	DB	27
 	DB	27
 	DB	27
@@ -855,8 +855,8 @@ _tilemap_map:
 	DB	36
 	DB	27
 	DB	27
-	DB	27
-	DB	27
+	DB	69
+	DB	70
 	DB	27
 	DB	27
 	DB	27
@@ -1311,14 +1311,14 @@ _tilemap_map:
 	DB	0
 	DB	23
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	24
+	DB	25
+	DB	25
+	DB	25
+	DB	25
+	DB	25
+	DB	25
+	DB	26
 	DB	0
 	DB	23
 	DB	0

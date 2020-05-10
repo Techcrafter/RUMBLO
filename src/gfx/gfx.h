@@ -23,6 +23,7 @@ extern "C" {
 #include "counter3.h"
 #include "counterFight.h"
 #include "mapHighlighter.h"
+#include "randomCharacter.h"
 #include "shield.h"
 #include "statusUi.h"
 

@@ -636,8 +636,8 @@ _character1_data:
 	DB	5
 	DB	100
 	DB	100
-	DB	95
-	DB	95
+	DB	94
+	DB	94
 	DB	4
 	DB	4
 	DB	59
@@ -646,7 +646,7 @@ _character1_data:
 	DB	96
 	DB	5
 	DB	23
-	DB	118
+	DB	117
 	DB	1
 	DB	8
 	DB	8
@@ -742,7 +742,7 @@ _character1_data:
 	DB	12
 	DB	12
 	DB	23
-	DB	95
+	DB	94
 	DB	1
 	DB	8
 	DB	8

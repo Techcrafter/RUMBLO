@@ -238,6 +238,8 @@ int main(void)
 	gfx_PrintStringXY(version, 296, 232);
 	gfx_SwapDraw();
 	
+	srand(rtc_Time());
+	
 	character0MoveSpeed = 4;
 	character0FallSpeed = 4;
 	character0JumpSpeed = 8;
@@ -312,6 +314,15 @@ int main(void)
 			gfx_SetTextFGColor(BLACK);
 		}
 		gfx_PrintStringXY("Singleplayer", 112, 68);
+		if(selection == -1)
+		{
+			gfx_SetTextFGColor(GRAY);
+		}
+		else
+		{
+			gfx_SetTextFGColor(GRAY);
+		}
+		gfx_PrintStringXY("Multiplayer", 119, 100);
 		if(selection == 1)
 		{
 			gfx_SetTextFGColor(RED);
@@ -320,7 +331,7 @@ int main(void)
 		{
 			gfx_SetTextFGColor(BLACK);
 		}
-		gfx_PrintStringXY("Quit game", 124, 100);
+		gfx_PrintStringXY("Quit game", 124, 132);
 		gfx_SetTextFGColor(BLACK);
 		gfx_PrintStringXY("Star it on GitHub!", 90, 220);
 		
@@ -368,7 +379,7 @@ int main(void)
 		{
 			selection--;
 		}
-		else if(key == sk_Right && selection != 1)
+		else if(key == sk_Right && selection != 2)
 		{
 			selection++;
 		}
@@ -381,9 +392,26 @@ int main(void)
 			case 1:
 				gfx_TransparentSprite(mapHighlighter, 96, 64);
 				break;
+			case 2:
+				gfx_TransparentSprite(mapHighlighter, 160, 64);
+				break;
 		}
 		gfx_SwapDraw();
 	}
+	
+	if(selection == 2)  //random map
+	{
+		selection = random();
+		if(selection < 0.5)
+		{
+			selection = 0;
+		}
+		else
+		{
+			selection = 1;
+		}
+	}
+	
 	map = selection;
 	mapAnimation = 0;
 	switch(map)
@@ -394,7 +422,7 @@ int main(void)
 			break;
 		case 1:
 			mapAnimation = 2;
-			mapAnimationSpeed = 15;
+			mapAnimationSpeed = 25;
 			mapXBlock1 = 4;
 			mapYBlock1 = 0;
 			mapXBlock2 = 5;
@@ -411,6 +439,7 @@ int main(void)
 	//character selector
 	characterSelector:
 	
+	//player 1
 	selection = 0;
 	selecting = 1;
 	
@@ -422,7 +451,7 @@ int main(void)
 		gfx_SetTextFGColor(WHITE);
 		gfx_SetTextBGColor(GRAY);
 		gfx_SetTextScale(2, 2);
-		gfx_PrintStringXY("Select a character:", 10, 76);
+		gfx_PrintStringXY("Select character 1:", 10, 76);
 		gfx_TransparentSprite(characterHighlighter, 138, 100);
 		
 		key = os_GetCSC();
@@ -440,13 +469,13 @@ int main(void)
 		}
 		else if(key == sk_Left && selection == 0)
 		{
-			selection = 1;
+			selection = 2;
 		}
-		else if(key == sk_Right && selection != 1)
+		else if(key == sk_Right && selection != 2)
 		{
 			selection++;
 		}
-		else if(key == sk_Right && selection == 1)
+		else if(key == sk_Right && selection == 2)
 		{
 			selection = 0;
 		}
@@ -454,20 +483,117 @@ int main(void)
 		switch(selection)
 		{
 			case 0:
-				gfx_TransparentSprite(character1, 77, 108);
+				gfx_TransparentSprite(randomCharacter, 77, 108);
 				gfx_TransparentSprite(character0, 146, 108);
 				gfx_TransparentSprite(character1, 215, 108);
 				break;
 			case 1:
 				gfx_TransparentSprite(character0, 77, 108);
 				gfx_TransparentSprite(character1, 146, 108);
+				gfx_TransparentSprite(randomCharacter, 215, 108);
+				break;
+			case 2:
+				gfx_TransparentSprite(character1, 77, 108);
+				gfx_TransparentSprite(randomCharacter, 146, 108);
 				gfx_TransparentSprite(character0, 215, 108);
 				break;
 		}
 		
 		gfx_SwapDraw();
 	}
+	
+	if(selection == 2)  //random character
+	{
+		selection = random();
+		if(selection < 0.5)
+		{
+			selection = 0;
+		}
+		else
+		{
+			selection = 1;
+		}
+	}
+	
 	player1CharacterSelection = selection;
+	
+	//player 2
+	selection = 0;
+	selecting = 1;
+	
+	while(selecting)
+	{
+		gfx_Tilemap(&tilemap, getXBlock(mapXBlock1), getYBlock(mapYBlock1));
+		gfx_SetColor(GRAY);
+		gfx_FillRectangle(0, 70, 320, 105);
+		gfx_SetTextFGColor(WHITE);
+		gfx_SetTextBGColor(GRAY);
+		gfx_SetTextScale(2, 2);
+		gfx_PrintStringXY("Select character 2:", 10, 76);
+		gfx_TransparentSprite(characterHighlighter, 138, 100);
+		
+		key = os_GetCSC();
+		if(key == sk_2nd)
+		{
+			selecting = 0;
+		}
+		else if(key == sk_Clear)
+		{
+			goto mapSelector;
+		}
+		else if(key == sk_Left && selection != 0)
+		{
+			selection--;
+		}
+		else if(key == sk_Left && selection == 0)
+		{
+			selection = 2;
+		}
+		else if(key == sk_Right && selection != 2)
+		{
+			selection++;
+		}
+		else if(key == sk_Right && selection == 2)
+		{
+			selection = 0;
+		}
+		
+		switch(selection)
+		{
+			case 0:
+				gfx_TransparentSprite(randomCharacter, 77, 108);
+				gfx_TransparentSprite(character0, 146, 108);
+				gfx_TransparentSprite(character1, 215, 108);
+				break;
+			case 1:
+				gfx_TransparentSprite(character0, 77, 108);
+				gfx_TransparentSprite(character1, 146, 108);
+				gfx_TransparentSprite(randomCharacter, 215, 108);
+				break;
+			case 2:
+				gfx_TransparentSprite(character1, 77, 108);
+				gfx_TransparentSprite(randomCharacter, 146, 108);
+				gfx_TransparentSprite(character0, 215, 108);
+				break;
+		}
+		
+		gfx_SwapDraw();
+	}
+	
+	if(selection == 2)  //random character
+	{
+		selection = random();
+		if(selection < 0.5)
+		{
+			selection = 0;
+		}
+		else
+		{
+			selection = 1;
+		}
+	}
+	
+	player2CharacterSelection = selection;
 	
 	goto prepareFight;
 	
@@ -485,12 +611,22 @@ int main(void)
 	player1Grounded = 1;
 	player1ShieldActive = 0;
 	player1Lifes = 3;
+	
+	player1Weapon1 = 0;
+	player1Weapon2 = 0;
+	player1Weapon3 = 0;
+	
 	player2Flipped = 1;
 	player2MoveAnimation = 0;
 	player2Jumping = 0;
 	player2Grounded = 1;
 	player2ShieldActive = 0;
 	player2Lifes = 3;
+	
+	player2Weapon1 = 0;
+	player2Weapon2 = 0;
+	player2Weapon3 = 0;
+	
 	if(players == 1)
 	{
 		player2IsAi = 1;
@@ -670,7 +806,7 @@ int main(void)
 		{
 			gfx_Tilemap(&tilemap, getXBlock(mapXBlock1), getYBlock(mapYBlock1));
 		}
-		else if(mapAnimationState == 1)
+		else if(mapAnimationState == 1 || mapAnimationState == 3)
 		{
 			gfx_Tilemap(&tilemap, getXBlock(mapXBlock2), getYBlock(mapYBlock2));
 		}

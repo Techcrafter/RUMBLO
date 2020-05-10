@@ -36,7 +36,7 @@ _character1Weapon_data:
 	DB	59
 	DB	96
 	DB	1
-	DB	95
+	DB	94
 	DB	96
 	DB	1
 	DB	0
