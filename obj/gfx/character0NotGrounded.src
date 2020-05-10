@@ -1,10 +1,10 @@
 ; Zilog eZ80 ANSI C Compiler Release 3.4
 ; -optsize -noreduceopt -nomodsect -peephole -globalopt
 ; -localcse -const=ROM 
-	FILE	"SRC\GFX\CHARACTER1MOVING2.C"
+	FILE	"SRC\GFX\CHARACTER0NOTGROUNDED.C"
 	.assume ADL=1
 	SEGMENT DATA
-_character1Moving2_data:
+_character0NotGrounded_data:
 	DB	32
 	DB	48
 	DB	0
@@ -13,41 +13,10 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
 	DB	1
 	DB	1
 	DB	1
@@ -75,19 +44,16 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
 	DB	1
-	DB	0
-	DB	0
-	DB	0
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -111,12 +77,14 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
+	DB	17
+	DB	17
+	DB	1
+	DB	17
+	DB	17
+	DB	1
+	DB	17
+	DB	17
 	DB	1
 	DB	0
 	DB	0
@@ -140,47 +108,15 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
 	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
+	DB	17
+	DB	17
 	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	17
+	DB	17
 	DB	1
-	DB	12
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	12
+	DB	17
+	DB	17
 	DB	1
 	DB	0
 	DB	0
@@ -204,277 +140,369 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	1
-	DB	12
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	17
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	1
 	DB	1
 	DB	18
 	DB	18
+	DB	18
 	DB	1
-	DB	12
 	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	12
-	DB	12
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	12
-	DB	12
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	133
+	DB	133
+	DB	133
 	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	1
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	1
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	35
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -487,346 +515,249 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	1
-	DB	8
-	DB	8
-	DB	35
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	11
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	8
-	DB	8
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	35
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	23
-	DB	59
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	5
-	DB	100
-	DB	100
-	DB	95
-	DB	95
-	DB	4
-	DB	4
-	DB	59
-	DB	59
-	DB	96
-	DB	96
-	DB	5
-	DB	23
-	DB	118
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	23
-	DB	59
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
 	DB	1
-	DB	8
-	DB	8
-	DB	8
+	DB	133
+	DB	133
+	DB	133
 	DB	1
 	DB	1
 	DB	18
 	DB	18
 	DB	18
 	DB	18
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	1
 	DB	18
 	DB	18
 	DB	18
+	DB	1
+	DB	1
+	DB	133
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	24
+	DB	24
+	DB	24
+	DB	9
+	DB	9
+	DB	9
+	DB	0
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	1
 	DB	18
 	DB	18
 	DB	18
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	24
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	9
+	DB	80
+	DB	7
+	DB	80
+	DB	9
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	1
 	DB	18
 	DB	18
 	DB	18
-	DB	23
-	DB	4
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
 	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
 	DB	1
 	DB	1
+	DB	25
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	9
+	DB	7
+	DB	116
+	DB	7
+	DB	9
 	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
 	DB	1
 	DB	1
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	23
-	DB	95
+	DB	18
+	DB	18
+	DB	18
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	17
 	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
 	DB	1
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	9
+	DB	80
+	DB	7
+	DB	80
+	DB	9
 	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	23
-	DB	100
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
 	DB	1
-	DB	11
-	DB	11
-	DB	11
 	DB	1
-	DB	23
-	DB	23
-	DB	23
-	DB	23
+	DB	18
 	DB	1
+	DB	17
+	DB	17
 	DB	1
 	DB	1
 	DB	1
-	DB	1
+	DB	25
+	DB	24
+	DB	25
+	DB	24
+	DB	24
+	DB	24
+	DB	24
+	DB	9
+	DB	9
+	DB	9
+	DB	0
 	DB	1
 	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
 	DB	1
 	DB	1
 	DB	1
 	DB	1
 	DB	1
 	DB	1
+	DB	0
 	DB	1
 	DB	1
-	DB	8
-	DB	8
-	DB	35
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
 	DB	1
 	DB	1
 	DB	1
 	DB	1
-	DB	23
-	DB	23
 	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	1
-	DB	8
-	DB	8
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
 	DB	1
 	DB	0
 	DB	0
@@ -839,26 +770,26 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
 	DB	1
 	DB	0
 	DB	0
@@ -871,59 +802,32 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	35
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -935,26 +839,20 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	1
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
 	DB	1
 	DB	0
 	DB	0
@@ -967,30 +865,27 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	1
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	133
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -999,27 +894,6 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	35
-	DB	8
-	DB	8
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1031,27 +905,20 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	16
+	DB	16
+	DB	16
+	DB	1
+	DB	1
 	DB	0
+	DB	1
 	DB	1
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	35
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
 	DB	1
+	DB	1
+	DB	1
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1066,24 +933,26 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	1
+	DB	0
+	DB	0
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	16
+	DB	16
 	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1099,20 +968,20 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
 	DB	1
 	DB	1
 	DB	1
+	DB	16
+	DB	16
+	DB	16
 	DB	1
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
-	DB	8
+	DB	0
 	DB	1
 	DB	1
+	DB	16
+	DB	16
+	DB	16
 	DB	1
 	DB	1
 	DB	0
@@ -1132,17 +1001,52 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	1
 	DB	1
-	DB	11
+	DB	16
+	DB	16
 	DB	1
+	DB	0
+	DB	0
 	DB	1
 	DB	1
+	DB	16
+	DB	16
+	DB	16
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	1
 	DB	1
+	DB	16
 	DB	1
 	DB	1
+	DB	0
+	DB	0
 	DB	1
 	DB	1
+	DB	16
+	DB	16
 	DB	1
 	DB	0
 	DB	0
@@ -1166,16 +1070,18 @@ _character1Moving2_data:
 	DB	0
 	DB	1
 	DB	1
-	DB	11
-	DB	11
-	DB	11
+	DB	16
+	DB	16
 	DB	1
 	DB	0
 	DB	0
+	DB	0
+	DB	1
 	DB	1
-	DB	11
-	DB	11
+	DB	16
 	DB	1
+	DB	1
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1194,20 +1100,55 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	1
+	DB	16
+	DB	16
+	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	1
 	DB	1
-	DB	11
-	DB	11
+	DB	16
+	DB	16
 	DB	1
+	DB	0
+	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	16
+	DB	16
+	DB	16
 	DB	1
-	DB	11
-	DB	11
 	DB	1
 	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	16
+	DB	16
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1216,6 +1157,26 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	7
+	DB	7
+	DB	1
+	DB	1
+	DB	16
+	DB	16
+	DB	16
+	DB	1
+	DB	1
+	DB	7
+	DB	1
+	DB	1
+	DB	16
+	DB	16
+	DB	16
+	DB	16
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1230,15 +1191,28 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	7
+	DB	7
+	DB	1
+	DB	1
+	DB	16
+	DB	16
 	DB	1
 	DB	1
-	DB	11
+	DB	7
+	DB	7
 	DB	1
 	DB	1
-	DB	11
-	DB	11
+	DB	16
+	DB	16
+	DB	16
 	DB	1
 	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1248,6 +1222,24 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	1
+	DB	7
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	1
+	DB	7
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1263,9 +1255,6 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
 	DB	1
 	DB	1
 	DB	1
@@ -1274,6 +1263,10 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1291,14 +1284,18 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	0
 	DB	1
-	DB	11
-	DB	11
 	DB	1
 	DB	1
 	DB	0
@@ -1327,11 +1324,6 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	1
-	DB	1
-	DB	11
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1358,13 +1350,6 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	1
-	DB	11
-	DB	11
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1389,15 +1374,6 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	1
-	DB	1
-	DB	1
-	DB	11
-	DB	1
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1420,17 +1396,7 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	1
-	DB	11
-	DB	1
-	DB	1
 	DB	0
-	DB	1
-	DB	1
-	DB	11
-	DB	1
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1452,18 +1418,8 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	1
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1484,19 +1440,7 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1516,19 +1460,75 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1543,7 +1543,7 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	XDEF _character1Moving2_data
-;    1	unsigned char character1Moving2_data[1538] = 
+	XDEF _character0NotGrounded_data
+;    1	unsigned char character0NotGrounded_data[1538] = 
 ;    2	{ 
 	END

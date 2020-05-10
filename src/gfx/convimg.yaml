@@ -23,16 +23,16 @@ convert: sprites
   transparent-color-index: 0
   images:
     - character0.png
-    - character0Jumping.png
     - character0Moving1.png
     - character0Moving2.png
+    - character0NotGrounded.png
     - character0Weapon.png
     - character1.png
-    - character1Jumping.png
     - character1Moving1.png
     - character1Moving2.png
+    - character1NotGrounded.png
     - character1Weapon.png
-    - characterHighlighter
+    - characterHighlighter.png
     - counter1.png
     - counter2.png
     - counter3.png

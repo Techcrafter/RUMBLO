@@ -201,7 +201,7 @@ _player1CharacterMoving1:
 	DS	3
 _player1CharacterMoving2:
 	DS	3
-_player1CharacterJumping:
+_player1CharacterNotGrounded:
 	DS	3
 _player1CharacterFlipped:
 	DS	3
@@ -209,7 +209,7 @@ _player1CharacterMoving1Flipped:
 	DS	3
 _player1CharacterMoving2Flipped:
 	DS	3
-_player1CharacterJumpingFlipped:
+_player1CharacterNotGroundedFlipped:
 	DS	3
 _player1Weapon:
 	DS	3
@@ -221,7 +221,7 @@ _player2CharacterMoving1:
 	DS	3
 _player2CharacterMoving2:
 	DS	3
-_player2CharacterJumping:
+_player2CharacterNotGrounded:
 	DS	3
 _player2CharacterFlipped:
 	DS	3
@@ -229,7 +229,7 @@ _player2CharacterMoving1Flipped:
 	DS	3
 _player2CharacterMoving2Flipped:
 	DS	3
-_player2CharacterJumpingFlipped:
+_player2CharacterNotGroundedFlipped:
 	DS	3
 _player2Weapon:
 	DS	3
@@ -380,11 +380,11 @@ _tilemap:
 ;  141	gfx_sprite_t *player1Character;
 ;  142	gfx_sprite_t *player1CharacterMoving1;
 ;  143	gfx_sprite_t *player1CharacterMoving2;
-;  144	gfx_sprite_t *player1CharacterJumping;
+;  144	gfx_sprite_t *player1CharacterNotGrounded;
 ;  145	gfx_sprite_t *player1CharacterFlipped;
 ;  146	gfx_sprite_t *player1CharacterMoving1Flipped;
 ;  147	gfx_sprite_t *player1CharacterMoving2Flipped;
-;  148	gfx_sprite_t *player1CharacterJumpingFlipped;
+;  148	gfx_sprite_t *player1CharacterNotGroundedFlipped;
 ;  149	
 ;  150	gfx_sprite_t *player1Weapon;
 ;  151	gfx_sprite_t *player1WeaponFlipped;
@@ -392,11 +392,11 @@ _tilemap:
 ;  153	gfx_sprite_t *player2Character;
 ;  154	gfx_sprite_t *player2CharacterMoving1;
 ;  155	gfx_sprite_t *player2CharacterMoving2;
-;  156	gfx_sprite_t *player2CharacterJumping;
+;  156	gfx_sprite_t *player2CharacterNotGrounded;
 ;  157	gfx_sprite_t *player2CharacterFlipped;
 ;  158	gfx_sprite_t *player2CharacterMoving1Flipped;
 ;  159	gfx_sprite_t *player2CharacterMoving2Flipped;
-;  160	gfx_sprite_t *player2CharacterJumpingFlipped;
+;  160	gfx_sprite_t *player2CharacterNotGroundedFlipped;
 ;  161	
 ;  162	gfx_sprite_t *player2Weapon;
 ;  163	gfx_sprite_t *player2WeaponFlipped;
@@ -493,7 +493,7 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;  183		player1CharacterJumping = gfx_MallocSprite(32, 48);
+;  183		player1CharacterNotGrounded = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
@@ -512,7 +512,7 @@ _main:
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
-	LD	(_player1CharacterJumping),HL
+	LD	(_player1CharacterNotGrounded),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
@@ -541,7 +541,7 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;  187		player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+;  187		player1CharacterNotGroundedFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
@@ -560,7 +560,7 @@ _main:
 	LD	BC,8
 	PUSH	BC
 	PUSH	BC
-	LD	(_player1CharacterJumpingFlipped),HL
+	LD	(_player1CharacterNotGroundedFlipped),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
@@ -613,7 +613,7 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;  195		player2CharacterJumping = gfx_MallocSprite(32, 48);
+;  195		player2CharacterNotGrounded = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
@@ -632,7 +632,7 @@ _main:
 	PUSH	BC
 	LD	BC,32
 	PUSH	BC
-	LD	(_player2CharacterJumping),HL
+	LD	(_player2CharacterNotGrounded),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
@@ -661,7 +661,7 @@ _main:
 	POP	BC
 	POP	BC
 	POP	BC
-;  199		player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+;  199		player2CharacterNotGroundedFlipped = gfx_MallocSprite(32, 48);
 	LD	BC,_malloc
 	PUSH	BC
 	LD	BC,48
@@ -680,7 +680,7 @@ _main:
 	LD	BC,8
 	PUSH	BC
 	PUSH	BC
-	LD	(_player2CharacterJumpingFlipped),HL
+	LD	(_player2CharacterNotGroundedFlipped),HL
 	CALL	_gfx_AllocSprite
 	POP	BC
 	POP	BC
@@ -739,7 +739,7 @@ _main:
 ;  219		gfx_SetPalette(global_palette, sizeof_global_palette, 0);
 	LD	BC,0
 	PUSH	BC
-	LD	BC,264
+	LD	BC,272
 	PUSH	BC
 	LD	BC,_global_palette
 	PUSH	BC
@@ -1348,8 +1348,8 @@ L_52:
 	JR	L_54
 ;  386			case 1:
 L_53:
-;  387				mapXBlock = 5;
-	LD	BC,5
+;  387				mapXBlock = 4;
+	LD	BC,4
 	LD	(_mapXBlock),BC
 ;  388				mapYBlock = 0;
 	LD	BC,0
@@ -1785,9 +1785,9 @@ L_88:
 ;  511				player1CharacterMoving2 = character0Moving2;
 	LD	BC,_character0Moving2_data
 	LD	(_player1CharacterMoving2),BC
-;  512				player1CharacterJumping = character0Jumping;
-	LD	BC,_character0Jumping_data
-	LD	(_player1CharacterJumping),BC
+;  512				player1CharacterNotGrounded = character0NotGrounded;
+	LD	BC,_character0NotGrounded_data
+	LD	(_player1CharacterNotGrounded),BC
 ;  513				gfx_FlipSpriteY(character0, player1CharacterFlipped);
 	LD	BC,(_player1CharacterFlipped)
 	PUSH	BC
@@ -1812,10 +1812,10 @@ L_88:
 	CALL	_gfx_FlipSpriteY
 	POP	BC
 	POP	BC
-;  516				gfx_FlipSpriteY(character0Jumping, player1CharacterJumpingFlipped);
-	LD	BC,(_player1CharacterJumpingFlipped)
+;  516				gfx_FlipSpriteY(character0NotGrounded, player1CharacterNotGroundedFlipped);
+	LD	BC,(_player1CharacterNotGroundedFlipped)
 	PUSH	BC
-	LD	BC,_character0Jumping_data
+	LD	BC,_character0NotGrounded_data
 	PUSH	BC
 	CALL	_gfx_FlipSpriteY
 	POP	BC
@@ -1868,9 +1868,9 @@ L_89:
 ;  533				player1CharacterMoving2 = character1Moving2;
 	LD	BC,_character1Moving2_data
 	LD	(_player1CharacterMoving2),BC
-;  534				player1CharacterJumping = character1Jumping;
-	LD	BC,_character1Jumping_data
-	LD	(_player1CharacterJumping),BC
+;  534				player1CharacterNotGrounded = character1NotGrounded;
+	LD	BC,_character1NotGrounded_data
+	LD	(_player1CharacterNotGrounded),BC
 ;  535				gfx_FlipSpriteY(character1, player1CharacterFlipped);
 	LD	BC,(_player1CharacterFlipped)
 	PUSH	BC
@@ -1895,10 +1895,10 @@ L_89:
 	CALL	_gfx_FlipSpriteY
 	POP	BC
 	POP	BC
-;  538				gfx_FlipSpriteY(character1Jumping, player1CharacterJumpingFlipped);
-	LD	BC,(_player1CharacterJumpingFlipped)
+;  538				gfx_FlipSpriteY(character1NotGrounded, player1CharacterNotGroundedFlipped);
+	LD	BC,(_player1CharacterNotGroundedFlipped)
 	PUSH	BC
-	LD	BC,_character1Jumping_data
+	LD	BC,_character1NotGrounded_data
 	PUSH	BC
 	CALL	_gfx_FlipSpriteY
 	POP	BC
@@ -1966,9 +1966,9 @@ L_90:
 ;  558				player2CharacterMoving2 = character0Moving2;
 	LD	BC,_character0Moving2_data
 	LD	(_player2CharacterMoving2),BC
-;  559				player2CharacterJumping = character0Jumping;
-	LD	BC,_character0Jumping_data
-	LD	(_player2CharacterJumping),BC
+;  559				player2CharacterNotGrounded = character0NotGrounded;
+	LD	BC,_character0NotGrounded_data
+	LD	(_player2CharacterNotGrounded),BC
 ;  560				gfx_FlipSpriteY(character0, player2CharacterFlipped);
 	LD	BC,(_player2CharacterFlipped)
 	PUSH	BC
@@ -1993,10 +1993,10 @@ L_90:
 	CALL	_gfx_FlipSpriteY
 	POP	BC
 	POP	BC
-;  563				gfx_FlipSpriteY(character0Jumping, player2CharacterJumpingFlipped);
-	LD	BC,(_player2CharacterJumpingFlipped)
+;  563				gfx_FlipSpriteY(character0NotGrounded, player2CharacterNotGroundedFlipped);
+	LD	BC,(_player2CharacterNotGroundedFlipped)
 	PUSH	BC
-	LD	BC,_character0Jumping_data
+	LD	BC,_character0NotGrounded_data
 	PUSH	BC
 	CALL	_gfx_FlipSpriteY
 	POP	BC
@@ -2049,9 +2049,9 @@ L_91:
 ;  580				player2CharacterMoving2 = character1Moving2;
 	LD	BC,_character1Moving2_data
 	LD	(_player2CharacterMoving2),BC
-;  581				player2CharacterJumping = character1Jumping;
-	LD	BC,_character1Jumping_data
-	LD	(_player2CharacterJumping),BC
+;  581				player2CharacterNotGrounded = character1NotGrounded;
+	LD	BC,_character1NotGrounded_data
+	LD	(_player2CharacterNotGrounded),BC
 ;  582				gfx_FlipSpriteY(character1, player2CharacterFlipped);
 	LD	BC,(_player2CharacterFlipped)
 	PUSH	BC
@@ -2076,10 +2076,10 @@ L_91:
 	CALL	_gfx_FlipSpriteY
 	POP	BC
 	POP	BC
-;  585				gfx_FlipSpriteY(character1Jumping, player2CharacterJumpingFlipped);
-	LD	BC,(_player2CharacterJumpingFlipped)
+;  585				gfx_FlipSpriteY(character1NotGrounded, player2CharacterNotGroundedFlipped);
+	LD	BC,(_player2CharacterNotGroundedFlipped)
 	PUSH	BC
-	LD	BC,_character1Jumping_data
+	LD	BC,_character1NotGrounded_data
 	PUSH	BC
 	CALL	_gfx_FlipSpriteY
 	POP	BC
@@ -2366,18 +2366,17 @@ L_112:
 	CALL	__icmpzero
 	JR	NZ,L_98
 ;  650					{
-;  651						player1Weapon1X = player1X + 8;
+;  651						player1Weapon1X = player1X + 26;
 	LD	IY,(_player1X)
-	LEA	BC,IY+8
+	LEA	BC,IY+26
 	LD	(_player1Weapon1X),BC
 ;  652					}
 ;  653					else
 	JR	L_99
 L_98:
 ;  654					{
-;  655						player1Weapon1X = player1X - 8;
-	LD	IY,(_player1X)
-	LEA	BC,IY+-8
+;  655						player1Weapon1X = player1X;
+	LD	BC,(_player1X)
 	LD	(_player1Weapon1X),BC
 ;  656					}
 L_99:
@@ -2404,18 +2403,17 @@ L_110:
 	CALL	__icmpzero
 	JR	NZ,L_101
 ;  664					{
-;  665						player1Weapon2X = player1X + 8;
+;  665						player1Weapon2X = player1X + 26;
 	LD	IY,(_player1X)
-	LEA	BC,IY+8
+	LEA	BC,IY+26
 	LD	(_player1Weapon2X),BC
 ;  666					}
 ;  667					else
 	JR	L_102
 L_101:
 ;  668					{
-;  669						player1Weapon2X = player1X - 8;
-	LD	IY,(_player1X)
-	LEA	BC,IY+-8
+;  669						player1Weapon2X = player1X;
+	LD	BC,(_player1X)
 	LD	(_player1Weapon2X),BC
 ;  670					}
 L_102:
@@ -2442,18 +2440,17 @@ L_108:
 	CALL	__icmpzero
 	JR	NZ,L_104
 ;  678					{
-;  679						player1Weapon3X = player1X + 8;
+;  679						player1Weapon3X = player1X + 26;
 	LD	IY,(_player1X)
-	LEA	BC,IY+8
+	LEA	BC,IY+26
 	LD	(_player1Weapon3X),BC
 ;  680					}
 ;  681					else
 	JR	L_105
 L_104:
 ;  682					{
-;  683						player1Weapon3X = player1X - 8;
-	LD	IY,(_player1X)
-	LEA	BC,IY+-8
+;  683						player1Weapon3X = player1X;
+	LD	BC,(_player1X)
 	LD	(_player1Weapon3X),BC
 ;  684					}
 L_105:
@@ -3597,12 +3594,12 @@ L__140:
 	CALL	__icmpzero
 	JR	NZ,L_299
 ; 1030			{
-; 1031				gfx_TransparentSprite(player1CharacterJumping, player1X, player1Y);
+; 1031				gfx_TransparentSprite(player1CharacterNotGrounded, player1X, player1Y);
 	LD	BC,(_player1Y)
 	PUSH	BC
 	LD	BC,(_player1X)
 	PUSH	BC
-	LD	BC,(_player1CharacterJumping)
+	LD	BC,(_player1CharacterNotGrounded)
 	PUSH	BC
 	CALL	_gfx_TransparentSprite
 	POP	BC
@@ -3634,12 +3631,12 @@ L__145:
 	CALL	__icmpzero
 	JR	NZ,L_297
 ; 1036			{
-; 1037				gfx_TransparentSprite(player1CharacterJumpingFlipped, player1X, player1Y);
+; 1037				gfx_TransparentSprite(player1CharacterNotGroundedFlipped, player1X, player1Y);
 	LD	BC,(_player1Y)
 	PUSH	BC
 	LD	BC,(_player1X)
 	PUSH	BC
-	LD	BC,(_player1CharacterJumpingFlipped)
+	LD	BC,(_player1CharacterNotGroundedFlipped)
 	PUSH	BC
 	CALL	_gfx_TransparentSprite
 	POP	BC
@@ -3882,12 +3879,12 @@ L__167:
 	CALL	__icmpzero
 	JR	NZ,L_331
 ; 1082			{
-; 1083				gfx_TransparentSprite(player2CharacterJumping, player2X, player2Y);
+; 1083				gfx_TransparentSprite(player2CharacterNotGrounded, player2X, player2Y);
 	LD	BC,(_player2Y)
 	PUSH	BC
 	LD	BC,(_player2X)
 	PUSH	BC
-	LD	BC,(_player2CharacterJumping)
+	LD	BC,(_player2CharacterNotGrounded)
 	PUSH	BC
 	CALL	_gfx_TransparentSprite
 	POP	BC
@@ -3919,12 +3916,12 @@ L__172:
 	CALL	__icmpzero
 	JR	NZ,L_329
 ; 1088			{
-; 1089				gfx_TransparentSprite(player2CharacterJumpingFlipped, player2X, player2Y);
+; 1089				gfx_TransparentSprite(player2CharacterNotGroundedFlipped, player2X, player2Y);
 	LD	BC,(_player2Y)
 	PUSH	BC
 	LD	BC,(_player2X)
 	PUSH	BC
-	LD	BC,(_player2CharacterJumpingFlipped)
+	LD	BC,(_player2CharacterNotGroundedFlipped)
 	PUSH	BC
 	CALL	_gfx_TransparentSprite
 	POP	BC
@@ -5080,24 +5077,36 @@ L_447:
 	LD	A,(_key)
 	CP	A,56
 	JR	NZ,L_447
-L_192:
 ; 1324			{
-; 1325				goto gameOver;
-; 1326			}
-; 1327		}
-; 1328		
-; 1329		//---------------------------------------------------------------
-; 1330		
-; 1331		//gameOver
-; 1332		gameOver:
-; 1333		
-; 1334		gfx_Tilemap(&tilemap, getXBlock(4), getYBlock(0));
+; 1325				player1Lifes = 0;
+	LD	BC,0
+	LD	(_player1Lifes),BC
+L_192:
+; 1326				goto gameOver;
+; 1327			}
+; 1328		}
+; 1329		
+; 1330		//---------------------------------------------------------------
+; 1331		
+; 1332		//gameOver
+; 1333		gameOver:
+; 1334		
+; 1335		if(player1Lifes > 0)
+	LD	BC,(_player1Lifes)
+	OR	A,A
+	SBC	HL,HL
+	OR	A,A
+	SBC	HL,BC
+	CALL	__setflag
+	JP	P,L_449
+; 1336		{
+; 1337			gfx_Tilemap(&tilemap, getXBlock(5), getYBlock(0));
 	LD	BC,0
 	PUSH	BC
 	CALL	_getYBlock
 	POP	BC
 	PUSH	HL
-	LD	BC,4
+	LD	BC,5
 	PUSH	BC
 	CALL	_getXBlock
 	POP	BC
@@ -5108,12 +5117,36 @@ L_192:
 	POP	BC
 	POP	BC
 	POP	BC
-; 1335		gfx_SetTextFGColor(WHITE);
+; 1338		}
+; 1339		else
+	JR	L_451
+L_449:
+; 1340		{
+; 1341			gfx_Tilemap(&tilemap, getXBlock(6), getYBlock(0));
+	LD	BC,0
+	PUSH	BC
+	CALL	_getYBlock
+	POP	BC
+	PUSH	HL
+	LD	BC,6
+	PUSH	BC
+	CALL	_getXBlock
+	POP	BC
+	PUSH	HL
+	LD	BC,_tilemap
+	PUSH	BC
+	CALL	_gfx_Tilemap
+	POP	BC
+	POP	BC
+	POP	BC
+; 1342		}
+L_451:
+; 1343		gfx_SetTextFGColor(WHITE);
 	LD	BC,2
 	PUSH	BC
 	CALL	_gfx_SetTextFGColor
 	POP	BC
-; 1336		gfx_SetTextBGColor(gfx_GetPixel(0, 0));
+; 1344		gfx_SetTextBGColor(gfx_GetPixel(0, 0));
 	LD	BC,0
 	PUSH	BC
 	PUSH	BC
@@ -5125,91 +5158,27 @@ L_192:
 	PUSH	BC
 	CALL	_gfx_SetTextBGColor
 	POP	BC
-; 1337		gfx_SetTextScale(1, 1);
+; 1345		gfx_SetTextScale(1, 1);
 	LD	BC,1
 	PUSH	BC
 	PUSH	BC
 	CALL	_gfx_SetTextScale
 	POP	BC
 	POP	BC
-; 1338		gfx_PrintStringXY("Press [2nd] to go to the main menu...", 15, 218);
+; 1346		gfx_PrintStringXY("Press [2nd] to go to the main menu...", 15, 218);
 	LD	BC,218
 	PUSH	BC
 	LD	BC,15
 	PUSH	BC
-	LD	BC,L__271
+	LD	BC,L__272
 	PUSH	BC
 	CALL	_gfx_PrintStringXY
 	POP	BC
 	POP	BC
 	POP	BC
-; 1339		gfx_SwapDraw();
+; 1347		gfx_SwapDraw();
 	CALL	_gfx_SwapDraw
-; 1340		while(os_GetCSC() != sk_2nd);
-L_450:
-	CALL	_os_GetCSC
-	UEXT	HL
-	LD	L,A
-	OR	A,A
-	LD	BC,54
-	SBC	HL,BC
-	JR	NZ,L_450
-; 1341		goto mainMenu;
-	JR	L_5
-L_32:
-; 1342		
-; 1343		
-; 1344		//---------------------------------------------------------------
-; 1345		
-; 1346		//error
-; 1347		error:
-; 1348		
-; 1349		gfx_FillScreen(RED);
-	LD	BC,224
-	PUSH	BC
-	CALL	_gfx_FillScreen
-	POP	BC
-; 1350		gfx_SetTextFGColor(WHITE);
-	LD	BC,2
-	PUSH	BC
-	CALL	_gfx_SetTextFGColor
-	POP	BC
-; 1351		gfx_SetTextBGColor(RED);
-	LD	BC,224
-	PUSH	BC
-	CALL	_gfx_SetTextBGColor
-	POP	BC
-; 1352		gfx_SetTextScale(1, 1);
-	LD	BC,1
-	PUSH	BC
-	PUSH	BC
-	CALL	_gfx_SetTextScale
-	POP	BC
-	POP	BC
-; 1353		gfx_PrintStringXY("An error has occurred!", 0, 0);
-	LD	BC,0
-	PUSH	BC
-	PUSH	BC
-	LD	BC,L__273
-	PUSH	BC
-	CALL	_gfx_PrintStringXY
-	POP	BC
-	POP	BC
-	POP	BC
-; 1354		gfx_PrintStringXY("Press [2nd] to go to the main menu...", 0, 10);
-	LD	BC,10
-	PUSH	BC
-	LD	BC,0
-	PUSH	BC
-	LD	BC,L__274
-	PUSH	BC
-	CALL	_gfx_PrintStringXY
-	POP	BC
-	POP	BC
-	POP	BC
-; 1355		gfx_SwapDraw();
-	CALL	_gfx_SwapDraw
-; 1356		while(os_GetCSC() != sk_2nd);
+; 1348		while(os_GetCSC() != sk_2nd);
 L_453:
 	CALL	_os_GetCSC
 	UEXT	HL
@@ -5218,19 +5187,83 @@ L_453:
 	LD	BC,54
 	SBC	HL,BC
 	JR	NZ,L_453
-; 1357		goto mainMenu;
+; 1349		goto mainMenu;
+	JR	L_5
+L_32:
+; 1350		
+; 1351		
+; 1352		//---------------------------------------------------------------
+; 1353		
+; 1354		//error
+; 1355		error:
+; 1356		
+; 1357		gfx_FillScreen(RED);
+	LD	BC,224
+	PUSH	BC
+	CALL	_gfx_FillScreen
+	POP	BC
+; 1358		gfx_SetTextFGColor(WHITE);
+	LD	BC,2
+	PUSH	BC
+	CALL	_gfx_SetTextFGColor
+	POP	BC
+; 1359		gfx_SetTextBGColor(RED);
+	LD	BC,224
+	PUSH	BC
+	CALL	_gfx_SetTextBGColor
+	POP	BC
+; 1360		gfx_SetTextScale(1, 1);
+	LD	BC,1
+	PUSH	BC
+	PUSH	BC
+	CALL	_gfx_SetTextScale
+	POP	BC
+	POP	BC
+; 1361		gfx_PrintStringXY("An error has occurred!", 0, 0);
+	LD	BC,0
+	PUSH	BC
+	PUSH	BC
+	LD	BC,L__274
+	PUSH	BC
+	CALL	_gfx_PrintStringXY
+	POP	BC
+	POP	BC
+	POP	BC
+; 1362		gfx_PrintStringXY("Press [2nd] to go to the main menu...", 0, 10);
+	LD	BC,10
+	PUSH	BC
+	LD	BC,0
+	PUSH	BC
+	LD	BC,L__275
+	PUSH	BC
+	CALL	_gfx_PrintStringXY
+	POP	BC
+	POP	BC
+	POP	BC
+; 1363		gfx_SwapDraw();
+	CALL	_gfx_SwapDraw
+; 1364		while(os_GetCSC() != sk_2nd);
+L_456:
+	CALL	_os_GetCSC
+	UEXT	HL
+	LD	L,A
+	OR	A,A
+	LD	BC,54
+	SBC	HL,BC
+	JR	NZ,L_456
+; 1365		goto mainMenu;
 	JR	L_5
 L_30:
-; 1358		
-; 1359		//---------------------------------------------------------------
-; 1360		
-; 1361		//quit game
-; 1362		quitGame:
-; 1363		
-; 1364		gfx_End();
+; 1366		
+; 1367		//---------------------------------------------------------------
+; 1368		
+; 1369		//quit game
+; 1370		quitGame:
+; 1371		
+; 1372		gfx_End();
 	CALL	_gfx_End
 	OR	A,A
-; 1365		return 0;
+; 1373		return 0;
 	SBC	HL,HL
 	LD	SP,IX
 	POP	IX
@@ -5295,7 +5328,7 @@ L_30:
 ;_player2MoveSpeed                   STATIC      3   variable
 ;_player2CharacterSelection          STATIC      3   variable
 ;_character1Weapon_data              IMPORT     66   variable
-;_character1Jumping_data             IMPORT   1538   variable
+;_character1NotGrounded_data         IMPORT   1538   variable
 ;_character1Moving2_data             IMPORT   1538   variable
 ;_character1Moving1_data             IMPORT   1538   variable
 ;_player1WeaponKnockbackStrength      STATIC      3   variable
@@ -5307,7 +5340,7 @@ L_30:
 ;_player1MoveSpeed                   STATIC      3   variable
 ;_character0Weapon_data              IMPORT     66   variable
 ;_gfx_FlipSpriteY                    IMPORT  -----   function
-;_character0Jumping_data             IMPORT   1538   variable
+;_character0NotGrounded_data         IMPORT   1538   variable
 ;_character0Moving2_data             IMPORT   1538   variable
 ;_character0Moving1_data             IMPORT   1538   variable
 ;_player2Y                           STATIC      3   variable
@@ -5372,29 +5405,29 @@ L_30:
 ;_gfx_SetDraw                        IMPORT  -----   function
 ;_gfx_SetColor                       IMPORT  -----   function
 ;_gfx_SetTransparentColor            IMPORT  -----   function
-;_global_palette                     IMPORT    264   variable
+;_global_palette                     IMPORT    272   variable
 ;_gfx_SetPalette                     IMPORT  -----   function
 ;_gfx_Begin                          IMPORT  -----   function
-;_tileset_tiles_data                 IMPORT    180   variable
+;_tileset_tiles_data                 IMPORT    240   variable
 ;_tilemap                            STATIC     18   variable
 ;_tilemap_map                        IMPORT  unknown variable
 ;_player2WeaponFlipped               STATIC      3   variable
 ;_player2Weapon                      STATIC      3   variable
-;_player2CharacterJumpingFlipped      STATIC      3   variable
+;_player2CharacterNotGroundedFlipped      STATIC      3   variable
 ;_player2CharacterMoving2Flipped      STATIC      3   variable
 ;_player2CharacterMoving1Flipped      STATIC      3   variable
 ;_player2CharacterFlipped            STATIC      3   variable
-;_player2CharacterJumping            STATIC      3   variable
+;_player2CharacterNotGrounded        STATIC      3   variable
 ;_player2CharacterMoving2            STATIC      3   variable
 ;_player2CharacterMoving1            STATIC      3   variable
 ;_player2Character                   STATIC      3   variable
 ;_player1WeaponFlipped               STATIC      3   variable
 ;_player1Weapon                      STATIC      3   variable
-;_player1CharacterJumpingFlipped      STATIC      3   variable
+;_player1CharacterNotGroundedFlipped      STATIC      3   variable
 ;_player1CharacterMoving2Flipped      STATIC      3   variable
 ;_player1CharacterMoving1Flipped      STATIC      3   variable
 ;_player1CharacterFlipped            STATIC      3   variable
-;_player1CharacterJumping            STATIC      3   variable
+;_player1CharacterNotGrounded        STATIC      3   variable
 ;_player1CharacterMoving2            STATIC      3   variable
 ;_player1CharacterMoving1            STATIC      3   variable
 ;_player1Character                   STATIC      3   variable
@@ -5441,13 +5474,13 @@ L__267:
 L__268:
 	DB	"Press [del] to give up..."
 	DB	0
-L__271:
+L__272:
 	DB	"Press [2nd] to go to the main menu..."
 	DB	0
-L__273:
+L__274:
 	DB	"An error has occurred!"
 	DB	0
-L__274:
+L__275:
 	DB	"Press [2nd] to go to the main menu..."
 	DB	0
 	XREF _tilemap_map:ROM
@@ -5483,14 +5516,14 @@ L__274:
 	XREF _counter1_data:ROM
 	XREF _characterHighlighter_data:ROM
 	XREF _character1Weapon_data:ROM
+	XREF _character1NotGrounded_data:ROM
 	XREF _character1Moving2_data:ROM
 	XREF _character1Moving1_data:ROM
-	XREF _character1Jumping_data:ROM
 	XREF _character1_data:ROM
 	XREF _character0Weapon_data:ROM
+	XREF _character0NotGrounded_data:ROM
 	XREF _character0Moving2_data:ROM
 	XREF _character0Moving1_data:ROM
-	XREF _character0Jumping_data:ROM
 	XREF _character0_data:ROM
 	XREF _tileset_tiles_data:ROM
 	XREF _global_palette:ROM
@@ -5510,21 +5543,21 @@ L__274:
 	XDEF _tilemap
 	XDEF _player2WeaponFlipped
 	XDEF _player2Weapon
-	XDEF _player2CharacterJumpingFlipped
+	XDEF _player2CharacterNotGroundedFlipped
 	XDEF _player2CharacterMoving2Flipped
 	XDEF _player2CharacterMoving1Flipped
 	XDEF _player2CharacterFlipped
-	XDEF _player2CharacterJumping
+	XDEF _player2CharacterNotGrounded
 	XDEF _player2CharacterMoving2
 	XDEF _player2CharacterMoving1
 	XDEF _player2Character
 	XDEF _player1WeaponFlipped
 	XDEF _player1Weapon
-	XDEF _player1CharacterJumpingFlipped
+	XDEF _player1CharacterNotGroundedFlipped
 	XDEF _player1CharacterMoving2Flipped
 	XDEF _player1CharacterMoving1Flipped
 	XDEF _player1CharacterFlipped
-	XDEF _player1CharacterJumping
+	XDEF _player1CharacterNotGrounded
 	XDEF _player1CharacterMoving2
 	XDEF _player1CharacterMoving1
 	XDEF _player1Character

@@ -1,10 +1,10 @@
 ; Zilog eZ80 ANSI C Compiler Release 3.4
 ; -optsize -noreduceopt -nomodsect -peephole -globalopt
 ; -localcse -const=ROM 
-	FILE	"SRC\GFX\CHARACTER1MOVING2.C"
+	FILE	"SRC\GFX\CHARACTER1NOTGROUNDED.C"
 	.assume ADL=1
 	SEGMENT DATA
-_character1Moving2_data:
+_character1NotGrounded_data:
 	DB	32
 	DB	48
 	DB	0
@@ -1095,9 +1095,9 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	1
 	DB	1
@@ -1127,130 +1127,26 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	11
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	1
-	DB	0
-	DB	0
 	DB	1
 	DB	11
 	DB	11
 	DB	1
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	1
 	DB	1
-	DB	11
-	DB	11
-	DB	1
-	DB	0
-	DB	1
-	DB	11
-	DB	11
 	DB	1
 	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
+	DB	1
 	DB	1
 	DB	1
 	DB	11
 	DB	1
-	DB	1
-	DB	11
-	DB	11
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1266,12 +1162,13 @@ _character1Moving2_data:
 	DB	1
 	DB	11
 	DB	11
-	DB	1
-	DB	1
-	DB	1
+	DB	11
 	DB	1
 	DB	0
 	DB	0
+	DB	1
+	DB	11
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1279,12 +1176,10 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	1
+	DB	11
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1300,6 +1195,22 @@ _character1Moving2_data:
 	DB	11
 	DB	11
 	DB	1
+	DB	11
+	DB	1
+	DB	0
+	DB	1
+	DB	11
+	DB	1
+	DB	0
+	DB	1
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	11
 	DB	1
 	DB	0
 	DB	0
@@ -1312,10 +1223,27 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	11
+	DB	1
+	DB	1
+	DB	1
+	DB	11
+	DB	1
+	DB	1
+	DB	11
+	DB	1
+	DB	0
+	DB	1
+	DB	11
+	DB	11
+	DB	1
+	DB	1
 	DB	0
 	DB	0
-	DB	0
-	DB	0
+	DB	1
+	DB	11
+	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1328,6 +1256,54 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	1
+	DB	11
+	DB	1
+	DB	0
+	DB	1
+	DB	1
+	DB	11
+	DB	11
+	DB	11
+	DB	1
+	DB	0
+	DB	1
+	DB	11
+	DB	11
+	DB	11
+	DB	11
+	DB	1
+	DB	0
+	DB	1
+	DB	11
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	11
+	DB	1
+	DB	1
+	DB	0
+	DB	1
+	DB	11
+	DB	11
+	DB	1
+	DB	1
+	DB	11
 	DB	1
 	DB	1
 	DB	11
@@ -1349,19 +1325,18 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
+	DB	1
+	DB	1
+	DB	1
 	DB	0
 	DB	0
 	DB	1
 	DB	11
-	DB	11
 	DB	1
+	DB	0
+	DB	1
+	DB	1
+	DB	11
 	DB	11
 	DB	11
 	DB	1
@@ -1387,12 +1362,11 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	1
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	1
+	DB	0
 	DB	1
 	DB	1
 	DB	11
@@ -1420,32 +1394,6 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	1
-	DB	11
-	DB	1
-	DB	1
-	DB	0
-	DB	1
-	DB	1
-	DB	11
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -1453,16 +1401,7 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	11
-	DB	11
-	DB	11
 	DB	1
-	DB	0
-	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
 	DB	1
 	DB	0
 	DB	0
@@ -1484,19 +1423,6 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
-	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1516,19 +1442,6 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
-	DB	0
-	DB	1
-	DB	11
-	DB	11
-	DB	11
-	DB	11
-	DB	1
 	DB	0
 	DB	0
 	DB	0
@@ -1543,7 +1456,94 @@ _character1Moving2_data:
 	DB	0
 	DB	0
 	DB	0
-	XDEF _character1Moving2_data
-;    1	unsigned char character1Moving2_data[1538] = 
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	XDEF _character1NotGrounded_data
+;    1	unsigned char character1NotGrounded_data[1538] = 
 ;    2	{ 
 	END

@@ -7,6 +7,55 @@
 _counter1_data:
 	DB	48
 	DB	32
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
 	DB	7
 	DB	7
 	DB	7
@@ -53,199 +102,15 @@ _counter1_data:
 	DB	7
 	DB	7
 	DB	7
+	DB	9
+	DB	9
 	DB	7
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	7
-	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
 	DB	7
 	DB	7
@@ -285,6 +150,8 @@ _counter1_data:
 	DB	7
 	DB	7
 	DB	7
+	DB	9
+	DB	9
 	DB	7
 	DB	7
 	DB	7
@@ -295,6 +162,139 @@ _counter1_data:
 	DB	7
 	DB	7
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
+	DB	9
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -315,14 +315,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -363,14 +363,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -411,14 +411,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -459,14 +459,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -507,14 +507,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -555,14 +555,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -603,14 +603,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -651,14 +651,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -699,14 +699,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -747,14 +747,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -795,14 +795,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -843,14 +843,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -891,14 +891,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -939,14 +939,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -987,14 +987,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1035,14 +1035,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1083,14 +1083,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1131,14 +1131,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1179,14 +1179,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	7
+	DB	7
+	DB	7
+	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1227,14 +1227,14 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1255,6 +1255,137 @@ _counter1_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	9
+	DB	9
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
 	DB	7
 	DB	7
 	DB	7
@@ -1267,6 +1398,8 @@ _counter1_data:
 	DB	7
 	DB	7
 	DB	7
+	DB	9
+	DB	9
 	DB	7
 	DB	7
 	DB	7
@@ -1304,199 +1437,17 @@ _counter1_data:
 	DB	7
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	7
 	DB	7
 	DB	7
+	DB	9
+	DB	9
 	DB	7
 	DB	7
 	DB	7
@@ -1543,6 +1494,55 @@ _counter1_data:
 	DB	7
 	DB	7
 	DB	7
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
 	XDEF _counter1_data
 ;    1	unsigned char counter1_data[1538] = 
 ;    2	{ 

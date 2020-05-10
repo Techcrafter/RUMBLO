@@ -75,38 +75,38 @@ _shield_data:
 	DB	1
 	DB	1
 	DB	1
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
 	DB	1
 	DB	1
 	DB	1
@@ -128,66 +128,12 @@ _shield_data:
 	DB	0
 	DB	1
 	DB	0
-	DB	5
-	DB	5
-	DB	5
+	DB	133
+	DB	133
+	DB	133
 	DB	0
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	0
-	DB	5
-	DB	5
-	DB	5
-	DB	0
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	1
-	DB	5
-	DB	5
-	DB	0
-	DB	128
-	DB	128
-	DB	128
+	DB	7
+	DB	7
 	DB	7
 	DB	7
 	DB	7
@@ -212,18 +158,72 @@ _shield_data:
 	DB	7
 	DB	7
 	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	7
+	DB	0
+	DB	133
+	DB	133
+	DB	133
+	DB	0
+	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	0
 	DB	7
 	DB	7
 	DB	7
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
 	DB	7
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
 	DB	0
-	DB	5
-	DB	5
+	DB	133
+	DB	133
 	DB	1
 	DB	1
 	DB	0
@@ -237,13 +237,13 @@ _shield_data:
 	DB	0
 	DB	1
 	DB	0
-	DB	5
+	DB	133
 	DB	0
-	DB	128
-	DB	128
-	DB	7
 	DB	7
 	DB	7
+	DB	9
+	DB	9
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -274,13 +274,13 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	9
+	DB	9
 	DB	7
 	DB	7
-	DB	7
-	DB	128
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	0
 	DB	1
 	DB	0
@@ -291,13 +291,12 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	0
-	DB	5
 	DB	0
-	DB	128
+	DB	133
 	DB	0
 	DB	7
 	DB	0
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -333,11 +332,12 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
+	DB	0
+	DB	9
 	DB	0
-	DB	128
+	DB	7
 	DB	0
-	DB	5
+	DB	133
 	DB	0
 	DB	1
 	DB	0
@@ -347,11 +347,11 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	5
+	DB	133
 	DB	0
-	DB	128
 	DB	7
-	DB	7
+	DB	9
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -390,11 +390,11 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
+	DB	9
+	DB	9
 	DB	7
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
@@ -402,10 +402,10 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	5
+	DB	133
 	DB	0
-	DB	128
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -448,21 +448,20 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	1
 	DB	0
-	DB	5
-	DB	128
-	DB	0
+	DB	133
 	DB	7
 	DB	0
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -504,19 +503,20 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
 	DB	0
-	DB	128
-	DB	5
+	DB	9
+	DB	0
+	DB	7
+	DB	133
 	DB	0
 	DB	1
 	DB	0
 	DB	0
 	DB	1
-	DB	5
+	DB	133
 	DB	0
-	DB	128
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -561,17 +561,17 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -618,16 +618,16 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -674,16 +674,16 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	1
-	DB	5
+	DB	133
 	DB	0
-	DB	128
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -730,15 +730,15 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -787,14 +787,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -843,14 +843,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -899,14 +899,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -955,14 +955,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1011,14 +1011,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1067,14 +1067,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1123,14 +1123,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1179,14 +1179,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1235,14 +1235,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1291,14 +1291,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1347,14 +1347,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1403,14 +1403,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1459,14 +1459,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1515,14 +1515,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1571,14 +1571,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1627,14 +1627,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1683,14 +1683,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1739,14 +1739,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1795,14 +1795,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1851,14 +1851,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1907,14 +1907,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -1963,14 +1963,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2019,14 +2019,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2075,14 +2075,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2131,14 +2131,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2187,14 +2187,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2243,14 +2243,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2299,14 +2299,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2355,14 +2355,14 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2411,15 +2411,15 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	1
-	DB	5
+	DB	133
 	DB	0
-	DB	128
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2466,16 +2466,16 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2522,16 +2522,16 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
 	DB	1
-	DB	5
-	DB	128
+	DB	133
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2578,17 +2578,17 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
 	DB	1
-	DB	5
+	DB	133
 	DB	0
-	DB	128
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2633,20 +2633,19 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
 	DB	1
 	DB	0
-	DB	5
-	DB	128
-	DB	0
+	DB	133
 	DB	7
 	DB	0
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2688,20 +2687,21 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
+	DB	0
+	DB	9
 	DB	0
-	DB	128
-	DB	5
+	DB	7
+	DB	133
 	DB	0
 	DB	1
 	DB	0
 	DB	0
 	DB	0
 	DB	1
-	DB	5
+	DB	133
 	DB	0
-	DB	128
 	DB	7
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2744,10 +2744,10 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
 	DB	7
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
@@ -2755,11 +2755,11 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	1
-	DB	5
+	DB	133
 	DB	0
-	DB	128
 	DB	7
-	DB	7
+	DB	9
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2798,11 +2798,11 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
+	DB	9
+	DB	9
 	DB	7
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	1
 	DB	0
 	DB	0
@@ -2812,12 +2812,11 @@ _shield_data:
 	DB	0
 	DB	1
 	DB	0
-	DB	5
+	DB	133
 	DB	0
-	DB	128
-	DB	0
 	DB	7
 	DB	0
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2853,11 +2852,12 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
-	DB	7
+	DB	0
+	DB	9
 	DB	0
-	DB	128
+	DB	7
 	DB	0
-	DB	5
+	DB	133
 	DB	0
 	DB	1
 	DB	0
@@ -2869,13 +2869,13 @@ _shield_data:
 	DB	0
 	DB	1
 	DB	0
-	DB	5
+	DB	133
 	DB	0
-	DB	128
-	DB	128
-	DB	7
 	DB	7
 	DB	7
+	DB	9
+	DB	9
+	DB	9
 	DB	0
 	DB	0
 	DB	0
@@ -2906,15 +2906,16 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	9
+	DB	9
+	DB	9
 	DB	7
 	DB	7
-	DB	7
-	DB	128
-	DB	128
 	DB	0
-	DB	5
+	DB	133
 	DB	0
 	DB	1
+	DB	0
 	DB	0
 	DB	0
 	DB	0
@@ -2923,15 +2924,70 @@ _shield_data:
 	DB	0
 	DB	0
 	DB	0
+	DB	1
+	DB	1
+	DB	133
+	DB	133
+	DB	0
+	DB	7
+	DB	7
+	DB	7
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	9
+	DB	7
+	DB	7
+	DB	7
 	DB	0
+	DB	133
+	DB	133
+	DB	1
 	DB	1
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
+	DB	0
 	DB	1
-	DB	5
-	DB	5
+	DB	0
+	DB	133
+	DB	133
+	DB	133
 	DB	0
-	DB	128
-	DB	128
-	DB	128
 	DB	7
 	DB	7
 	DB	7
@@ -2962,66 +3018,10 @@ _shield_data:
 	DB	7
 	DB	7
 	DB	7
-	DB	128
-	DB	128
-	DB	128
-	DB	0
-	DB	5
-	DB	5
-	DB	1
-	DB	1
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	0
-	DB	1
-	DB	0
-	DB	5
-	DB	5
-	DB	5
-	DB	0
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
-	DB	128
 	DB	0
-	DB	5
-	DB	5
-	DB	5
+	DB	133
+	DB	133
+	DB	133
 	DB	0
 	DB	1
 	DB	0
@@ -3043,38 +3043,38 @@ _shield_data:
 	DB	1
 	DB	1
 	DB	1
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
-	DB	5
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
+	DB	133
 	DB	1
 	DB	1
 	DB	1

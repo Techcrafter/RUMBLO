@@ -141,11 +141,11 @@ sk_key_t key;
 gfx_sprite_t *player1Character;
 gfx_sprite_t *player1CharacterMoving1;
 gfx_sprite_t *player1CharacterMoving2;
-gfx_sprite_t *player1CharacterJumping;
+gfx_sprite_t *player1CharacterNotGrounded;
 gfx_sprite_t *player1CharacterFlipped;
 gfx_sprite_t *player1CharacterMoving1Flipped;
 gfx_sprite_t *player1CharacterMoving2Flipped;
-gfx_sprite_t *player1CharacterJumpingFlipped;
+gfx_sprite_t *player1CharacterNotGroundedFlipped;
 
 gfx_sprite_t *player1Weapon;
 gfx_sprite_t *player1WeaponFlipped;
@@ -153,11 +153,11 @@ gfx_sprite_t *player1WeaponFlipped;
 gfx_sprite_t *player2Character;
 gfx_sprite_t *player2CharacterMoving1;
 gfx_sprite_t *player2CharacterMoving2;
-gfx_sprite_t *player2CharacterJumping;
+gfx_sprite_t *player2CharacterNotGrounded;
 gfx_sprite_t *player2CharacterFlipped;
 gfx_sprite_t *player2CharacterMoving1Flipped;
 gfx_sprite_t *player2CharacterMoving2Flipped;
-gfx_sprite_t *player2CharacterJumpingFlipped;
+gfx_sprite_t *player2CharacterNotGroundedFlipped;
 
 gfx_sprite_t *player2Weapon;
 gfx_sprite_t *player2WeaponFlipped;
@@ -180,11 +180,11 @@ int main(void)
 	player1Character = gfx_MallocSprite(32, 48);
 	player1CharacterMoving1 = gfx_MallocSprite(32, 48);
 	player1CharacterMoving2 = gfx_MallocSprite(32, 48);
-	player1CharacterJumping = gfx_MallocSprite(32, 48);
+	player1CharacterNotGrounded = gfx_MallocSprite(32, 48);
 	player1CharacterFlipped = gfx_MallocSprite(32, 48);
 	player1CharacterMoving1Flipped = gfx_MallocSprite(32, 48);
 	player1CharacterMoving2Flipped = gfx_MallocSprite(32, 48);
-	player1CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+	player1CharacterNotGroundedFlipped = gfx_MallocSprite(32, 48);
 	
 	player1Weapon = gfx_MallocSprite(8, 8);
 	player1WeaponFlipped = gfx_MallocSprite(8, 8);
@@ -192,11 +192,11 @@ int main(void)
 	player2Character = gfx_MallocSprite(32, 48);
 	player2CharacterMoving1 = gfx_MallocSprite(32, 48);
 	player2CharacterMoving2 = gfx_MallocSprite(32, 48);
-	player2CharacterJumping = gfx_MallocSprite(32, 48);
+	player2CharacterNotGrounded = gfx_MallocSprite(32, 48);
 	player2CharacterFlipped = gfx_MallocSprite(32, 48);
 	player2CharacterMoving1Flipped = gfx_MallocSprite(32, 48);
 	player2CharacterMoving2Flipped = gfx_MallocSprite(32, 48);
-	player2CharacterJumpingFlipped = gfx_MallocSprite(32, 48);
+	player2CharacterNotGroundedFlipped = gfx_MallocSprite(32, 48);
 	
 	player2Weapon = gfx_MallocSprite(8, 8);
 	player2WeaponFlipped = gfx_MallocSprite(8, 8);
@@ -384,7 +384,7 @@ int main(void)
 			mapYBlock = 0;
 			break;
 		case 1:
-			mapXBlock = 5;
+			mapXBlock = 4;
 			mapYBlock = 0;
 			break;
 	}
@@ -509,11 +509,11 @@ int main(void)
 			player1Character = character0;
 			player1CharacterMoving1 = character0Moving1;
 			player1CharacterMoving2 = character0Moving2;
-			player1CharacterJumping = character0Jumping;
+			player1CharacterNotGrounded = character0NotGrounded;
 			gfx_FlipSpriteY(character0, player1CharacterFlipped);
 			gfx_FlipSpriteY(character0Moving1, player1CharacterMoving1Flipped);
 			gfx_FlipSpriteY(character0Moving2, player1CharacterMoving2Flipped);
-			gfx_FlipSpriteY(character0Jumping, player1CharacterJumpingFlipped);
+			gfx_FlipSpriteY(character0NotGrounded, player1CharacterNotGroundedFlipped);
 			
 			player1Weapon = character0Weapon;
 			gfx_FlipSpriteY(character0Weapon, player1WeaponFlipped);
@@ -531,11 +531,11 @@ int main(void)
 			player1Character = character1;
 			player1CharacterMoving1 = character1Moving1;
 			player1CharacterMoving2 = character1Moving2;
-			player1CharacterJumping = character1Jumping;
+			player1CharacterNotGrounded = character1NotGrounded;
 			gfx_FlipSpriteY(character1, player1CharacterFlipped);
 			gfx_FlipSpriteY(character1Moving1, player1CharacterMoving1Flipped);
 			gfx_FlipSpriteY(character1Moving2, player1CharacterMoving2Flipped);
-			gfx_FlipSpriteY(character1Jumping, player1CharacterJumpingFlipped);
+			gfx_FlipSpriteY(character1NotGrounded, player1CharacterNotGroundedFlipped);
 			
 			player1Weapon = character1Weapon;
 			gfx_FlipSpriteY(character1Weapon, player1WeaponFlipped);
@@ -556,11 +556,11 @@ int main(void)
 			player2Character = character0;
 			player2CharacterMoving1 = character0Moving1;
 			player2CharacterMoving2 = character0Moving2;
-			player2CharacterJumping = character0Jumping;
+			player2CharacterNotGrounded = character0NotGrounded;
 			gfx_FlipSpriteY(character0, player2CharacterFlipped);
 			gfx_FlipSpriteY(character0Moving1, player2CharacterMoving1Flipped);
 			gfx_FlipSpriteY(character0Moving2, player2CharacterMoving2Flipped);
-			gfx_FlipSpriteY(character0Jumping, player2CharacterJumpingFlipped);
+			gfx_FlipSpriteY(character0NotGrounded, player2CharacterNotGroundedFlipped);
 			
 			player2Weapon = character0Weapon;
 			gfx_FlipSpriteY(character0Weapon, player2WeaponFlipped);
@@ -578,11 +578,11 @@ int main(void)
 			player2Character = character1;
 			player2CharacterMoving1 = character1Moving1;
 			player2CharacterMoving2 = character1Moving2;
-			player2CharacterJumping = character1Jumping;
+			player2CharacterNotGrounded = character1NotGrounded;
 			gfx_FlipSpriteY(character1, player2CharacterFlipped);
 			gfx_FlipSpriteY(character1Moving1, player2CharacterMoving1Flipped);
 			gfx_FlipSpriteY(character1Moving2, player2CharacterMoving2Flipped);
-			gfx_FlipSpriteY(character1Jumping, player2CharacterJumpingFlipped);
+			gfx_FlipSpriteY(character1NotGrounded, player2CharacterNotGroundedFlipped);
 			
 			player2Weapon = character1Weapon;
 			gfx_FlipSpriteY(character1Weapon, player2WeaponFlipped);
@@ -648,11 +648,11 @@ int main(void)
 				player1Weapon1Flipped = player1Flipped;
 				if(player1Flipped == 0)
 				{
-					player1Weapon1X = player1X + 8;
+					player1Weapon1X = player1X + 26;
 				}
 				else
 				{
-					player1Weapon1X = player1X - 8;
+					player1Weapon1X = player1X;
 				}
 				player1Weapon1Y = player1Y + 17;
 			}
@@ -662,11 +662,11 @@ int main(void)
 				player1Weapon2Flipped = player1Flipped;
 				if(player1Flipped == 0)
 				{
-					player1Weapon2X = player1X + 8;
+					player1Weapon2X = player1X + 26;
 				}
 				else
 				{
-					player1Weapon2X = player1X - 8;
+					player1Weapon2X = player1X;
 				}
 				player1Weapon2Y = player1Y + 17;
 			}
@@ -676,11 +676,11 @@ int main(void)
 				player1Weapon3Flipped = player1Flipped;
 				if(player1Flipped == 0)
 				{
-					player1Weapon3X = player1X + 8;
+					player1Weapon3X = player1X + 26;
 				}
 				else
 				{
-					player1Weapon3X = player1X - 8;
+					player1Weapon3X = player1X;
 				}
 				player1Weapon3Y = player1Y + 17;
 			}
@@ -1028,13 +1028,13 @@ int main(void)
 		//fight - draw character (player 1)
 		if(player1Flipped == 0 && player1Grounded == 0)
 		{
-			gfx_TransparentSprite(player1CharacterJumping, player1X, player1Y);
+			gfx_TransparentSprite(player1CharacterNotGrounded, player1X, player1Y);
 			player1MoveAnimation = 0;
 			player1MoveAnimationCount = 0;
 		}
 		else if(player1Flipped == 1 && player1Grounded == 0)
 		{
-			gfx_TransparentSprite(player1CharacterJumpingFlipped, player1X, player1Y);
+			gfx_TransparentSprite(player1CharacterNotGroundedFlipped, player1X, player1Y);
 			player1MoveAnimation = 0;
 			player1MoveAnimationCount = 0;
 		}
@@ -1080,13 +1080,13 @@ int main(void)
 		//fight - draw character (player 2)
 		if(player2Flipped == 0 && player2Grounded == 0)
 		{
-			gfx_TransparentSprite(player2CharacterJumping, player2X, player2Y);
+			gfx_TransparentSprite(player2CharacterNotGrounded, player2X, player2Y);
 			player2MoveAnimation = 0;
 			player2MoveAnimationCount = 0;
 		}
 		else if(player2Flipped == 1 && player2Grounded == 0)
 		{
-			gfx_TransparentSprite(player2CharacterJumpingFlipped, player2X, player2Y);
+			gfx_TransparentSprite(player2CharacterNotGroundedFlipped, player2X, player2Y);
 			player2MoveAnimation = 0;
 			player2MoveAnimationCount = 0;
 		}
@@ -1322,6 +1322,7 @@ int main(void)
 		}
 		else if(key == sk_Del)
 		{
+			player1Lifes = 0;
 			goto gameOver;
 		}
 	}
@@ -1331,7 +1332,14 @@ int main(void)
 	//gameOver
 	gameOver:
 	
-	gfx_Tilemap(&tilemap, getXBlock(4), getYBlock(0));
+	if(player1Lifes > 0)
+	{
+		gfx_Tilemap(&tilemap, getXBlock(5), getYBlock(0));
+	}
+	else
+	{
+		gfx_Tilemap(&tilemap, getXBlock(6), getYBlock(0));
+	}
 	gfx_SetTextFGColor(WHITE);
 	gfx_SetTextBGColor(gfx_GetPixel(0, 0));
 	gfx_SetTextScale(1, 1);

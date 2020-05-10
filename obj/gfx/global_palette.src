@@ -13,20 +13,22 @@ _global_palette:
 	DB	255
 	DB	16
 	DB	66
-	DB	128
-	DB	241
-	DB	56
 	DB	161
-	DB	82
-	DB	74
-	DB	103
-	DB	125
-	DB	38
-	DB	105
+	DB	2
 	DB	90
 	DB	235
-	DB	31
-	DB	124
+	DB	38
+	DB	105
+	DB	160
+	DB	127
+	DB	128
+	DB	241
+	DB	103
+	DB	125
+	DB	159
+	DB	99
+	DB	41
+	DB	37
 	DB	173
 	DB	181
 	DB	196
@@ -59,10 +61,10 @@ _global_palette:
 	DB	8
 	DB	64
 	DB	35
-	DB	33
-	DB	4
 	DB	99
 	DB	12
+	DB	33
+	DB	4
 	DB	254
 	DB	123
 	DB	222
@@ -83,10 +85,10 @@ _global_palette:
 	DB	103
 	DB	148
 	DB	210
-	DB	24
-	DB	99
 	DB	0
 	DB	124
+	DB	24
+	DB	99
 	DB	123
 	DB	239
 	DB	67
@@ -121,6 +123,8 @@ _global_palette:
 	DB	227
 	DB	74
 	DB	41
+	DB	2
+	DB	159
 	DB	231
 	DB	28
 	DB	98
@@ -135,8 +139,6 @@ _global_palette:
 	DB	123
 	DB	239
 	DB	61
-	DB	192
-	DB	192
 	DB	156
 	DB	243
 	DB	165
@@ -145,24 +147,24 @@ _global_palette:
 	DB	222
 	DB	72
 	DB	183
-	DB	128
-	DB	176
+	DB	192
+	DB	192
 	DB	189
 	DB	119
+	DB	128
+	DB	176
 	DB	74
 	DB	169
 	DB	160
 	DB	154
-	DB	2
-	DB	159
 	DB	49
 	DB	70
 	DB	107
 	DB	45
-	DB	224
-	DB	131
 	DB	72
 	DB	90
+	DB	224
+	DB	131
 	DB	0
 	DB	246
 	DB	107
@@ -179,12 +181,12 @@ _global_palette:
 	DB	53
 	DB	9
 	DB	165
+	DB	198
+	DB	24
 	DB	115
 	DB	78
 	DB	140
 	DB	49
-	DB	161
-	DB	2
 	DB	64
 	DB	152
 	DB	82
@@ -195,8 +197,8 @@ _global_palette:
 	DB	161
 	DB	1
 	DB	2
-	DB	198
-	DB	24
+	DB	98
+	DB	187
 	DB	247
 	DB	94
 	DB	156
@@ -211,8 +213,6 @@ _global_palette:
 	DB	140
 	DB	148
 	DB	82
-	DB	98
-	DB	187
 	DB	16
 	DB	194
 	DB	140
@@ -229,6 +229,8 @@ _global_palette:
 	DB	148
 	DB	155
 	DB	111
+	DB	14
+	DB	242
 	DB	199
 	DB	156
 	DB	114
@@ -253,23 +255,29 @@ _global_palette:
 	DB	99
 	DB	147
 	DB	78
-	DB	36
-	DB	46
-	DB	132
-	DB	49
-	DB	139
-	DB	53
+	DB	193
+	DB	1
+	DB	224
+	DB	0
+	DB	99
+	DB	109
+	DB	99
+	DB	89
+	DB	70
+	DB	61
+	DB	246
+	DB	246
 	DB	141
 	DB	181
-	DB	160
-	DB	127
+	DB	31
+	DB	124
+	DB	56
+	DB	161
+	DB	82
+	DB	74
 	DB	255
 	DB	243
-	DB	159
-	DB	99
-	DB	41
-	DB	37
 	XDEF _global_palette
-;    1	unsigned char global_palette[264] = 
+;    1	unsigned char global_palette[272] = 
 ;    2	{ 
 	END

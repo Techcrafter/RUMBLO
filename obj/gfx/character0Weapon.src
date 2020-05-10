@@ -32,20 +32,20 @@ _character0Weapon_data:
 	DB	1
 	DB	0
 	DB	1
-	DB	128
 	DB	7
-	DB	128
+	DB	9
 	DB	7
-	DB	128
+	DB	9
 	DB	7
+	DB	9
 	DB	1
 	DB	1
+	DB	9
 	DB	7
-	DB	128
+	DB	9
 	DB	7
-	DB	128
+	DB	9
 	DB	7
-	DB	128
 	DB	1
 	DB	0
 	DB	1
