@@ -20,7 +20,7 @@ _character1Weapon_data:
 	DB	1
 	DB	1
 	DB	1
-	DB	4
+	DB	131
 	DB	59
 	DB	1
 	DB	1
@@ -29,7 +29,7 @@ _character1Weapon_data:
 	DB	96
 	DB	96
 	DB	96
-	DB	4
+	DB	131
 	DB	1
 	DB	1
 	DB	1
@@ -42,7 +42,7 @@ _character1Weapon_data:
 	DB	0
 	DB	1
 	DB	59
-	DB	4
+	DB	131
 	DB	96
 	DB	1
 	DB	59
@@ -52,11 +52,11 @@ _character1Weapon_data:
 	DB	96
 	DB	1
 	DB	96
-	DB	4
+	DB	131
 	DB	59
 	DB	1
 	DB	1
-	DB	4
+	DB	131
 	DB	59
 	DB	59
 	DB	1

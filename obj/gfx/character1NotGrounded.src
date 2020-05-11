@@ -337,8 +337,8 @@ _character1NotGrounded_data:
 	DB	12
 	DB	12
 	DB	12
-	DB	12
-	DB	12
+	DB	1
+	DB	1
 	DB	12
 	DB	12
 	DB	12
@@ -368,10 +368,10 @@ _character1NotGrounded_data:
 	DB	8
 	DB	1
 	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
+	DB	1
+	DB	23
+	DB	11
+	DB	1
 	DB	12
 	DB	1
 	DB	8
@@ -400,10 +400,10 @@ _character1NotGrounded_data:
 	DB	8
 	DB	1
 	DB	12
-	DB	12
-	DB	12
-	DB	12
-	DB	12
+	DB	1
+	DB	11
+	DB	23
+	DB	1
 	DB	12
 	DB	1
 	DB	8
@@ -433,8 +433,8 @@ _character1NotGrounded_data:
 	DB	1
 	DB	12
 	DB	12
-	DB	12
-	DB	12
+	DB	1
+	DB	1
 	DB	12
 	DB	12
 	DB	1
@@ -638,8 +638,8 @@ _character1NotGrounded_data:
 	DB	100
 	DB	94
 	DB	94
-	DB	4
-	DB	4
+	DB	131
+	DB	131
 	DB	59
 	DB	59
 	DB	96
@@ -710,7 +710,7 @@ _character1NotGrounded_data:
 	DB	18
 	DB	18
 	DB	23
-	DB	4
+	DB	131
 	DB	1
 	DB	8
 	DB	8

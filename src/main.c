@@ -27,12 +27,15 @@ extern unsigned char tilemap_map[];
 
 #define BLACK				1
 #define GRAY				3
+#define GREEN				4
 #define RED					gfx_red
 #define TRANSPARENT			0
 #define WHITE				2
+#define YELLOW				gfx_yellow
 
 char version[] = "1.0";
-int testMode = 0;
+
+int testMode;
 
 int selection;
 int selecting;
@@ -51,6 +54,7 @@ int mapXBlock3;
 int mapYBlock3;
 
 int character0MoveSpeed;
+int character0MoveAnimationSpeed;
 int character0FallSpeed;
 int character0JumpSpeed;
 int character0JumpHeight;
@@ -60,6 +64,7 @@ int character0WeaponKnockback;
 int character0WeaponKnockbackStrength;
 
 int character1MoveSpeed;
+int character1MoveAnimationSpeed;
 int character1FallSpeed;
 int character1JumpSpeed;
 int character1JumpHeight;
@@ -89,6 +94,7 @@ int player1JumpSpeed;
 int player1JumpHeight;
 int player1MoveAnimation;
 int player1MoveAnimationCount;
+int player1MoveAnimationSpeed;
 int player1Jumping;
 int player1Grounded;
 int player1ShieldActive;
@@ -111,6 +117,15 @@ int player1Weapon3X;
 int player1Weapon3Y;
 int player1Weapon3Flipped;
 
+int player2Jump;
+int player2Attack;
+int player2Down;
+int player2Left;
+int player2Right;
+
+int player2AiAttackDelay;
+int player2AiAttackDelayCount;
+
 int player2IsAi;
 int player2CharacterSelection;
 int player2X;
@@ -122,6 +137,7 @@ int player2JumpSpeed;
 int player2JumpHeight;
 int player2MoveAnimation;
 int player2MoveAnimationCount;
+int player2MoveAnimationSpeed;
 int player2Jumping;
 int player2Grounded;
 int player2ShieldActive;
@@ -241,6 +257,7 @@ int main(void)
 	srand(rtc_Time());
 	
 	character0MoveSpeed = 4;
+	character0MoveAnimationSpeed = 3;
 	character0FallSpeed = 4;
 	character0JumpSpeed = 8;
 	character0JumpHeight = 10;
@@ -250,6 +267,7 @@ int main(void)
 	character0WeaponKnockbackStrength = 6;
 	
 	character1MoveSpeed = 8;
+	character1MoveAnimationSpeed = 2;
 	character1FallSpeed = 4;
 	character1JumpSpeed = 8;
 	character1JumpHeight = 15;
@@ -257,6 +275,13 @@ int main(void)
 	character1WeaponSpeed = 6;
 	character1WeaponKnockback = 4;
 	character1WeaponKnockbackStrength = 4;
+	
+	kb_Scan();
+    key = kb_Data[7];
+	if(key & kb_Up && key & kb_Down && key & kb_Left && key & kb_Right)
+	{
+		testMode = 1;
+	}
 	
 	delay(2000);
 	
@@ -269,6 +294,10 @@ int main(void)
 	gfx_SetTextFGColor(BLACK);
     gfx_SetTextBGColor(WHITE);
 	gfx_SetTextScale(1, 1);
+	if(testMode == 1)
+	{
+		gfx_PrintStringXY("TEST MODE", 0, 0);
+	}
 	gfx_PrintStringXY("Press [2nd] to start...", 78, 200);
 	gfx_PrintStringXY(version, 296, 232);
 	gfx_SwapDraw();
@@ -342,14 +371,22 @@ int main(void)
 	{
 		case 0:
 			players = 1;
-			goto mapSelector;
 			break;
 		case 1:
 			goto quitGame;
 			break;
 	}
 	
-	goto error;
+	if(players == 1)
+	{
+		player2IsAi = 1;
+	}
+	else if(players == 2)
+	{
+		player2IsAi = 0;
+	}
+	
+	goto mapSelector;
 	
 	//---------------------------------------------------------------
 	
@@ -432,14 +469,13 @@ int main(void)
 			break;
 	}
 	
-	goto characterSelector;
+	goto characterSelector1;
 	
 	//---------------------------------------------------------------
 	
-	//character selector
-	characterSelector:
+	//character selector 1
+	characterSelector1:
 	
-	//player 1
 	selection = 0;
 	selecting = 1;
 	
@@ -517,7 +553,11 @@ int main(void)
 	
 	player1CharacterSelection = selection;
 	
-	//player 2
+	//---------------------------------------------------------------
+	
+	//character selector 2
+	characterSelector2:
+	
 	selection = 0;
 	selecting = 1;
 	
@@ -539,7 +579,7 @@ int main(void)
 		}
 		else if(key == sk_Clear)
 		{
-			goto mapSelector;
+			goto characterSelector1;
 		}
 		else if(key == sk_Left && selection != 0)
 		{
@@ -595,6 +635,101 @@ int main(void)
 	
 	player2CharacterSelection = selection;
 	
+	if(player2IsAi == 0)
+	{
+		goto prepareFight;
+	}
+	else
+	{
+		goto aiDifficultySelector;
+	}
+	
+	//---------------------------------------------------------------
+	
+	//aiDifficultySelector
+	aiDifficultySelector:
+	
+	selection = 0;
+	selecting = 1;
+	
+	while(selecting)
+	{
+		gfx_Tilemap(&tilemap, getXBlock(mapXBlock1), getYBlock(mapYBlock1));
+		gfx_SetColor(GRAY);
+		gfx_FillRectangle(0, 70, 320, 105);
+		gfx_SetTextFGColor(WHITE);
+		gfx_SetTextBGColor(GRAY);
+		gfx_SetTextScale(2, 2);
+		gfx_PrintStringXY("Select a difficulty:", 6, 76);
+		gfx_SetTextScale(1, 1);
+		gfx_SetTextFGColor(GREEN);
+		gfx_PrintStringXY("1: Easy", 132, 115);
+		gfx_SetTextFGColor(YELLOW);
+		gfx_PrintStringXY("2: Normal", 126, 125);
+		gfx_SetTextFGColor(RED);
+		gfx_PrintStringXY("3: Hard", 132, 135);
+		gfx_SetTextFGColor(WHITE);
+		gfx_PrintStringXY("4: Random", 126, 145);
+		
+		key = os_GetCSC();
+		switch(key)
+		{
+			case sk_Clear:
+				goto characterSelector2;
+				break;
+			case sk_1:
+				selection = 0;
+				selecting = 0;
+				break;
+			case sk_2:
+				selection = 1;
+				selecting = 0;
+				break;
+			case sk_3:
+				selection = 2;
+				selecting = 0;
+				break;
+			case sk_4:
+				selection = 3;
+				selecting = 0;
+				break;
+		}
+		
+		gfx_SwapDraw();
+	}
+	
+	if(selection == 3)  //random difficulty
+	{
+		selection = random();
+		if(selection < 0.3)
+		{
+			selection = 0;
+		}
+		else if(selection >= 0.3 && selection < 0.6)
+		{
+			selection = 1;
+		}
+		else
+		{
+			selection = 2;
+		}
+	}
+	
+	switch(selection)
+	{
+		case 0:
+			player2AiAttackDelay = 15;
+			break;
+		case 1:
+			player2AiAttackDelay = 10;
+			break;
+		case 2:
+			player2AiAttackDelay = 5;
+			break;
+	}
+	
+	player2AiAttackDelayCount = 0;
+	
 	goto prepareFight;
 	
 	//---------------------------------------------------------------
@@ -627,14 +762,6 @@ int main(void)
 	player2Weapon2 = 0;
 	player2Weapon3 = 0;
 	
-	if(players == 1)
-	{
-		player2IsAi = 1;
-	}
-	else if(players == 2)
-	{
-		player2IsAi = 0;
-	}
 	switch(map)
 	{
 		case 0:
@@ -673,6 +800,7 @@ int main(void)
 			gfx_FlipSpriteY(character0Weapon, player1WeaponFlipped);
 			
 			player1MoveSpeed = character0MoveSpeed;
+			player1MoveAnimationSpeed = character0MoveAnimationSpeed;
 			player1FallSpeed = character0FallSpeed;
 			player1JumpSpeed = character0JumpSpeed;
 			player1JumpHeight = character0JumpHeight;
@@ -695,6 +823,7 @@ int main(void)
 			gfx_FlipSpriteY(character1Weapon, player1WeaponFlipped);
 			
 			player1MoveSpeed = character1MoveSpeed;
+			player1MoveAnimationSpeed = character1MoveAnimationSpeed;
 			player1FallSpeed = character1FallSpeed;
 			player1JumpSpeed = character1JumpSpeed;
 			player1JumpHeight = character1JumpHeight;
@@ -720,6 +849,7 @@ int main(void)
 			gfx_FlipSpriteY(character0Weapon, player2WeaponFlipped);
 			
 			player2MoveSpeed = character0MoveSpeed;
+			player2MoveAnimationSpeed = character0MoveAnimationSpeed;
 			player2FallSpeed = character0FallSpeed;
 			player2JumpSpeed = character0JumpSpeed;
 			player2JumpHeight = character0JumpHeight;
@@ -742,6 +872,7 @@ int main(void)
 			gfx_FlipSpriteY(character1Weapon, player2WeaponFlipped);
 			
 			player2MoveSpeed = character1MoveSpeed;
+			player2MoveAnimationSpeed = character1MoveAnimationSpeed;
 			player2FallSpeed = character1FallSpeed;
 			player2JumpSpeed = character1JumpSpeed;
 			player2JumpHeight = character1JumpHeight;
@@ -815,7 +946,79 @@ int main(void)
 			gfx_Tilemap(&tilemap, getXBlock(mapXBlock3), getYBlock(mapYBlock3));
 		}
 		
-		//fight - get keys (player 1)
+		//fight - get actions from player inputs (player 1)
+		kb_Scan();
+        key = kb_Data[7];
+		if(key & kb_Up)
+		{
+			if(testMode == 1)
+			{
+				player1Y -= 4;
+			}
+		}
+		if(key & kb_Down)
+		{
+			if(testMode == 1)
+			{
+				player1Y += 4;
+			}
+			player1Jumping = 0;
+			if(player1Grounded == 1)
+			{
+				player1ShieldActive = 1;
+			}
+		}
+		else
+		{
+			player1ShieldActive = 0;
+		}
+		if(key & kb_Left && player1ShieldActive == 0)
+		{
+			player1X -= player1MoveSpeed;
+			if(player1Flipped == 0)
+			{
+				player1Flipped = 1;
+				player1MoveAnimation = 0;
+				player1MoveAnimationCount = 0;
+			}
+			player1MoveAnimationCount++;
+			if(player1MoveAnimationCount == player1MoveAnimationSpeed)
+			{
+				if(player1MoveAnimation != 3)
+				{
+					player1MoveAnimation++;
+				}
+				else
+				{
+					player1MoveAnimation = 0;
+				}
+				player1MoveAnimationCount = 0;
+			}
+		}
+		if(key & kb_Right && player1ShieldActive == 0)
+		{
+			player1X += player1MoveSpeed;
+			if(player1Flipped == 1)
+			{
+				player1Flipped = 0;
+				player1MoveAnimation = 0;
+				player1MoveAnimationCount = 0;
+			}
+			player1MoveAnimationCount++;
+			if(player1MoveAnimationCount == player1MoveAnimationSpeed)
+			{
+				if(player1MoveAnimation != 3)
+				{
+					player1MoveAnimation++;
+				}
+				else
+				{
+					player1MoveAnimation = 0;
+				}
+				player1MoveAnimationCount = 0;
+			}
+		}
+		
 		key = os_GetCSC();
 		if(key == sk_2nd)
 		{
@@ -874,75 +1077,228 @@ int main(void)
 			goto pause;
 		}
 		
-		kb_Scan();
-        key = kb_Data[7];
-		if(key & kb_Up)
+		//fight - get actions (player 2)
+		player2Down = 0;
+		player2Left = 0;
+		player2Right = 0;
+		player2Jump = 0;
+		player2Attack = 0;
+		
+		if(player2IsAi == 1 && testMode == 0)
 		{
-			if(testMode == 1)
+			//fight - get actions - ai if activated
+			if(map == 0)
 			{
-				player1Y -= 4;
-			}
-		}
-		if(key & kb_Down)
-		{
-			if(testMode == 1)
-			{
-				player1Y += 4;
-			}
-			player1Jumping = 0;
-			if(player1Grounded == 1)
-			{
-				player1ShieldActive = 1;
+				if(player2X <= 48)
+				{
+					player2Right = 1;
+					player2Jump = 1;
+				}
+				else if(player2X >= 244)
+				{
+					player2Left = 1;
+					player2Jump = 1;
+				}
+				else if(player1Y == 132 && player2Y <= 64)
+				{
+					if(player2X < 160 && player2X > 60)
+					{
+						player2Left = 1;
+					}
+					else if(player2X >= 160 && player2X < 228)
+					{
+						player2Right = 1;
+					}
+				}
+				else if(player1Y <= 64 && player2Y == 132)
+				{
+					player2Jump = 1;
+					if(player1X < player2X)
+					{
+						player2Left = 1;
+					}
+					else
+					{
+						player2Right = 1;
+					}
+					player2Attack = 1;
+				}
+				else if(player1Y < 64 && player2Y == 64)
+				{
+					if(player1X < 160 && player2X > 84)
+					{
+						player2Left = 1;
+					}
+					else if(player1X < 160)
+					{
+						player2Left = 1;
+						player2Jump = 1;
+					}
+					else if(player1X >= 160 && player2X < 204)
+					{
+						player2Right = 1;
+					}
+					else
+					{
+						player2Right = 1;
+						player2Jump = 1;
+					}
+				}
+				else
+				{
+					if(player1X + 20 < player2X)
+					{
+						player2Left = 1;
+					}
+					else if(player1X - 20 > player2X)
+					{
+						player2Right = 1;
+					}
+					
+					if(player1Y > player2Y)
+					{
+						player2Jump = 1;
+					}
+					
+					if(player1Y == player2Y)
+					{
+						player2Attack = 1;
+					}
+				}
+				
+				if(player2XKnockback < -4 || player2XKnockback > 4)
+				{
+					player2Down = 1;
+				}
+				else if(player2XKnockback < -2 || player2XKnockback > 2)
+				{
+					player2Left = 0;
+					player2Right = 0;
+				}
 			}
 		}
 		else
 		{
-			player1ShieldActive = 0;
+			//fight - get actions - player inputs
 		}
-		if(key & kb_Left && player1ShieldActive == 0)
+		
+		if(player2Down == 1)
 		{
-			player1X -= player1MoveSpeed;
-			if(player1Flipped == 0)
+			player2Jumping = 0;
+			if(player2Grounded == 1)
 			{
-				player1Flipped = 1;
-				player1MoveAnimation = 0;
-				player1MoveAnimationCount = 0;
+				player2ShieldActive = 1;
 			}
-			player1MoveAnimationCount++;
-			if(player1MoveAnimationCount == 3)
+		}
+		else
+		{
+			player2ShieldActive = 0;
+		}
+		if(player2Left == 1 && player2ShieldActive == 0)
+		{
+			player2X -= player2MoveSpeed;
+			if(player2Flipped == 0)
 			{
-				if(player1MoveAnimation != 3)
+				player2Flipped = 1;
+				player2MoveAnimation = 0;
+				player2MoveAnimationCount = 0;
+			}
+			player2MoveAnimationCount++;
+			if(player2MoveAnimationCount == player2MoveAnimationSpeed)
+			{
+				if(player2MoveAnimation != 3)
 				{
-					player1MoveAnimation++;
+					player2MoveAnimation++;
 				}
 				else
 				{
-					player1MoveAnimation = 0;
+					player2MoveAnimation = 0;
 				}
-				player1MoveAnimationCount = 0;
+				player2MoveAnimationCount = 0;
 			}
 		}
-		if(key & kb_Right && player1ShieldActive == 0)
+		if(player2Right == 1 && player2ShieldActive == 0)
 		{
-			player1X += player1MoveSpeed;
-			if(player1Flipped == 1)
+			player2X += player2MoveSpeed;
+			if(player2Flipped == 1)
 			{
-				player1Flipped = 0;
-				player1MoveAnimation = 0;
-				player1MoveAnimationCount = 0;
+				player2Flipped = 0;
+				player2MoveAnimation = 0;
+				player2MoveAnimationCount = 0;
 			}
-			player1MoveAnimationCount++;
-			if(player1MoveAnimationCount == 3)
+			player2MoveAnimationCount++;
+			if(player2MoveAnimationCount == player2MoveAnimationSpeed)
 			{
-				if(player1MoveAnimation != 3)
+				if(player2MoveAnimation != 3)
 				{
-					player1MoveAnimation++;
+					player2MoveAnimation++;
 				}
 				else
 				{
-					player1MoveAnimation = 0;
+					player2MoveAnimation = 0;
 				}
-				player1MoveAnimationCount = 0;
+				player2MoveAnimationCount = 0;
+			}
+		}
+		
+		if(player2Jump == 1)
+		{
+			if(player2Grounded == 1)
+			{
+				player2Jumping = player2JumpHeight;
+			}
+		}
+		if(player2Attack)
+		{
+			if(player2IsAi == 1)
+			{
+				player2AiAttackDelayCount--;
+			}
+			if(player2IsAi == 0 || player2AiAttackDelayCount <= 0)
+			{
+				player2AiAttackDelayCount = player2AiAttackDelay;
+				if(player2Weapon1 == 0)
+				{
+					player2Weapon1 = 1;
+					player2Weapon1Flipped = player2Flipped;
+					if(player2Flipped == 0)
+					{
+						player2Weapon1X = player2X + 26;
+					}
+					else
+					{
+						player2Weapon1X = player2X;
+					}
+					player2Weapon1Y = player2Y + 17;
+				}
+				else if(player2Weapon2 == 0)
+				{
+					player2Weapon2 = 1;
+					player2Weapon2Flipped = player2Flipped;
+					if(player2Flipped == 0)
+					{
+						player2Weapon2X = player2X + 26;
+					}
+					else
+					{
+						player2Weapon2X = player2X;
+					}
+					player2Weapon2Y = player2Y + 17;
+				}
+				else if(player2Weapon3 == 0)
+				{
+					player2Weapon3 = 1;
+					player2Weapon3Flipped = player2Flipped;
+					if(player2Flipped == 0)
+					{
+						player2Weapon3X = player2X + 26;
+					}
+					else
+					{
+						player2Weapon3X = player2X;
+					}
+					player2Weapon3Y = player2Y + 17;
+				}
 			}
 		}
 		
@@ -1470,7 +1826,8 @@ int main(void)
 		//fight - draw player 1 position
 		if(testMode == 1)
 		{
-			gfx_SetTextXY(10, 10);
+			gfx_PrintStringXY("TEST MODE", 10, 10);
+			gfx_SetTextXY(160, 10);
 			gfx_PrintInt(player1X, 3);
 			gfx_PrintString(" ");
 			gfx_PrintInt(player1Y, 3);
