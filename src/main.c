@@ -33,7 +33,7 @@ extern unsigned char tilemap_map[];
 #define WHITE				2
 #define YELLOW				gfx_yellow
 
-char version[] = "1.0";
+char version[] = "0.1";
 
 int testMode;
 
@@ -351,7 +351,7 @@ int main(void)
 		{
 			gfx_SetTextFGColor(GRAY);
 		}
-		gfx_PrintStringXY("Multiplayer", 119, 100);
+		gfx_PrintStringXY("Multiplayer", 116, 100);
 		if(selection == 1)
 		{
 			gfx_SetTextFGColor(RED);
@@ -1087,14 +1087,14 @@ int main(void)
 		if(player2IsAi == 1 && testMode == 0)
 		{
 			//fight - get actions - ai if activated
-			if(map == 0)
+			if(map == 0)  //map 0
 			{
-				if(player2X <= 48)
+				if(player2X <= 48 && player2Y == 132)
 				{
 					player2Right = 1;
 					player2Jump = 1;
 				}
-				else if(player2X >= 244)
+				else if(player2X >= 244 && player2Y == 132)
 				{
 					player2Left = 1;
 					player2Jump = 1;
@@ -1111,6 +1111,19 @@ int main(void)
 					}
 				}
 				else if(player1Y <= 64 && player2Y == 132)
+				{
+					player2Jump = 1;
+					if(player1X < player2X)
+					{
+						player2Left = 1;
+					}
+					else
+					{
+						player2Right = 1;
+					}
+					player2Attack = 1;
+				}
+				else if(player1Y == 40 && player2Y < 64)
 				{
 					player2Jump = 1;
 					if(player1X < player2X)
@@ -1144,6 +1157,17 @@ int main(void)
 						player2Jump = 1;
 					}
 				}
+				else if(player2Y == 40 && player1Y < 40)
+				{
+					if(player2X < 160)
+					{
+						player2Right = 1;
+					}
+					else
+					{
+						player2Left = 1;
+					}
+				}
 				else
 				{
 					if(player1X + 20 < player2X)
@@ -1165,16 +1189,145 @@ int main(void)
 						player2Attack = 1;
 					}
 				}
-				
-				if(player2XKnockback < -4 || player2XKnockback > 4)
+			}
+			else if(map == 1)  //map1
+			{
+				if(player2X < 92 && player2Y == 80)
 				{
-					player2Down = 1;
+					player2Right = 1;
+					player2Jump = 1;
 				}
-				else if(player2XKnockback < -2 || player2XKnockback > 2)
+				else if(player2X > 192 && player2Y == 80)
 				{
-					player2Left = 0;
-					player2Right = 0;
+					player2Left = 1;
+					player2Jump = 1;
 				}
+				else if(player2Y == 96 && player1Y <= 80)
+				{
+					if(player2X < 160 && player2X < 48)
+					{
+						player2Right = 1;
+					}
+					else if(player2X < 160)
+					{
+						player2Right = 1;
+						player2Jump = 1;
+					}
+					else if(player2X > 240)
+					{
+						player2Left = 1;
+					}
+					else
+					{
+						player2Left = 1;
+						player2Jump = 1;
+					}
+					player2Attack = 1;
+				}
+				else if(player1Y == 96 && player2Y == 80)
+				{
+					if(player1X < 160 && player2X > 92)
+					{
+						player2Left = 1;
+					}
+					else if(player1X < 160)
+					{
+						player2Left = 1;
+						player2Jump = 1;
+					}
+					else if(player2X < 192)
+					{
+						player2Right = 1;
+					}
+					else
+					{
+						player2Right = 1;
+						player2Jump = 1;
+					}
+					player2Attack = 1;
+				}
+				else if(player1Y <= 16 && player2Y == 80)
+				{
+					if(player1X < player2X)
+					{
+						player2Right = 1;
+						player2Jump = 1;
+						player2Attack = 1;
+					}
+					else if(player2X < player1X)
+					{
+						player2Left = 1;
+						player2Jump = 1;
+						player2Attack = 1;
+					}
+				}
+				else if(player1Y > 16 && player2Y == 16)
+				{
+					if(player2X < 160 && player2X > 96)
+					{
+						player2Left = 1;
+					}
+					else if(player2X < 196)
+					{
+						player2Right = 1;
+					}
+				}
+				else if(player1Y == 96 && player2Y == 96)
+				{
+					if((player1X - player2X) > 50 || (player1X - player2X) < -50)
+					{
+						if(player2X < 160 && player2X < 48)
+					{
+						player2Right = 1;
+					}
+					else if(player2X < 160)
+					{
+						player2Right = 1;
+						player2Jump = 1;
+					}
+					else if(player2X > 240)
+					{
+						player2Left = 1;
+					}
+					else
+					{
+						player2Left = 1;
+						player2Jump = 1;
+					}
+					player2Attack = 1;
+					}
+				}
+				else
+				{
+					if(player1X + 20 < player2X)
+					{
+						player2Left = 1;
+					}
+					else if(player1X - 20 > player2X)
+					{
+						player2Right = 1;
+					}
+					
+					if(player1Y > player2Y)
+					{
+						player2Jump = 1;
+					}
+				}
+			}
+			
+			if(player1Y == player2Y)
+			{
+				player2Attack = 1;
+			}
+			
+			if(player2XKnockback < -4 || player2XKnockback > 4)
+			{
+				player2Down = 1;
+			}
+			else if(player2XKnockback < -2 || player2XKnockback > 2)
+			{
+				player2Left = 0;
+				player2Right = 0;
 			}
 		}
 		else

@@ -25,5 +25,5 @@ __program_icon:
 	db	0FFh, 0FFh, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 0FFh, 0FFh, 0FFh
 	db	0FFh, 0FFh, 0FFh, 0FFh, 0FFh, 000h, 000h, 000h, 000h, 000h, 000h, 0FFh, 0FFh, 0FFh, 0FFh, 0FFh
 __program_description:
-	db	"A fun fighting game - 1.0", 0
+	db	"A fun fighting game - 0.1", 0
 __program_description_end:
